@@ -1,0 +1,9 @@
+---
+ensure:
+  selector: a.sign-up
+  absent: true
+  value: val
+  text: 'Join now for free!'
+  if: ${isDesktop}
+  unless: ${isMobile}
+  timeout: 100

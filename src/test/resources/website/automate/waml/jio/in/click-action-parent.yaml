@@ -1,0 +1,7 @@
+---
+click:
+  selector: a.sign-up
+  parent:
+    selector: div.main
+    text: some text
+    value: some value
