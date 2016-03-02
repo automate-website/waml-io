@@ -13,6 +13,7 @@ import website.automate.waml.jio.model.action.Action;
 import website.automate.waml.jio.model.action.ClickAction;
 import website.automate.waml.jio.model.action.EnsureAction;
 import website.automate.waml.jio.model.action.EnterAction;
+import website.automate.waml.jio.model.action.IncludeAction;
 import website.automate.waml.jio.model.action.MoveAction;
 import website.automate.waml.jio.model.action.OpenAction;
 import website.automate.waml.jio.model.action.WaitAction;
@@ -40,6 +41,7 @@ public class ActionDeserializer extends StdDeserializer<Action> {
         registerAction(ActionType.ENTER.getName(), EnterAction.class);
         registerAction(ActionType.OPEN.getName(), OpenAction.class);
         registerAction(ActionType.WAIT.getName(), WaitAction.class);
+        registerAction(ActionType.INCLUDE.getName(), IncludeAction.class);
     }
 
     void registerAction(String attributeKey, Class<? extends Action> actionType) {
