@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import website.automate.waml.jio.model.ActionType;
+import website.automate.waml.jio.model.CriterionType;
 import website.automate.waml.jio.model.action.Action;
 import website.automate.waml.jio.model.action.ClickAction;
 import website.automate.waml.jio.model.action.EnsureAction;
@@ -16,6 +17,7 @@ import website.automate.waml.jio.model.action.EnterAction;
 import website.automate.waml.jio.model.action.IncludeAction;
 import website.automate.waml.jio.model.action.MoveAction;
 import website.automate.waml.jio.model.action.OpenAction;
+import website.automate.waml.jio.model.action.StoreAction;
 import website.automate.waml.jio.model.action.WaitAction;
 
 import com.fasterxml.jackson.core.JsonParser;
@@ -42,6 +44,7 @@ public class ActionDeserializer extends StdDeserializer<Action> {
         registerAction(ActionType.OPEN.getName(), OpenAction.class);
         registerAction(ActionType.WAIT.getName(), WaitAction.class);
         registerAction(ActionType.INCLUDE.getName(), IncludeAction.class);
+        registerAction(ActionType.STORE.getName(), StoreAction.class);
     }
 
     void registerAction(String attributeKey, Class<? extends Action> actionType) {
@@ -55,33 +58,44 @@ public class ActionDeserializer extends StdDeserializer<Action> {
         ObjectMapper mapper = (ObjectMapper) jsonParser.getCodec();
         ObjectNode root = (ObjectNode) mapper.readTree(jsonParser);
 
-        Class<? extends Action> animalClass = null;
+        Class<? extends Action> actionClass = null;
         Iterator<Entry<String, JsonNode>> elementsIterator = root.fields();
         String key = null;
         while (elementsIterator.hasNext()) {
             Entry<String, JsonNode> element = elementsIterator.next();
             String name = element.getKey();
             if (registry.containsKey(name)) {
-                animalClass = registry.get(name);
+                actionClass = registry.get(name);
                 key = name;
                 break;
             }
         }
 
-        if (animalClass == null){
+        if (actionClass == null){
             return null;
         }
         
         JsonNode object = root.get(key);
-        if (object.isTextual()
-                || !object.isObject()) {
+        if (isShortNotated(actionClass, object)) {
             ActionType actionType = ActionType.findByName(key);
             JsonNode wrapper = new ObjectNode(JsonNodeFactory.instance,
                     singletonMap(actionType.getDefaultCriteriaType().getName(),
                             object));
-            return mapper.convertValue(wrapper, animalClass);
+            return mapper.convertValue(wrapper, actionClass);
         }
         
-        return mapper.convertValue(root.get(key), animalClass);
+        return mapper.convertValue(root.get(key), actionClass);
+    }
+    
+    private boolean isShortNotated(Class<? extends Action> actionClass, JsonNode object){
+        if(object.isTextual()){
+            return true;
+        }
+        if(actionClass == StoreAction.class){
+            return !object.has(CriterionType.IF.getName())
+                    && !object.has(CriterionType.UNLESS.getName())
+                    && !object.has(CriterionType.VALUE.getName());
+        }
+        return !object.isObject();
     }
 }

@@ -1,0 +1,7 @@
+---
+store:
+  value:
+    keyA: valueA
+    keyB: valueB
+  if: ${isDesktop}
+  unless: ${isMobile}

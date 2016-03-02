@@ -4,15 +4,15 @@ import java.util.Map;
 
 import website.automate.waml.jio.model.CriterionValue;
 
-public class StoreAction extends FilterAction {
+public class StoreAction extends ConditionalAction {
 
-    private Map<String, CriterionValue> values;
+    private Map<String, CriterionValue> value;
     
-    public Map<String, CriterionValue> getValues() {
-        return values;
+    public Map<String, CriterionValue> getValue() {
+        return value;
     }
 
-    public void setValues(Map<String, CriterionValue> values) {
-        this.values = values;
+    public void setValue(Map<String, CriterionValue> value) {
+        this.value = value;
     }
 }

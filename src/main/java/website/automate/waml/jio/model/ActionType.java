@@ -10,7 +10,7 @@ public enum ActionType {
     OPEN("open", CriterionType.URL),
     SELECT("select", CriterionType.SELECTOR),
     WAIT("wait", CriterionType.TIME),
-    STORE("store", null);
+    STORE("store", CriterionType.VALUE);
     
     private final String name;
     
