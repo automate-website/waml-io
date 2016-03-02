@@ -14,6 +14,8 @@ import website.automate.waml.jio.model.action.ClickAction;
 import website.automate.waml.jio.model.action.EnsureAction;
 import website.automate.waml.jio.model.action.EnterAction;
 import website.automate.waml.jio.model.action.MoveAction;
+import website.automate.waml.jio.model.action.OpenAction;
+import website.automate.waml.jio.model.action.WaitAction;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -36,6 +38,8 @@ public class ActionDeserializer extends StdDeserializer<Action> {
         registerAction(ActionType.ENSURE.getName(), EnsureAction.class);
         registerAction(ActionType.MOVE.getName(), MoveAction.class);
         registerAction(ActionType.ENTER.getName(), EnterAction.class);
+        registerAction(ActionType.OPEN.getName(), OpenAction.class);
+        registerAction(ActionType.WAIT.getName(), WaitAction.class);
     }
 
     void registerAction(String attributeKey, Class<? extends Action> actionType) {
@@ -67,7 +71,8 @@ public class ActionDeserializer extends StdDeserializer<Action> {
         }
         
         JsonNode object = root.get(key);
-        if (object.isTextual()) {
+        if (object.isTextual()
+                || !object.isObject()) {
             ActionType actionType = ActionType.findByName(key);
             JsonNode wrapper = new ObjectNode(JsonNodeFactory.instance,
                     singletonMap(actionType.getDefaultCriteriaType().getName(),

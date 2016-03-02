@@ -1,0 +1,5 @@
+---
+wait:
+  time: 100
+  if: ${isDesktop}
+  unless: ${isMobile}

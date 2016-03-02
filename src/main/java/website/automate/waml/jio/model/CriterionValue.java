@@ -11,6 +11,10 @@ public class CriterionValue {
         return new CriterionValue(value);
     }
     
+    public CriterionValue(int value){
+        this.value = value;
+    }
+    
     public CriterionValue(Object value){
         this.value = value;
     }

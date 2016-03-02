@@ -2,7 +2,7 @@ package website.automate.waml.jio.model.action;
 
 import website.automate.waml.jio.model.CriterionValue;
 
-public class WaitAction extends TimeLimitedAction {
+public class WaitAction extends ConditionalAction {
 
     private CriterionValue time;
     
