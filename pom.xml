@@ -2,13 +2,13 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>website.automate</groupId>
-    <artifactId>waml-serializer</artifactId>
+    <artifactId>waml-io</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Serializer of the web automation markup language (WAML) for Java</description>
-    <url>https://github.com/automate-website/waml-serializer</url>
+    <description>(De)Serializer of the web automation markup language (WAML) for Java</description>
+    <url>https://github.com/automate-website/waml-io</url>
 
     <developers>
         <developer>
@@ -252,9 +252,9 @@
     </distributionManagement>
 
     <scm>
-        <url>https://github.com/automate-website/waml-serializer</url>
-        <connection>scm:git:git@github.com:automate-website/waml-serializer.git</connection>
-        <developerConnection>scm:git:git@github.com:automate-website/waml-serializer.git</developerConnection>
+        <url>https://github.com/automate-website/waml-io</url>
+        <connection>scm:git:git@github.com:automate-website/waml-io.git</connection>
+        <developerConnection>scm:git:git@github.com:automate-website/waml-io.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 </project>

@@ -1,0 +1,13 @@
+---
+name: scenario-name
+description: scenario-description
+if: ${isDesktop}
+unless: ${isMobile}
+timeout: 100
+steps:
+  - click:
+      selector: a.sign-up
+      parent:
+        selector: div.main
+        text: some text
+        value: some value
