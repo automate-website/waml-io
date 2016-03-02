@@ -1,4 +1,4 @@
-package website.automate.waml.io;
+package website.automate.waml.io.deserializer;
 
 import static java.lang.ClassLoader.getSystemResourceAsStream;
 import static org.hamcrest.core.Is.is;
