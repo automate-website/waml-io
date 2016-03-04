@@ -1,27 +1,29 @@
 package website.automate.waml.io.model.action;
 
+import website.automate.waml.io.model.CriterionValue;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public abstract class ConditionalAction implements Action {
 
     @JsonProperty("if")
-    private String when;
+    private CriterionValue when;
     
-    private String unless;
+    private CriterionValue unless;
     
-    public String getWhen() {
+    public CriterionValue getWhen() {
         return when;
     }
 
-    public void setWhen(String when) {
+    public void setWhen(CriterionValue when) {
         this.when = when;
     }
 
-    public String getUnless() {
+    public CriterionValue getUnless() {
         return unless;
     }
 
-    public void setUnless(String unless) {
+    public void setUnless(CriterionValue unless) {
         this.unless = unless;
     }
     

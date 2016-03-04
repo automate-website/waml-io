@@ -29,8 +29,8 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         ClickAction actualClickAction = ClickAction.class.cast(action);
         assertThat(actualClickAction.getSelector(), is("a.sign-up"));
         assertThat(actualClickAction.getText(), is("Join now for free!"));
-        assertThat(actualClickAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualClickAction.getUnless(), is("${isMobile}"));
+        assertThat(actualClickAction.getWhen(), is(of("${isDesktop}")));
+        assertThat(actualClickAction.getUnless(), is(of("${isMobile}")));
         assertThat(actualClickAction.getTimeout(), is(of(100)));
         assertThat(actualClickAction.getValue(), is("val"));
     }

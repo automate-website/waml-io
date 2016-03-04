@@ -28,8 +28,8 @@ public class WaitActionDeserializerIT extends DeserializerBase {
         assertTrue(action instanceof WaitAction);
         WaitAction actualWaitAction = WaitAction.class.cast(action);
         assertThat(actualWaitAction.getTime(), is(of(new Integer(100))));
-        assertThat(actualWaitAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualWaitAction.getUnless(), is("${isMobile}"));
+        assertThat(actualWaitAction.getWhen(), is(of("${isDesktop}")));
+        assertThat(actualWaitAction.getUnless(), is(of("${isMobile}")));
     }
     
     @Test

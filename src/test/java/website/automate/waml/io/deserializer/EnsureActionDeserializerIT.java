@@ -29,8 +29,8 @@ public class EnsureActionDeserializerIT extends DeserializerBase {
         EnsureAction actualEnsureAction = EnsureAction.class.cast(action);
         assertThat(actualEnsureAction.getSelector(), is("a.sign-up"));
         assertThat(actualEnsureAction.getText(), is("Join now for free!"));
-        assertThat(actualEnsureAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualEnsureAction.getUnless(), is("${isMobile}"));
+        assertThat(actualEnsureAction.getWhen(), is(of("${isDesktop}")));
+        assertThat(actualEnsureAction.getUnless(), is(of("${isMobile}")));
         assertThat(actualEnsureAction.getTimeout(), is(of(100)));
         assertThat(actualEnsureAction.getAbsent(), is(of(Boolean.TRUE)));
         assertThat(actualEnsureAction.getValue(), is("val"));

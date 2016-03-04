@@ -29,8 +29,8 @@ public class MoveActionDeserializerIT extends DeserializerBase {
         MoveAction moveMoveAction = MoveAction.class.cast(action);
         assertThat(moveMoveAction.getSelector(), is("a.sign-up"));
         assertThat(moveMoveAction.getText(), is("Join now for free!"));
-        assertThat(moveMoveAction.getWhen(), is("${isDesktop}"));
-        assertThat(moveMoveAction.getUnless(), is("${isMobile}"));
+        assertThat(moveMoveAction.getWhen(), is(of("${isDesktop}")));
+        assertThat(moveMoveAction.getUnless(), is(of("${isMobile}")));
         assertThat(moveMoveAction.getTimeout(), is(of(100)));
         assertThat(moveMoveAction.getValue(), is("val"));
     }

@@ -29,8 +29,8 @@ public class StoreActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof StoreAction);
         StoreAction actualStoreAction = StoreAction.class.cast(action);
-        assertThat(actualStoreAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualStoreAction.getUnless(), is("${isMobile}"));
+        assertThat(actualStoreAction.getWhen(), is(of("${isDesktop}")));
+        assertThat(actualStoreAction.getUnless(), is(of("${isMobile}")));
         Map<String, CriterionValue> value = actualStoreAction.getValue();
         assertThat(value.get("keyA"), is(of("valueA")));
         assertThat(value.get("keyB"), is(of("valueB")));

@@ -19,9 +19,9 @@ public class Scenario {
     private CriterionValue timeout = CriterionValue.of(5);
 
     @JsonProperty("if")
-    private String when;
+    private CriterionValue when;
     
-    private String unless;
+    private CriterionValue unless;
     
     private List<Action> steps;
     
@@ -65,19 +65,19 @@ public class Scenario {
         this.timeout = timeout;
     }
 
-    public String getWhen() {
+    public CriterionValue getWhen() {
         return when;
     }
 
-    public void setWhen(String when) {
+    public void setWhen(CriterionValue when) {
         this.when = when;
     }
 
-    public String getUnless() {
+    public CriterionValue getUnless() {
         return unless;
     }
 
-    public void setUnless(String unless) {
+    public void setUnless(CriterionValue unless) {
         this.unless = unless;
     }
 

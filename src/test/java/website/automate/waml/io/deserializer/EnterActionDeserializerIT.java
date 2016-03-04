@@ -29,8 +29,8 @@ public class EnterActionDeserializerIT extends DeserializerBase {
         EnterAction enterEnterAction = EnterAction.class.cast(action);
         assertThat(enterEnterAction.getSelector(), is("a.sign-up"));
         assertThat(enterEnterAction.getText(), is("Join now for free!"));
-        assertThat(enterEnterAction.getWhen(), is("${isDesktop}"));
-        assertThat(enterEnterAction.getUnless(), is("${isMobile}"));
+        assertThat(enterEnterAction.getWhen(), is(of("${isDesktop}")));
+        assertThat(enterEnterAction.getUnless(), is(of("${isMobile}")));
         assertThat(enterEnterAction.getTimeout(), is(of(100)));
         assertThat(enterEnterAction.getValue(), is("val"));
     }

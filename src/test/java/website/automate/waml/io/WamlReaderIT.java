@@ -35,8 +35,8 @@ public class WamlReaderIT {
     
     private void verifyProperties(Scenario scenario){
         assertThat(scenario.getDescription(), is("scenario-description"));
-        assertThat(scenario.getUnless(), is("${isMobile}"));
-        assertThat(scenario.getWhen(), is("${isDesktop}"));
+        assertThat(scenario.getUnless(), is(of("${isMobile}")));
+        assertThat(scenario.getWhen(), is(of("${isDesktop}")));
         assertThat(scenario.getTimeout(), is(of(100)));
     }
 }
