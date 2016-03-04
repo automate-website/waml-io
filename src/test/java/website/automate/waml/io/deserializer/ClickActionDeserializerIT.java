@@ -21,7 +21,7 @@ public class ClickActionDeserializerIT extends DeserializerBase {
 
     @Test
     public void clickActionIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream clickAction = getSystemResourceAsStream("./website/automate/waml/io/click-action.yaml");
+        InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/click-action.yaml");
         Action action = mapper.readValue(clickAction, Action.class);
         
         assertNotNull(action);
@@ -37,7 +37,7 @@ public class ClickActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void clickActionShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream clickAction = getSystemResourceAsStream("./website/automate/waml/io/click-action-short-notation.yaml");
+        InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/click-action-short-notation.yaml");
         Action action = mapper.readValue(clickAction, Action.class);
         
         assertNotNull(action);
@@ -48,7 +48,7 @@ public class ClickActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void clickActionParentIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream clickAction = getSystemResourceAsStream("./website/automate/waml/io/click-action-parent.yaml");
+        InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/click-action-parent.yaml");
         Action action = mapper.readValue(clickAction, Action.class);
         
         assertNotNull(action);

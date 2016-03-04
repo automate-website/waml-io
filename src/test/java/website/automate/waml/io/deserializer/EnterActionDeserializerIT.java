@@ -21,7 +21,7 @@ public class EnterActionDeserializerIT extends DeserializerBase {
 
     @Test
     public void enterActionIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream enterAction = getSystemResourceAsStream("./website/automate/waml/io/enter-action.yaml");
+        InputStream enterAction = getSystemResourceAsStream(getBasePath() + "/enter-action.yaml");
         Action action = mapper.readValue(enterAction, Action.class);
         
         assertNotNull(action);
@@ -37,7 +37,7 @@ public class EnterActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void enterActionShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream enterAction = getSystemResourceAsStream("./website/automate/waml/io/enter-action-short-notation.yaml");
+        InputStream enterAction = getSystemResourceAsStream(getBasePath() + "/enter-action-short-notation.yaml");
         Action action = mapper.readValue(enterAction, Action.class);
         
         assertNotNull(action);
@@ -48,7 +48,7 @@ public class EnterActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void enterActionParentIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream enterAction = getSystemResourceAsStream("./website/automate/waml/io/enter-action-parent.yaml");
+        InputStream enterAction = getSystemResourceAsStream(getBasePath() + "/enter-action-parent.yaml");
         Action action = mapper.readValue(enterAction, Action.class);
         
         assertNotNull(action);

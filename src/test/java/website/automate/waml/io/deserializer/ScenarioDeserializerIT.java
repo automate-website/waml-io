@@ -20,7 +20,7 @@ public class ScenarioDeserializerIT extends DeserializerBase {
 
     @Test
     public void scenarioIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream scenarioStream = getSystemResourceAsStream("./website/automate/waml/io/scenario.yaml");
+        InputStream scenarioStream = getSystemResourceAsStream(getBasePath() + "/scenario.yaml");
         Scenario scenario = mapper.readValue(scenarioStream, Scenario.class);
         
         assertNotNull(scenario);

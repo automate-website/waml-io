@@ -21,7 +21,7 @@ public class EnsureActionDeserializerIT extends DeserializerBase {
 
     @Test
     public void ensureActionIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream ensureAction = getSystemResourceAsStream("./website/automate/waml/io/ensure-action.yaml");
+        InputStream ensureAction = getSystemResourceAsStream(getBasePath() + "/ensure-action.yaml");
         Action action = mapper.readValue(ensureAction, Action.class);
         
         assertNotNull(action);
@@ -38,7 +38,7 @@ public class EnsureActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void ensureActionShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream ensureAction = getSystemResourceAsStream("./website/automate/waml/io/ensure-action-short-notation.yaml");
+        InputStream ensureAction = getSystemResourceAsStream(getBasePath() + "/ensure-action-short-notation.yaml");
         Action action = mapper.readValue(ensureAction, Action.class);
         
         assertNotNull(action);
@@ -49,7 +49,7 @@ public class EnsureActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void ensureActionParentIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream ensureAction = getSystemResourceAsStream("./website/automate/waml/io/ensure-action-parent.yaml");
+        InputStream ensureAction = getSystemResourceAsStream(getBasePath() + "/ensure-action-parent.yaml");
         Action action = mapper.readValue(ensureAction, Action.class);
         
         assertNotNull(action);

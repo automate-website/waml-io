@@ -21,7 +21,7 @@ public class MoveActionDeserializerIT extends DeserializerBase {
 
     @Test
     public void moveActionIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream moveAction = getSystemResourceAsStream("./website/automate/waml/io/move-action.yaml");
+        InputStream moveAction = getSystemResourceAsStream(getBasePath() + "/move-action.yaml");
         Action action = mapper.readValue(moveAction, Action.class);
         
         assertNotNull(action);
@@ -37,7 +37,7 @@ public class MoveActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void moveActionShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream moveAction = getSystemResourceAsStream("./website/automate/waml/io/move-action-short-notation.yaml");
+        InputStream moveAction = getSystemResourceAsStream(getBasePath() + "/move-action-short-notation.yaml");
         Action action = mapper.readValue(moveAction, Action.class);
         
         assertNotNull(action);
@@ -48,7 +48,7 @@ public class MoveActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void moveActionParentIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream moveAction = getSystemResourceAsStream("./website/automate/waml/io/move-action-parent.yaml");
+        InputStream moveAction = getSystemResourceAsStream(getBasePath() + "/move-action-parent.yaml");
         Action action = mapper.readValue(moveAction, Action.class);
         
         assertNotNull(action);

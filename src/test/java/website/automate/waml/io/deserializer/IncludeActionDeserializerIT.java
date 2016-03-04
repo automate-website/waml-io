@@ -20,7 +20,7 @@ public class IncludeActionDeserializerIT extends DeserializerBase {
 
     @Test
     public void includeActionIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream includeAction = getSystemResourceAsStream("./website/automate/waml/io/include-action.yaml");
+        InputStream includeAction = getSystemResourceAsStream(getBasePath() + "/include-action.yaml");
         Action action = mapper.readValue(includeAction, Action.class);
         
         assertNotNull(action);
@@ -33,7 +33,7 @@ public class IncludeActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void includeActionShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream includeAction = getSystemResourceAsStream("./website/automate/waml/io/include-action-short-notation.yaml");
+        InputStream includeAction = getSystemResourceAsStream(getBasePath() + "/include-action-short-notation.yaml");
         Action action = mapper.readValue(includeAction, Action.class);
         
         assertNotNull(action);

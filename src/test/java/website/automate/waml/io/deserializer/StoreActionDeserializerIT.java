@@ -23,7 +23,7 @@ public class StoreActionDeserializerIT extends DeserializerBase {
 
     @Test
     public void storeActionIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream storeAction = getSystemResourceAsStream("./website/automate/waml/io/store-action.yaml");
+        InputStream storeAction = getSystemResourceAsStream(getBasePath() + "/store-action.yaml");
         Action action = mapper.readValue(storeAction, Action.class);
         
         assertNotNull(action);
@@ -38,7 +38,7 @@ public class StoreActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void storeActionShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream storeAction = getSystemResourceAsStream("./website/automate/waml/io/store-action-short-notation.yaml");
+        InputStream storeAction = getSystemResourceAsStream(getBasePath() + "/store-action-short-notation.yaml");
         Action action = mapper.readValue(storeAction, Action.class);
         
         assertNotNull(action);

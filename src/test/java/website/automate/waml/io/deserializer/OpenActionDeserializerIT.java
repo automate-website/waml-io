@@ -20,7 +20,7 @@ public class OpenActionDeserializerIT extends DeserializerBase {
 
     @Test
     public void openActionIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream openAction = getSystemResourceAsStream("./website/automate/waml/io/open-action.yaml");
+        InputStream openAction = getSystemResourceAsStream(getBasePath() + "/open-action.yaml");
         Action action = mapper.readValue(openAction, Action.class);
         
         assertNotNull(action);
@@ -33,7 +33,7 @@ public class OpenActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void openActionShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream openAction = getSystemResourceAsStream("./website/automate/waml/io/open-action-short-notation.yaml");
+        InputStream openAction = getSystemResourceAsStream(getBasePath() + "/open-action-short-notation.yaml");
         Action action = mapper.readValue(openAction, Action.class);
         
         assertNotNull(action);

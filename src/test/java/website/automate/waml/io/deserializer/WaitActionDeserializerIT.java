@@ -21,7 +21,7 @@ public class WaitActionDeserializerIT extends DeserializerBase {
 
     @Test
     public void waitActionIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream waitAction = getSystemResourceAsStream("./website/automate/waml/io/wait-action.yaml");
+        InputStream waitAction = getSystemResourceAsStream(getBasePath() + "/wait-action.yaml");
         Action action = mapper.readValue(waitAction, Action.class);
         
         assertNotNull(action);
@@ -34,7 +34,7 @@ public class WaitActionDeserializerIT extends DeserializerBase {
     
     @Test
     public void waitActionShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
-        InputStream waitAction = getSystemResourceAsStream("./website/automate/waml/io/wait-action-short-notation.yaml");
+        InputStream waitAction = getSystemResourceAsStream(getBasePath() + "/wait-action-short-notation.yaml");
         Action action = mapper.readValue(waitAction, Action.class);
         
         assertNotNull(action);

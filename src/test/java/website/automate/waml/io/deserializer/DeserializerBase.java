@@ -26,4 +26,8 @@ public abstract class DeserializerBase {
         mapper = new ObjectMapper(new YAMLFactory());  
         mapper.registerModule(module);
     }
+    
+    protected String getBasePath(){
+        return "./website/automate/waml/io/deserializer";
+    }
 }
