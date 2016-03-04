@@ -23,28 +23,25 @@ public class CriterionValue {
         this.value = value;
     }
     
-    public String asString(){
+    @Override
+    public String toString(){
         return value.toString();
     }
     
-    public Boolean asBoolean(){
-        return Boolean.parseBoolean(asString());
+    public Boolean toBoolean(){
+        return Boolean.parseBoolean(toString());
     }
     
-    public Long asLong(){
+    public Long toLong(){
         return Long.parseLong(value.toString());
     }
     
-    public Integer asInteger(){
-        return Integer.class.cast(value);
+    public Integer toInteger(){
+        return Integer.parseInt(value.toString());
     }
     
-    public Double asDouble(){
-        return Double.class.cast(value);
-    }
-    
-    public Object asObject(){
-        return value;
+    public Double toDouble(){
+        return Double.parseDouble(value.toString());
     }
     
     public Object getValue() {
