@@ -38,6 +38,8 @@ public class WamlWriterIT {
         ClickAction clickAction = new ClickAction();
         clickAction.setSelector(actionDefaultCriterionValue);
         scenario.setSteps(asList((Action)clickAction));
+        scenario.setPrecedence(1);
+        scenario.setFragment(false);
         return scenario;
     }
 }
