@@ -13,4 +13,9 @@ public abstract class TimeLimitedAction extends ConditionalAction {
     public void setTimeout(Object timeout){
         this.timeout = new CriterionValue(timeout);
     }
+    
+    public boolean canBeShortNotated(){
+        return timeout == null
+                && super.canBeShortNotated();
+    }
 }

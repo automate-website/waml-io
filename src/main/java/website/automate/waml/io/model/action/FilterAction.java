@@ -1,5 +1,7 @@
 package website.automate.waml.io.model.action;
 
+import website.automate.waml.io.model.CriterionValue;
+
 public abstract class FilterAction extends TimeLimitedAction {
 
     private String selector;
@@ -40,5 +42,18 @@ public abstract class FilterAction extends TimeLimitedAction {
 
     public void setParent(ParentCriteria parent) {
         this.parent = parent;
+    }
+    
+    @Override
+    public boolean canBeShortNotated(){
+        return text == null
+                && value == null
+                && parent == null
+                && super.canBeShortNotated();
+    }
+    
+    @Override
+    public CriterionValue getDefaultCriterionValue(){
+        return new CriterionValue(selector);
     }
 }

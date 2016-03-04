@@ -15,4 +15,9 @@ public class StoreAction extends ConditionalAction {
     public void setValue(Map<String, CriterionValue> value) {
         this.value = value;
     }
+    
+    @Override
+    public CriterionValue getDefaultCriterionValue(){
+        return new CriterionValue(value);
+    }
 }

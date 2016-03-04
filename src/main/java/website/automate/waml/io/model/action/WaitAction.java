@@ -13,4 +13,9 @@ public class WaitAction extends ConditionalAction {
     public void setTime(CriterionValue time) {
         this.time = time;
     }
+    
+    @Override
+    public CriterionValue getDefaultCriterionValue(){
+        return new CriterionValue(time);
+    }
 }

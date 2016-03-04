@@ -1,0 +1,14 @@
+---
+name: "scenario-name"
+precedence: -1
+fragment: false
+timeout: 5
+steps:
+- click: "a.link"
+---
+name: "another-scenario-name"
+precedence: -1
+fragment: false
+timeout: 5
+steps:
+- click: "a.link"

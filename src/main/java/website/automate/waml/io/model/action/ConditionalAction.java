@@ -2,7 +2,7 @@ package website.automate.waml.io.model.action;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public abstract class ConditionalAction extends Action {
+public abstract class ConditionalAction implements Action {
 
     @JsonProperty("if")
     private String when;
@@ -23,5 +23,10 @@ public abstract class ConditionalAction extends Action {
 
     public void setUnless(String unless) {
         this.unless = unless;
+    }
+    
+    public boolean canBeShortNotated(){
+        return when == null
+                && unless == null;
     }
 }

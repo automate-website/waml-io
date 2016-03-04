@@ -1,8 +1,12 @@
 package website.automate.waml.io;
 
 import website.automate.waml.io.deserializer.ActionDeserializer;
+import website.automate.waml.io.model.CriterionValue;
 import website.automate.waml.io.model.action.Action;
+import website.automate.waml.io.serliazer.CriterionValueSerializer;
+import website.automate.waml.io.serliazer.WamlSerializerModifier;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
@@ -22,10 +26,13 @@ public class WamlConfig {
     
     private ObjectMapper createMapper(){
         SimpleModule module = new SimpleModule(MODULE_NAME, Version.unknownVersion());
-        module.addDeserializer(Action.class, new ActionDeserializer());  
+        module.addDeserializer(Action.class, new ActionDeserializer()); 
+        module.addSerializer(CriterionValue.class, new CriterionValueSerializer());
+        module.setSerializerModifier(new WamlSerializerModifier());
 
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());  
         mapper.registerModule(module);
+        mapper.setSerializationInclusion(Include.NON_NULL);
         return mapper;
     }
     

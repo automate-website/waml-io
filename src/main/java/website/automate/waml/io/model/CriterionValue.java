@@ -47,6 +47,10 @@ public class CriterionValue {
         return value;
     }
     
+    public Object getValue() {
+        return value;
+    }
+    
     @SuppressWarnings("unchecked")
     public Map<String, CriterionValue> asMap(){
         return (Map<String, CriterionValue>)value;
