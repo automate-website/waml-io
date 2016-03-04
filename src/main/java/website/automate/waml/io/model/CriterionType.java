@@ -5,20 +5,21 @@ import static java.util.Arrays.asList;
 import java.util.List;
 
 public enum CriterionType {
-    CLEAR("clear"),
-    IF("if"),
-    UNLESS("unless"),
-    SELECTOR("selector"),
-    SCENARIO("scenario"),
-    TEXT("text"),
-    TIME("time"),
-    TIMEOUT("timeout"),
-    URL("url"),
-    VALUE("value"),
-    INPUT("input"),
-    PARENT("parent"),
-    ABSENT("absent");
-
+    
+    CLEAR(CriterionNames.CLEAR),
+    IF(CriterionNames.IF),
+    UNLESS(CriterionNames.UNLESS),
+    SELECTOR(CriterionNames.SELECTOR),
+    SCENARIO(CriterionNames.SCENARIO),
+    TEXT(CriterionNames.TEXT),
+    TIME(CriterionNames.TIME),
+    TIMEOUT(CriterionNames.TIMEOUT),
+    URL(CriterionNames.URL),
+    VALUE(CriterionNames.VALUE),
+    INPUT(CriterionNames.INPUT),
+    PARENT(CriterionNames.PARENT),
+    ABSENT(CriterionNames.ABSENT);
+    
     public static final List<CriterionType> FILTER_CRITERIA_TYPES = asList(SELECTOR, TEXT, VALUE);
     
     private final String name;

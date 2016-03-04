@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static website.automate.waml.io.model.CriterionValue.of;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
@@ -14,15 +13,12 @@ import org.junit.Test;
 
 import website.automate.waml.io.model.Scenario;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-
 public class WamlReaderIT {
 
     private WamlReader reader = new WamlReader();
     
     @Test
-    public void multipleScenariosAreDeserialized() throws JsonParseException, JsonMappingException, IOException{
+    public void multipleScenariosAreDeserialized() throws Exception {
         InputStream scenarioStream = getSystemResourceAsStream("./website/automate/waml/io/multiple-scenario.yaml");
         List<Scenario> scenarios = reader.read(scenarioStream);
         
