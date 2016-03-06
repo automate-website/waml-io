@@ -56,4 +56,11 @@ public abstract class FilterAction extends TimeLimitedAction {
     public CriterionValue getDefaultCriterionValue(){
         return new CriterionValue(selector);
     }
+    
+    public boolean hasFilterCriteria(){
+        return selector != null
+                || text != null
+                || value != null
+                || parent != null;
+    }
 }
