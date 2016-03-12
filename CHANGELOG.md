@@ -4,5 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.0]
+### Added
+- initial implemenation
 
-[Unreleased]: https://github.com/automate-website/waml-io/commits/master
+[0.1.0]: https://github.com/automate-website/waml-io/commits/0.1.0
+[Unreleased]: https://github.com/automate-website/waml-io/compare/0.1.0...master
