@@ -23,6 +23,10 @@ public class CriterionValue {
         this.value = value;
     }
     
+    public CriterionValue(Boolean value){
+        this.value = value;
+    }
+    
     @Override
     public String toString(){
         return value.toString();
@@ -70,7 +74,7 @@ public class CriterionValue {
         if (value == null) {
             if (other.value != null)
                 return false;
-        } else if (!value.equals(other.value))
+        } else if (!obj.toString().equals(other.toString()))
             return false;
         return true;
     }

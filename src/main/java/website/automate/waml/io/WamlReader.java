@@ -1,6 +1,5 @@
 package website.automate.waml.io;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
@@ -27,8 +26,8 @@ public class WamlReader {
                 scenarios.add(objectMapper.readValue(content, Scenario.class));
             }
                 
-        } catch (IOException e) {
-            throw new RuntimeException(
+        } catch (Exception e) {
+            throw new WamlDeserializationException(
                     "Unable to read the suite from the desired format.", e);
         } finally {
             scanner.close();

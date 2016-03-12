@@ -9,8 +9,8 @@ public class EnsureAction extends FilterAction {
     public CriterionValue getAbsent() {
         return absent;
     }
-
-    public void setAbsent(Object absent) {
-        this.absent = new CriterionValue(absent);
+    
+    public void setAbsent(CriterionValue absent) {
+        this.absent = absent;
     }
 }

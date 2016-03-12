@@ -1,5 +1,6 @@
 package website.automate.waml.io.deserializer;
 
+import static java.text.MessageFormat.format;
 import static java.util.Collections.singletonMap;
 
 import java.io.IOException;
@@ -17,6 +18,7 @@ import website.automate.waml.io.model.action.EnterAction;
 import website.automate.waml.io.model.action.IncludeAction;
 import website.automate.waml.io.model.action.MoveAction;
 import website.automate.waml.io.model.action.OpenAction;
+import website.automate.waml.io.model.action.SelectAction;
 import website.automate.waml.io.model.action.StoreAction;
 import website.automate.waml.io.model.action.WaitAction;
 
@@ -41,6 +43,7 @@ public class ActionDeserializer extends StdDeserializer<Action> {
         registerAction(ActionType.ENSURE.getName(), EnsureAction.class);
         registerAction(ActionType.MOVE.getName(), MoveAction.class);
         registerAction(ActionType.ENTER.getName(), EnterAction.class);
+        registerAction(ActionType.SELECT.getName(), SelectAction.class);
         registerAction(ActionType.OPEN.getName(), OpenAction.class);
         registerAction(ActionType.WAIT.getName(), WaitAction.class);
         registerAction(ActionType.INCLUDE.getName(), IncludeAction.class);
@@ -64,6 +67,10 @@ public class ActionDeserializer extends StdDeserializer<Action> {
         while (elementsIterator.hasNext()) {
             Entry<String, JsonNode> element = elementsIterator.next();
             String name = element.getKey();
+            if(elementsIterator.hasNext()){
+                String anotherName = elementsIterator.next().getKey();
+                throw new TooManyActionsException(format("Single action expected, but found at least: {0}, {1}", name, anotherName));
+            }
             if (registry.containsKey(name)) {
                 actionClass = registry.get(name);
                 key = name;
@@ -72,7 +79,7 @@ public class ActionDeserializer extends StdDeserializer<Action> {
         }
 
         if (actionClass == null){
-            return null;
+            throw new UnknownActionException(format("Action {0} is unknown.", key));
         }
         
         JsonNode object = root.get(key);

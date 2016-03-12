@@ -10,8 +10,8 @@ public abstract class TimeLimitedAction extends ConditionalAction {
         return timeout;
     }
 
-    public void setTimeout(Object timeout){
-        this.timeout = new CriterionValue(timeout);
+    public void setTimeout(CriterionValue timeout){
+        this.timeout = timeout;
     }
     
     public boolean canBeShortNotated(){

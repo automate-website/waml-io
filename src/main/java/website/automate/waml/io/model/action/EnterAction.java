@@ -12,15 +12,15 @@ public class EnterAction extends FilterAction {
         return input;
     }
 
-    public void setInput(Object input) {
-        this.input = new CriterionValue(input);
+    public void setInput(CriterionValue input) {
+        this.input = input;
     }
 
     public CriterionValue getClear() {
         return clear;
     }
 
-    public void setClear(Object clear) {
-        this.clear = new CriterionValue(clear);
+    public void setClear(CriterionValue clear) {
+        this.clear = clear;
     }
 }

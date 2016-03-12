@@ -1,6 +1,5 @@
 package website.automate.waml.io;
 
-import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
 
@@ -17,8 +16,8 @@ public class WamlWriter {
             for(Scenario scenario : scenarios){
                 objectMapper.writeValue(scenarioStream, scenario);
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Unable to write the suite to desired format.", e);
+        } catch (Exception e) {
+            throw new WamlSerializationException("Unable to write the suite to desired format.", e);
         }
 	}
 }
