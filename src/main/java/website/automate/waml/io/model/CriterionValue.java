@@ -8,6 +8,9 @@ public class CriterionValue {
     private Object value;
     
     public static CriterionValue of(Object value){
+        if(value == null){
+            return null;
+        }
         return new CriterionValue(value);
     }
     
