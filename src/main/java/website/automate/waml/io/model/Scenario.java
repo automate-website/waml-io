@@ -11,11 +11,11 @@ public class Scenario {
 
     private String name;
     
-    private int precedence = -1;
+    private Integer precedence = -1;
     
     private String description;
     
-    private boolean fragment = false;
+    private Boolean fragment = false;
     
     private CriterionValue timeout = CriterionValue.of(5);
 
@@ -34,11 +34,11 @@ public class Scenario {
         this.name = name;
     }
 
-    public int getPrecedence() {
+    public Integer getPrecedence() {
         return precedence;
     }
 
-    public void setPrecedence(int precedence) {
+    public void setPrecedence(Integer precedence) {
         this.precedence = precedence;
     }
 
@@ -50,11 +50,11 @@ public class Scenario {
         this.description = description;
     }
 
-    public boolean isFragment() {
+    public Boolean getFragment() {
         return fragment;
     }
 
-    public void setFragment(boolean fragment) {
+    public void setFragment(Boolean fragment) {
         this.fragment = fragment;
     }
 
