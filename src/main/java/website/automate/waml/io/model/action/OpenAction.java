@@ -1,7 +1,5 @@
 package website.automate.waml.io.model.action;
 
-import website.automate.waml.io.model.CriterionValue;
-
 public class OpenAction extends ConditionalAction {
 
     private String url;
@@ -15,7 +13,7 @@ public class OpenAction extends ConditionalAction {
     }
     
     @Override
-    public CriterionValue getDefaultCriterionValue(){
-        return new CriterionValue(url);
+    public String getDefaultCriterionValue(){
+        return url;
     }
 }

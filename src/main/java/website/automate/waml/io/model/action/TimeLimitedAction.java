@@ -1,16 +1,14 @@
 package website.automate.waml.io.model.action;
 
-import website.automate.waml.io.model.CriterionValue;
-
 public abstract class TimeLimitedAction extends ConditionalAction {
 
-    private CriterionValue timeout;
+    private String timeout;
 
-    public CriterionValue getTimeout() {
+    public String getTimeout() {
         return timeout;
     }
 
-    public void setTimeout(CriterionValue timeout){
+    public void setTimeout(String timeout){
         this.timeout = timeout;
     }
     

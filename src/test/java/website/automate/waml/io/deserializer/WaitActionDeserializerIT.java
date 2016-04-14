@@ -15,7 +15,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
-import static website.automate.waml.io.model.CriterionValue.of;
 
 public class WaitActionDeserializerIT extends DeserializerBase {
 
@@ -27,9 +26,9 @@ public class WaitActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof WaitAction);
         WaitAction actualWaitAction = WaitAction.class.cast(action);
-        assertThat(actualWaitAction.getTime(), is(of(new Integer(100))));
-        assertThat(actualWaitAction.getWhen(), is(of("${isDesktop}")));
-        assertThat(actualWaitAction.getUnless(), is(of("${isMobile}")));
+        assertThat(actualWaitAction.getTime(), is("100"));
+        assertThat(actualWaitAction.getWhen(), is("${isDesktop}"));
+        assertThat(actualWaitAction.getUnless(), is("${isMobile}"));
     }
     
     @Test
@@ -40,6 +39,6 @@ public class WaitActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof WaitAction);
         WaitAction actualWaitAction = WaitAction.class.cast(action);
-        assertThat(actualWaitAction.getTime(), is(of(new Integer(100))));
+        assertThat(actualWaitAction.getTime(), is("100"));
     }
 }

@@ -1,21 +1,19 @@
 package website.automate.waml.io.model.action;
 
-import website.automate.waml.io.model.CriterionValue;
-
 public class WaitAction extends ConditionalAction {
 
-    private CriterionValue time;
+    private String time;
     
-    public CriterionValue getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(CriterionValue time) {
+    public void setTime(String time) {
         this.time = time;
     }
     
     @Override
-    public CriterionValue getDefaultCriterionValue(){
-        return new CriterionValue(time);
+    public String getDefaultCriterionValue(){
+        return time;
     }
 }

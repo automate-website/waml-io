@@ -1,26 +1,24 @@
 package website.automate.waml.io.model.action;
 
-import website.automate.waml.io.model.CriterionValue;
-
 public class EnterAction extends FilterAction {
 
-    private CriterionValue input;
+    private String input;
     
-    private CriterionValue clear;
+    private String clear;
     
-    public CriterionValue getInput() {
+    public String getInput() {
         return input;
     }
 
-    public void setInput(CriterionValue input) {
+    public void setInput(String input) {
         this.input = input;
     }
 
-    public CriterionValue getClear() {
+    public String getClear() {
         return clear;
     }
 
-    public void setClear(CriterionValue clear) {
+    public void setClear(String clear) {
         this.clear = clear;
     }
 }

@@ -15,7 +15,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
-import static website.automate.waml.io.model.CriterionValue.of;
 
 public class OpenActionDeserializerIT extends DeserializerBase {
 
@@ -28,8 +27,8 @@ public class OpenActionDeserializerIT extends DeserializerBase {
         assertTrue(action instanceof OpenAction);
         OpenAction actualOpenAction = OpenAction.class.cast(action);
         assertThat(actualOpenAction.getUrl(), is("https://www.google.de"));
-        assertThat(actualOpenAction.getWhen(), is(of("${isDesktop}")));
-        assertThat(actualOpenAction.getUnless(), is(of("${isMobile}")));
+        assertThat(actualOpenAction.getWhen(), is("${isDesktop}"));
+        assertThat(actualOpenAction.getUnless(), is("${isMobile}"));
     }
     
     @Test

@@ -17,12 +17,12 @@ public class Scenario {
     
     private Boolean fragment = false;
     
-    private CriterionValue timeout = CriterionValue.of(5);
+    private String timeout = "5";
 
     @JsonProperty("if")
-    private CriterionValue when;
+    private String when;
     
-    private CriterionValue unless;
+    private String unless;
     
     private List<Action> steps;
     
@@ -58,27 +58,27 @@ public class Scenario {
         this.fragment = fragment;
     }
 
-    public CriterionValue getTimeout() {
+    public String getTimeout() {
         return timeout;
     }
 
-    public void setTimeout(CriterionValue timeout) {
+    public void setTimeout(String timeout) {
         this.timeout = timeout;
     }
 
-    public CriterionValue getWhen() {
+    public String getWhen() {
         return when;
     }
 
-    public void setWhen(CriterionValue when) {
+    public void setWhen(String when) {
         this.when = when;
     }
 
-    public CriterionValue getUnless() {
+    public String getUnless() {
         return unless;
     }
 
-    public void setUnless(CriterionValue unless) {
+    public void setUnless(String unless) {
         this.unless = unless;
     }
 

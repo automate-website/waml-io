@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import website.automate.waml.io.model.ActionType;
-import website.automate.waml.io.model.CriterionValue;
 import website.automate.waml.io.model.action.Action;
 import website.automate.waml.io.model.action.ClickAction;
 import website.automate.waml.io.model.action.EnsureAction;
@@ -60,8 +59,8 @@ public class ActionSerializer extends StdSerializer<Action> implements Resolvabl
         generator.writeStartObject();
         generator.writeFieldName(actionType.getName());
         if(action.canBeShortNotated()){
-            CriterionValue defaultCriterionValue = action.getDefaultCriterionValue();
-            generator.writeObject(defaultCriterionValue.getValue());
+            Object defaultCriterionValue = action.getDefaultCriterionValue();
+            generator.writeObject(defaultCriterionValue);
         } else {
             defaultSerializer.serialize(action, generator, provider);
         }

@@ -2,22 +2,20 @@ package website.automate.waml.io.model.action;
 
 import java.util.Map;
 
-import website.automate.waml.io.model.CriterionValue;
-
 public class StoreAction extends ConditionalAction {
 
-    private Map<String, CriterionValue> value;
+    private Map<String, String> value;
     
-    public Map<String, CriterionValue> getValue() {
+    public Map<String, String> getValue() {
         return value;
     }
 
-    public void setValue(Map<String, CriterionValue> value) {
+    public void setValue(Map<String, String> value) {
         this.value = value;
     }
     
     @Override
-    public CriterionValue getDefaultCriterionValue(){
-        return new CriterionValue(value);
+    public Object getDefaultCriterionValue(){
+        return value;
     }
 }

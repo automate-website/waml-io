@@ -15,7 +15,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
-import static website.automate.waml.io.model.CriterionValue.of;
 
 public class IncludeActionDeserializerIT extends DeserializerBase {
 
@@ -28,8 +27,8 @@ public class IncludeActionDeserializerIT extends DeserializerBase {
         assertTrue(action instanceof IncludeAction);
         IncludeAction actualIncludeAction = IncludeAction.class.cast(action);
         assertThat(actualIncludeAction.getScenario(), is("included-scenario"));
-        assertThat(actualIncludeAction.getWhen(), is(of("${isDesktop}")));
-        assertThat(actualIncludeAction.getUnless(), is(of("${isMobile}")));
+        assertThat(actualIncludeAction.getWhen(), is("${isDesktop}"));
+        assertThat(actualIncludeAction.getUnless(), is("${isMobile}"));
     }
     
     @Test

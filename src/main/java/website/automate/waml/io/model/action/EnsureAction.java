@@ -1,16 +1,14 @@
 package website.automate.waml.io.model.action;
 
-import website.automate.waml.io.model.CriterionValue;
-
 public class EnsureAction extends FilterAction {
 
-    private CriterionValue absent;
+    private String absent;
     
-    public CriterionValue getAbsent() {
+    public String getAbsent() {
         return absent;
     }
     
-    public void setAbsent(CriterionValue absent) {
+    public void setAbsent(String absent) {
         this.absent = absent;
     }
 }

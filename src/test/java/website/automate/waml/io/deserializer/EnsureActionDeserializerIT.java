@@ -15,7 +15,6 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
-import static website.automate.waml.io.model.CriterionValue.of;
 
 public class EnsureActionDeserializerIT extends DeserializerBase {
 
@@ -29,10 +28,10 @@ public class EnsureActionDeserializerIT extends DeserializerBase {
         EnsureAction actualEnsureAction = EnsureAction.class.cast(action);
         assertThat(actualEnsureAction.getSelector(), is("a.sign-up"));
         assertThat(actualEnsureAction.getText(), is("Join now for free!"));
-        assertThat(actualEnsureAction.getWhen(), is(of("${isDesktop}")));
-        assertThat(actualEnsureAction.getUnless(), is(of("${isMobile}")));
-        assertThat(actualEnsureAction.getTimeout(), is(of(100)));
-        assertThat(actualEnsureAction.getAbsent(), is(of(Boolean.TRUE)));
+        assertThat(actualEnsureAction.getWhen(), is("${isDesktop}"));
+        assertThat(actualEnsureAction.getUnless(), is("${isMobile}"));
+        assertThat(actualEnsureAction.getTimeout(), is("100"));
+        assertThat(actualEnsureAction.getAbsent(), is("true"));
         assertThat(actualEnsureAction.getValue(), is("val"));
     }
     

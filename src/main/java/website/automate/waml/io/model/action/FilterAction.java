@@ -1,7 +1,5 @@
 package website.automate.waml.io.model.action;
 
-import website.automate.waml.io.model.CriterionValue;
-
 public abstract class FilterAction extends TimeLimitedAction {
 
     private String selector;
@@ -53,8 +51,8 @@ public abstract class FilterAction extends TimeLimitedAction {
     }
     
     @Override
-    public CriterionValue getDefaultCriterionValue(){
-        return new CriterionValue(selector);
+    public String getDefaultCriterionValue(){
+        return selector;
     }
     
     public boolean hasFilterCriteria(){
