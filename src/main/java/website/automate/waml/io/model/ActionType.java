@@ -1,5 +1,8 @@
 package website.automate.waml.io.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import website.automate.waml.io.model.action.Action;
 import website.automate.waml.io.model.action.ClickAction;
 import website.automate.waml.io.model.action.EnsureAction;
@@ -23,6 +26,32 @@ public enum ActionType {
     WAIT("wait", CriterionType.TIME, WaitAction.class),
     STORE("store", CriterionType.VALUE, StoreAction.class);
 
+    private static Map<Class<? extends Action>, ActionType> ACTION_CLAZZ_TYPE_MAP = new HashMap<>();
+    
+    private static Map<String, ActionType> ACTION_NAME_TYPE_MAP = new HashMap<>();
+    
+    static {
+        ACTION_CLAZZ_TYPE_MAP.put(ClickAction.class, CLICK);
+        ACTION_CLAZZ_TYPE_MAP.put(EnsureAction.class, ENSURE);
+        ACTION_CLAZZ_TYPE_MAP.put(EnterAction.class, ENTER);
+        ACTION_CLAZZ_TYPE_MAP.put(IncludeAction.class, INCLUDE);
+        ACTION_CLAZZ_TYPE_MAP.put(MoveAction.class, MOVE);
+        ACTION_CLAZZ_TYPE_MAP.put(OpenAction.class, OPEN);
+        ACTION_CLAZZ_TYPE_MAP.put(SelectAction.class, SELECT);
+        ACTION_CLAZZ_TYPE_MAP.put(WaitAction.class, WAIT);
+        ACTION_CLAZZ_TYPE_MAP.put(StoreAction.class, STORE);
+        
+        ACTION_NAME_TYPE_MAP.put(CLICK.getName(), CLICK);
+        ACTION_NAME_TYPE_MAP.put(ENSURE.getName(), ENSURE);
+        ACTION_NAME_TYPE_MAP.put(ENTER.getName(), ENTER);
+        ACTION_NAME_TYPE_MAP.put(INCLUDE.getName(), INCLUDE);
+        ACTION_NAME_TYPE_MAP.put(MOVE.getName(), MOVE);
+        ACTION_NAME_TYPE_MAP.put(OPEN.getName(), OPEN);
+        ACTION_NAME_TYPE_MAP.put(SELECT.getName(), SELECT);
+        ACTION_NAME_TYPE_MAP.put(WAIT.getName(), WAIT);
+        ACTION_NAME_TYPE_MAP.put(STORE.getName(), STORE);
+    }
+    
     private final String name;
     
     private final Class<? extends Action> clazz;
@@ -49,20 +78,10 @@ public enum ActionType {
     }
     
     public static ActionType findByName(String name){
-        for(ActionType actionType : values()){
-            if(actionType.getName().equals(name)){
-                return actionType;
-            }
-        }
-        return null;
+        return ACTION_NAME_TYPE_MAP.get(name);
     }
     
     public static ActionType findByClazz(Class<? extends Action> clazz){
-        for(ActionType actionType : values()){
-            if(actionType.getClazz().equals(clazz)){
-                return actionType;
-            }
-        }
-        return null;
+        return ACTION_CLAZZ_TYPE_MAP.get(clazz);
     }
 }
