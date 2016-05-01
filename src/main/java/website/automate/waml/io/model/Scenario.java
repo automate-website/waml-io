@@ -4,12 +4,16 @@ import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import website.automate.waml.io.model.action.Action;
 
+@JsonPropertyOrder({"name", "meta", "precedence", "description", "fragment", "timeout", "if", "unless", "steps"})
 public class Scenario {
 
     private String name;
+    
+    private String meta;
     
     private Integer precedence = -1;
     
@@ -88,6 +92,14 @@ public class Scenario {
 
     public void setSteps(List<Action> steps) {
         this.steps = steps;
+    }
+    
+    public String getMeta() {
+        return meta;
+    }
+
+    public void setMeta(String meta) {
+        this.meta = meta;
     }
 
     @Override

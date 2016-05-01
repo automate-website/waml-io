@@ -15,5 +15,6 @@ public class CriterionNames {
         VALUE = "value",
         INPUT = "input",
         PARENT = "parent",
-        ABSENT = "absent";
+        ABSENT = "absent",
+        META   = "meta";
 }

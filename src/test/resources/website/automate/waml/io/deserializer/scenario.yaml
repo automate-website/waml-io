@@ -4,6 +4,7 @@ description: scenario-description
 if: ${isDesktop}
 unless: ${isMobile}
 timeout: 100
+meta: data
 steps:
   - click:
       selector: a.sign-up

@@ -28,5 +28,6 @@ public class ScenarioDeserializerIT extends DeserializerBase {
         assertThat(scenario.getUnless(), is("${isMobile}"));
         assertThat(scenario.getWhen(), is("${isDesktop}"));
         assertThat(scenario.getTimeout(), is("100"));
+        assertThat(scenario.getMeta(), is("data"));
     }
 }

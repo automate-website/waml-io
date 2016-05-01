@@ -5,7 +5,7 @@ import static website.automate.waml.io.model.CriterionNames.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({IF, UNLESS, SELECTOR, TIME, SCENARIO, URL, TEXT, VALUE, INPUT, TIMEOUT})
+@JsonPropertyOrder({IF, UNLESS, SELECTOR, TIME, SCENARIO, URL, TEXT, VALUE, INPUT, TIMEOUT, META})
 public interface Action {
     boolean canBeShortNotated();
     
