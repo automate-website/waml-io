@@ -9,6 +9,8 @@ public abstract class ConditionalAction implements Action {
     
     private String unless;
     
+    private String meta;
+    
     public String getWhen() {
         return when;
     }
@@ -28,5 +30,12 @@ public abstract class ConditionalAction implements Action {
     public boolean canBeShortNotated(){
         return when == null
                 && unless == null;
+    }
+    public String getMeta() {
+        return meta;
+    }
+
+    public void setMeta(String meta) {
+        this.meta = meta;
     }
 }

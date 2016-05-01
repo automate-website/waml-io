@@ -6,3 +6,4 @@ click:
   if: ${isDesktop}
   unless: ${isMobile}
   timeout: 100
+  meta: data

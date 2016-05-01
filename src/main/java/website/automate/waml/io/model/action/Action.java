@@ -11,4 +11,6 @@ public interface Action {
     
     @JsonIgnore
     Object getDefaultCriterionValue();
+    
+    String getMeta();
 }

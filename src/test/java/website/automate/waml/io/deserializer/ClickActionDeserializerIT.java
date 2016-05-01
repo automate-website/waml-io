@@ -32,6 +32,7 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         assertThat(actualClickAction.getUnless(), is("${isMobile}"));
         assertThat(actualClickAction.getTimeout(), is("100"));
         assertThat(actualClickAction.getValue(), is("val"));
+        assertThat(actualClickAction.getMeta(), is("data"));
     }
     
     @Test
