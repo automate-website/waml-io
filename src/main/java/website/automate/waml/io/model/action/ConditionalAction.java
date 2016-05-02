@@ -27,14 +27,19 @@ public abstract class ConditionalAction implements Action {
         this.unless = unless;
     }
     
+    @Override
     public boolean canBeShortNotated(){
         return when == null
-                && unless == null;
+                && unless == null
+                && meta == null;
     }
+    
+    @Override
     public String getMeta() {
         return meta;
     }
 
+    @Override
     public void setMeta(String meta) {
         this.meta = meta;
     }

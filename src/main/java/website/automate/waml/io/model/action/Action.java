@@ -13,4 +13,6 @@ public interface Action {
     Object getDefaultCriterionValue();
     
     String getMeta();
+    
+    void setMeta(String meta);
 }
