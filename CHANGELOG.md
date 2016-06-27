@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- improved exception handling and wording
+
 ##[0.3.1]
 ### Fixed
 - fixed action short notation check
