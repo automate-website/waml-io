@@ -18,6 +18,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
@@ -48,7 +49,7 @@ public class ActionDeserializer extends StdDeserializer<Action> {
             }
             ActionType actionType = ActionType.findByName(name);
             if (actionType == null){
-                throw new UnknownActionException(format("Unknown step {0}.", name));
+                throw new UnknownActionException(format("Unknown step {0}. Correct it to match one of {1}.", name, ActionType.ACTION_TYPES));
             }
             
             actionClass = actionType.getClazz();
@@ -64,7 +65,20 @@ public class ActionDeserializer extends StdDeserializer<Action> {
             object = wrapper;
         }
         
-        return mapper.convertValue(object, actionClass);
+        try {
+        	return mapper.convertValue(object, actionClass);
+        } catch (IllegalArgumentException e){
+        	Throwable cause = e.getCause();
+        	if(cause instanceof UnrecognizedPropertyException){
+        		UnrecognizedPropertyException unknownCriterionException = (UnrecognizedPropertyException)cause; 
+        		throw new UnknownCriterionException(format("Unknown criterion {0} for step {1}. Valid criteria are {2}.", 
+        				unknownCriterionException.getPropertyName(),
+        				key,
+        				unknownCriterionException.getKnownPropertyIds()),
+        				e);
+        	}
+        	throw e;
+        }
     }
     
     private boolean isShortNotated(Class<? extends Action> actionClass, JsonNode object){

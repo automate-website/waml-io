@@ -1,7 +1,9 @@
 package website.automate.waml.io.model;
 
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import website.automate.waml.io.model.action.Action;
 import website.automate.waml.io.model.action.ClickAction;
@@ -26,6 +28,8 @@ public enum ActionType {
     WAIT("wait", CriterionType.TIME, WaitAction.class),
     STORE("store", CriterionType.VALUE, StoreAction.class);
 
+	public static Set<ActionType> ACTION_TYPES = EnumSet.allOf(ActionType.class);
+	
     private static Map<Class<? extends Action>, ActionType> ACTION_CLAZZ_TYPE_MAP = new HashMap<>();
     
     private static Map<String, ActionType> ACTION_NAME_TYPE_MAP = new HashMap<>();
@@ -83,5 +87,10 @@ public enum ActionType {
     
     public static ActionType findByClazz(Class<? extends Action> clazz){
         return ACTION_CLAZZ_TYPE_MAP.get(clazz);
+    }
+    
+    @Override
+    public String toString(){
+    	return getName();
     }
 }
