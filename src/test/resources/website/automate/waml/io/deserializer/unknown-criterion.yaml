@@ -1,0 +1,4 @@
+---
+click:
+  selector: a.sign-up
+  bad: criterion

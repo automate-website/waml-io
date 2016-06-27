@@ -46,6 +46,24 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         assertThat(actualClickAction.getSelector(), is("a.sign-up"));
     }
     
+    @Test(expected=UnknownActionException.class)
+    public void unknownActionCausesException() throws JsonParseException, JsonMappingException, IOException{
+        InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/unknown-action.yaml");
+        mapper.readValue(clickAction, Action.class);
+    }
+    
+    @Test(expected=UnknownCriterionException.class)
+    public void unknownCriterionCausesException() throws JsonParseException, JsonMappingException, IOException{
+        InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/unknown-criterion.yaml");
+        mapper.readValue(clickAction, Action.class);
+    }
+    
+    @Test(expected=TooManyActionsException.class)
+    public void multipleStepNamesCauseException() throws JsonParseException, JsonMappingException, IOException{
+        InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/too-many-steps.yaml");
+        mapper.readValue(clickAction, Action.class);
+    }
+    
     @Test
     public void clickActionParentIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
         InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/click-action-parent.yaml");
