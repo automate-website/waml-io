@@ -1,6 +1,8 @@
 package website.automate.waml.io.deserializer;
 
-public class UnknownActionException extends RuntimeException {
+import website.automate.waml.io.WamlDeserializationException;
+
+public class UnknownActionException extends WamlDeserializationException {
 
     private static final long serialVersionUID = 902254215961310661L;
 

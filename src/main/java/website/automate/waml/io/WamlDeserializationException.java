@@ -7,4 +7,8 @@ public class WamlDeserializationException extends RuntimeException {
     public WamlDeserializationException(String msg, Throwable e){
         super(msg, e);
     }
+    
+    public WamlDeserializationException(String msg){
+        super(msg);
+    }
 }

@@ -27,8 +27,12 @@ public class WamlReader {
             }
                 
         } catch (Exception e) {
-            throw new WamlDeserializationException(
-                    "Unable to read the suite from the desired format.", e);
+        	if(e instanceof WamlDeserializationException){
+        		throw (WamlDeserializationException)e;
+        	} else {
+	            throw new WamlDeserializationException(
+	                    "Unable to read the suite from the desired format.", e);
+        	}
         } finally {
             scanner.close();
         }

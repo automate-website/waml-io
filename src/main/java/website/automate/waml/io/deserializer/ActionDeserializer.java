@@ -44,14 +44,15 @@ public class ActionDeserializer extends StdDeserializer<Action> {
             String name = element.getKey();
             if(elementsIterator.hasNext()){
                 String anotherName = elementsIterator.next().getKey();
-                throw new TooManyActionsException(format("Single action expected, but found at least: {0}, {1}", name, anotherName));
+                throw new TooManyActionsException(format("Single step name expected, but found at least: {0}, {1}", name, anotherName));
             }
-            actionClass = ActionType.findByName(name).getClazz();
+            ActionType actionType = ActionType.findByName(name);
+            if (actionType == null){
+                throw new UnknownActionException(format("Unknown step {0}.", name));
+            }
+            
+            actionClass = actionType.getClazz();
             key = name;
-        }
-
-        if (actionClass == null){
-            throw new UnknownActionException(format("Action {0} is unknown.", key));
         }
         
         JsonNode object = root.get(key);
@@ -60,10 +61,10 @@ public class ActionDeserializer extends StdDeserializer<Action> {
             JsonNode wrapper = new ObjectNode(JsonNodeFactory.instance,
                     singletonMap(actionType.getDefaultCriteriaType().getName(),
                             object));
-            return mapper.convertValue(wrapper, actionClass);
+            object = wrapper;
         }
         
-        return mapper.convertValue(root.get(key), actionClass);
+        return mapper.convertValue(object, actionClass);
     }
     
     private boolean isShortNotated(Class<? extends Action> actionClass, JsonNode object){
