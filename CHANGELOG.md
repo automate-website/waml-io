@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+##[0.5.0]
+### Added
+- added utility methods to distinguish between explicit and implicit actions.
+
 ##[0.4.0]
 ### Changed
 - improved exception handling and wording
@@ -43,4 +48,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [0.3.0]: https://github.com/automate-website/waml-io/compare/0.2.1...0.3.0
 [0.3.1]: https://github.com/automate-website/waml-io/compare/0.3.0...0.3.1
 [0.4.0]: https://github.com/automate-website/waml-io/compare/0.3.1...0.4.0
-[Unreleased]: https://github.com/automate-website/waml-io/compare/0.4.0...master
+[0.5.0]: https://github.com/automate-website/waml-io/compare/0.4.0...0.5.0
+[Unreleased]: https://github.com/automate-website/waml-io/compare/0.5.0...master
