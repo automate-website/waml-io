@@ -4,22 +4,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.1]
 ### Fixed
 - made ensure an explicit action since it requires interaction with the browser.
 
-##[0.5.0]
+## [0.5.0]
 ### Added
 - added utility methods to distinguish between explicit and implicit actions.
 
-##[0.4.0]
+## [0.4.0]
 ### Changed
 - improved exception handling and wording
 
-##[0.3.1]
+## [0.3.1]
 ### Fixed
 - fixed action short notation check
 
-##[0.3.0]
+## [0.3.0]
 ### Added
 - added meta criterion for scenario and action for meta data transport
 
