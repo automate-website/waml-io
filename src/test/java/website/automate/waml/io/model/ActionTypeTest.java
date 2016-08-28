@@ -49,7 +49,7 @@ public class ActionTypeTest {
     
     @Test
     public void ensureActionIsImplicit(){
-        assertTrue(isImplicit(EnsureAction.class));
+        assertTrue(isExplicit(EnsureAction.class));
     }
     
     @Test
