@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- made ensure an explicit action since it requires interaction with the browser.
+
 ##[0.5.0]
 ### Added
 - added utility methods to distinguish between explicit and implicit actions.
