@@ -30,7 +30,7 @@ public enum ActionType {
 
 	public static Set<ActionType> ACTION_TYPES = EnumSet.allOf(ActionType.class);
 
-	public static Set<ActionType> EXPLICIT_ACTION_TYPES = EnumSet.of(CLICK, ENTER, MOVE, OPEN, SELECT, WAIT);
+	public static Set<ActionType> EXPLICIT_ACTION_TYPES = EnumSet.of(CLICK, ENTER, MOVE, OPEN, SELECT, WAIT, ENSURE);
 	
     private static Map<Class<? extends Action>, ActionType> ACTION_CLAZZ_TYPE_MAP = new HashMap<>();
     
@@ -96,7 +96,7 @@ public enum ActionType {
     }
     
     public static boolean isImplicit(Class<? extends Action> clazz){
-        return !EXPLICIT_ACTION_TYPES.contains(findByClazz(clazz));
+        return !isExplicit(clazz);
     }
     
     @Override
