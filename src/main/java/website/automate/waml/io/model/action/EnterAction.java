@@ -21,4 +21,11 @@ public class EnterAction extends FilterAction {
     public void setClear(String clear) {
         this.clear = clear;
     }
+    
+    @Override
+    public boolean canBeShortNotated(){
+        return input == null
+                && clear == null
+                && super.canBeShortNotated();
+    }
 }

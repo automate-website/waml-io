@@ -11,4 +11,10 @@ public class EnsureAction extends FilterAction {
     public void setAbsent(String absent) {
         this.absent = absent;
     }
+    
+    @Override
+    public boolean canBeShortNotated(){
+        return absent == null
+                && super.canBeShortNotated();
+    }
 }
