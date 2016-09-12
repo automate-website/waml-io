@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- short notation conditions for enter and ensure steps
+
 ## [0.5.1]
 ### Fixed
 - made ensure an explicit action since it requires interaction with the browser.
