@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.2]
 ### Fixed
 - short notation conditions for enter and ensure steps
 
@@ -56,4 +57,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [0.3.1]: https://github.com/automate-website/waml-io/compare/0.3.0...0.3.1
 [0.4.0]: https://github.com/automate-website/waml-io/compare/0.3.1...0.4.0
 [0.5.0]: https://github.com/automate-website/waml-io/compare/0.4.0...0.5.0
-[Unreleased]: https://github.com/automate-website/waml-io/compare/0.5.0...master
+[0.5.1]: https://github.com/automate-website/waml-io/compare/0.5.0...0.5.1
+[0.5.2]: https://github.com/automate-website/waml-io/compare/0.5.1...0.5.2
+[Unreleased]: https://github.com/automate-website/waml-io/compare/0.5.2...master
