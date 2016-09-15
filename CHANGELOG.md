@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- added short notation support for filter parent criteria
+
 ## [0.5.2]
 ### Fixed
 - short notation conditions for enter and ensure steps
