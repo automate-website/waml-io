@@ -47,4 +47,16 @@ public class ClickActionSerializerIT extends SerializerBase {
         
         assertEquals(IOUtils.toString(getSystemResourceAsStream(getBasePath() + "/" + testFileName), "UTF-8"), outputStream.toString("UTF-8"));
     }
+    
+    @Test
+    public void clickActionWithParentShortNotationIsSerialized() throws Exception {
+        String testFileName = "click-action-parent-short-notation.yaml";
+        InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/" + testFileName);
+        Action action = mapper.readValue(clickAction, Action.class);
+        
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        mapper.writeValue(outputStream, action);
+        
+        assertEquals(IOUtils.toString(getSystemResourceAsStream(getBasePath() + "/" + testFileName), "UTF-8"), outputStream.toString("UTF-8"));
+    }
 }

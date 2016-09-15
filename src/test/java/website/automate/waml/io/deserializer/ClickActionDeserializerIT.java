@@ -13,6 +13,7 @@ import website.automate.waml.io.model.action.ClickAction;
 import static java.lang.ClassLoader.getSystemResourceAsStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -76,5 +77,19 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         assertThat(actualClickAction.getParent().getSelector(), is("div.main"));
         assertThat(actualClickAction.getParent().getText(), is("some text"));
         assertThat(actualClickAction.getParent().getValue(), is("some value"));
+    }
+    
+    @Test
+    public void clickActionParentShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
+        InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/click-action-parent-short-notation.yaml");
+        Action action = mapper.readValue(clickAction, Action.class);
+        
+        assertNotNull(action);
+        assertTrue(action instanceof ClickAction);
+        ClickAction actualClickAction = ClickAction.class.cast(action);
+        assertThat(actualClickAction.getSelector(), is("a.sign-up"));
+        assertThat(actualClickAction.getParent().getSelector(), is("div.main"));
+        assertNull(actualClickAction.getParent().getText());
+        assertNull(actualClickAction.getParent().getValue());
     }
 }
