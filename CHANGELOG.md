@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Fixed
+- ensured backwards compatibility of the model
+
 ## [0.6.0]
 ### Added
 - added short notation support for filter parent criteria

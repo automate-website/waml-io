@@ -12,8 +12,13 @@ public class ParentCriteria {
     
     private String value;
     
+    public ParentCriteria(){
+      super();
+    }
+    
     @JsonCreator
     public ParentCriteria(String selector){
+      this();
       this.selector = selector;
     }
     
