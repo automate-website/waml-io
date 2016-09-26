@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.7.0]
+
+### Added
+- experimental support for store criteria on element filter steps to be able to store the element reference and access it in other steps during scenario execution
+
 ## [0.6.1]
 ## Fixed
 - ensured backwards compatibility of the model

@@ -1,4 +1,4 @@
 package website.automate.waml.io.model.action;
 
-public class ClickAction extends FilterAction {
+public class ClickAction extends ElementStoreAction {
 }

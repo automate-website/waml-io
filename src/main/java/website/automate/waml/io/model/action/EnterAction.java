@@ -1,6 +1,6 @@
 package website.automate.waml.io.model.action;
 
-public class EnterAction extends FilterAction {
+public class EnterAction extends ElementStoreAction {
 
     private String input;
     

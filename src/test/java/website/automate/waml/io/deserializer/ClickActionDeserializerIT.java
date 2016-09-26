@@ -47,6 +47,19 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         assertThat(actualClickAction.getSelector(), is("a.sign-up"));
     }
     
+    @Test
+    public void clickActionStoreElementIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
+        InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/click-action-store-element.yaml");
+        Action action = mapper.readValue(clickAction, Action.class);
+        
+        assertNotNull(action);
+        assertTrue(action instanceof ClickAction);
+        ClickAction actualClickAction = ClickAction.class.cast(action);
+        assertThat(actualClickAction.getSelector(), is("a.sign-up"));
+        assertThat(actualClickAction.getText(), is("Join now for free!"));
+        assertThat(actualClickAction.getStore(), is("signUpButton"));
+    }
+    
     @Test(expected=UnknownActionException.class)
     public void unknownActionCausesException() throws JsonParseException, JsonMappingException, IOException{
         InputStream clickAction = getSystemResourceAsStream(getBasePath() + "/unknown-action.yaml");

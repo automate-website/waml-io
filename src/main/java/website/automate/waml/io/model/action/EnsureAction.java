@@ -1,6 +1,6 @@
 package website.automate.waml.io.model.action;
 
-public class EnsureAction extends FilterAction {
+public class EnsureAction extends ElementStoreAction {
 
     private String absent;
     
