@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- store step inherits filter step nature.
+
 ## [0.7.0]
 
 ### Added
