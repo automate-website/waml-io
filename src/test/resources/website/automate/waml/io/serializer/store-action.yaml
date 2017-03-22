@@ -2,6 +2,6 @@
 store:
   if: "${isDesktop}"
   unless: "${isMobile}"
-  value:
+  facts:
     keyA: "valueA"
     keyB: "valueB"

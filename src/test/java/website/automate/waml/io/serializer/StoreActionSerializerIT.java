@@ -23,16 +23,4 @@ public class StoreActionSerializerIT extends SerializerBase {
         
         assertEquals(IOUtils.toString(getSystemResourceAsStream(getBasePath() + "/" + testFileName), "UTF-8"), outputStream.toString("UTF-8"));
     }
-    
-    @Test
-    public void storeActionShortNotationIsSerialized() throws Exception {
-        String testFileName = "store-action-short-notation.yaml";
-        InputStream storeAction = getSystemResourceAsStream(getBasePath() + "/" + testFileName);
-        Action action = mapper.readValue(storeAction, Action.class);
-        
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        mapper.writeValue(outputStream, action);
-        
-        assertEquals(IOUtils.toString(getSystemResourceAsStream(getBasePath() + "/" + testFileName), "UTF-8"), outputStream.toString("UTF-8"));
-    }
 }

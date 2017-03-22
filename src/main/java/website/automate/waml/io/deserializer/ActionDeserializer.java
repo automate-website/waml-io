@@ -8,9 +8,7 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 
 import website.automate.waml.io.model.ActionType;
-import website.automate.waml.io.model.CriterionType;
 import website.automate.waml.io.model.action.Action;
-import website.automate.waml.io.model.action.StoreAction;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -84,11 +82,6 @@ public class ActionDeserializer extends StdDeserializer<Action> {
     private boolean isShortNotated(Class<? extends Action> actionClass, JsonNode object){
         if(object.isTextual()){
             return true;
-        }
-        if(actionClass == StoreAction.class){
-            return !object.has(CriterionType.IF.getName())
-                    && !object.has(CriterionType.UNLESS.getName())
-                    && !object.has(CriterionType.VALUE.getName());
         }
         return !object.isObject();
     }
