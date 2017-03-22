@@ -1,7 +1,10 @@
 ---
 store:
-  value:
-    keyA: valueA
-    keyB: valueB
   if: ${isDesktop}
   unless: ${isMobile}
+  selector: button
+  value: xyz
+  facts:
+    keyA: valueA
+    keyB: valueB
+  store: buttonElement

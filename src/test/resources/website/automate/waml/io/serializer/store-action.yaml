@@ -2,6 +2,9 @@
 store:
   if: "${isDesktop}"
   unless: "${isMobile}"
-  value:
+  selector: "button"
+  value: "xyz"
+  facts:
     keyA: "valueA"
     keyB: "valueB"
+  store: "buttonElement"

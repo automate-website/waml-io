@@ -26,7 +26,7 @@ public enum ActionType {
     OPEN("open", CriterionType.URL, OpenAction.class),
     SELECT("select", CriterionType.SELECTOR, SelectAction.class),
     WAIT("wait", CriterionType.TIME, WaitAction.class),
-    STORE("store", CriterionType.VALUE, StoreAction.class);
+    STORE("store", CriterionType.FACTS, StoreAction.class);
 
 	public static Set<ActionType> ACTION_TYPES = EnumSet.allOf(ActionType.class);
 

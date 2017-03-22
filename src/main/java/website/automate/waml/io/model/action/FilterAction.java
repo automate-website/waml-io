@@ -51,7 +51,7 @@ public abstract class FilterAction extends TimeLimitedAction {
     }
     
     @Override
-    public String getDefaultCriterionValue(){
+    public Object getDefaultCriterionValue(){
         return selector;
     }
     

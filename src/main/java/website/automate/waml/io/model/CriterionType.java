@@ -18,7 +18,8 @@ public enum CriterionType {
     VALUE(CriterionNames.VALUE),
     INPUT(CriterionNames.INPUT),
     PARENT(CriterionNames.PARENT),
-    ABSENT(CriterionNames.ABSENT);
+    ABSENT(CriterionNames.ABSENT),
+    FACTS(CriterionNames.FACTS);
     
     public static final List<CriterionType> FILTER_CRITERIA_TYPES = asList(SELECTOR, TEXT, VALUE);
     

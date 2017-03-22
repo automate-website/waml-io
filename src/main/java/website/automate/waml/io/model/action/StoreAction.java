@@ -1,21 +1,28 @@
 package website.automate.waml.io.model.action;
 
+import java.util.Collections;
 import java.util.Map;
 
-public class StoreAction extends ConditionalAction {
+public class StoreAction extends ElementStoreAction {
 
-    private Map<String, String> value;
+    private Map<String, String> facts = Collections.emptyMap();
     
-    public Map<String, String> getValue() {
-        return value;
+    public Map<String, String> getFacts() {
+        return facts;
     }
 
-    public void setValue(Map<String, String> value) {
-        this.value = value;
+    public void setFacts(Map<String, String> facts) {
+        this.facts = facts;
     }
     
     @Override
     public Object getDefaultCriterionValue(){
-        return value;
+        return facts;
+    }
+    
+    @Override
+    public boolean canBeShortNotated(){
+      return getSelector() == null
+          && super.canBeShortNotated();
     }
 }
