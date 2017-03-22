@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.0]
 ### Changed
 - store step inherits filter step nature.
 
@@ -78,4 +79,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [0.6.0]: https://github.com/automate-website/waml-io/compare/0.5.1...0.6.0
 [0.6.1]: https://github.com/automate-website/waml-io/compare/0.6.0...0.6.1
 [0.7.0]: https://github.com/automate-website/waml-io/compare/0.6.1...0.7.0
-[Unreleased]: https://github.com/automate-website/waml-io/compare/0.7.0...master
+[1.0.0]: https://github.com/automate-website/waml-io/compare/0.7.0...1.0.0
+[Unreleased]: https://github.com/automate-website/waml-io/compare/1.0.0...master
