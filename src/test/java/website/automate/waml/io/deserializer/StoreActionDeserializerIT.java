@@ -29,7 +29,20 @@ public class StoreActionDeserializerIT extends DeserializerBase {
         StoreAction actualStoreAction = StoreAction.class.cast(action);
         assertThat(actualStoreAction.getWhen(), is("${isDesktop}"));
         assertThat(actualStoreAction.getUnless(), is("${isMobile}"));
-        Map<String, String> value = actualStoreAction.getFacts();
+        Map<String, String> value = actualStoreAction.getValue();
+        assertThat(value.get("keyA"), is("valueA"));
+        assertThat(value.get("keyB"), is("valueB"));
+    }
+    
+    @Test
+    public void storeActionShortNotationIsDeserialized() throws JsonParseException, JsonMappingException, IOException{
+        InputStream storeAction = getSystemResourceAsStream(getBasePath() + "/store-action-short-notation.yaml");
+        Action action = mapper.readValue(storeAction, Action.class);
+        
+        assertNotNull(action);
+        assertTrue(action instanceof StoreAction);
+        StoreAction actualStoreAction = StoreAction.class.cast(action);
+        Map<String, String> value = actualStoreAction.getValue();
         assertThat(value.get("keyA"), is("valueA"));
         assertThat(value.get("keyB"), is("valueB"));
     }

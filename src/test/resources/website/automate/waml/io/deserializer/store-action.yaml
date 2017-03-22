@@ -1,7 +1,7 @@
 ---
 store:
-  if: ${isDesktop}
-  unless: ${isMobile}
-  facts:
+  value:
     keyA: valueA
     keyB: valueB
+  if: ${isDesktop}
+  unless: ${isMobile}
