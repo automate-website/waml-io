@@ -2,6 +2,7 @@
 click:
   if: "${isDesktop}"
   unless: "${isMobile}"
+  frame: "iframe1"
   selector: "a.sign-up"
   text: "Join now for free!"
   value: "val"

@@ -2,6 +2,7 @@
 click:
   selector: a.sign-up
   parent:
+    frame: iframe1
     selector: div.main
     text: some text
     value: some value
