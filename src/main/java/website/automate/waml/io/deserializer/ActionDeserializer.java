@@ -91,8 +91,7 @@ public class ActionDeserializer extends StdDeserializer<Action> {
                     && !object.has(CriterionType.FACTS.getName())
                     && !object.has(CriterionType.SELECTOR.getName())
                     && !object.has(CriterionType.VALUE.getName())
-                    && !object.has(CriterionType.TEXT.getName())
-                    && !object.has(CriterionType.FRAME.getName());
+                    && !object.has(CriterionType.TEXT.getName());
         }
         return !object.isObject();
     }

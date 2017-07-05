@@ -1,16 +1,9 @@
 package website.automate.waml.io.model.action;
 
-import static website.automate.waml.io.model.CriterionNames.FRAME;
-import static website.automate.waml.io.model.CriterionNames.SELECTOR;
-import static website.automate.waml.io.model.CriterionNames.TEXT;
-import static website.automate.waml.io.model.CriterionNames.VALUE;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({FRAME, SELECTOR, TEXT, VALUE})
 public class ParentCriteria {
 
     private String selector;
@@ -18,8 +11,6 @@ public class ParentCriteria {
     private String text;
     
     private String value;
-    
-    private String frame;
     
     public ParentCriteria(){
       super();
@@ -33,11 +24,10 @@ public class ParentCriteria {
     
     @JsonCreator
     public ParentCriteria(@JsonProperty("selector") String selector, @JsonProperty("text") String text,
-        @JsonProperty("value") String value, @JsonProperty("frame") String frame){
+        @JsonProperty("value") String value){
       this(selector);
       this.text = text;
       this.value = value;
-      this.frame = frame;
     }
     
     public String getSelector() {
@@ -63,24 +53,15 @@ public class ParentCriteria {
     public void setValue(String value) {
         this.value = value;
     }
-  
+    
     @JsonIgnore
     public boolean canBeShortNotated(){
       return text == null &&
-          value == null &&
-          frame == null;
+          value == null;
     }
     
     @JsonIgnore
     public String getDefaultCriterionValue(){
       return selector;
-    }
-    
-    public String getFrame() {
-      return frame;
-    }
-  
-    public void setFrame(String frame) {
-      this.frame = frame;
     }
 }
