@@ -1,0 +1,8 @@
+---
+alert:
+  confirm: "yes"
+  text: "foo"
+  input: "bar"
+  if: "${isDesktop}"
+  unless: "${isMobile}"
+  timeout: "100"
