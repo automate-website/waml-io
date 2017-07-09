@@ -5,7 +5,7 @@ import static java.util.Arrays.asList;
 import java.util.List;
 
 public enum CriterionType {
-    
+
     CLEAR(CriterionNames.CLEAR),
     IF(CriterionNames.IF),
     UNLESS(CriterionNames.UNLESS),
@@ -19,20 +19,21 @@ public enum CriterionType {
     INPUT(CriterionNames.INPUT),
     PARENT(CriterionNames.PARENT),
     ABSENT(CriterionNames.ABSENT),
-    FACTS(CriterionNames.FACTS);
-    
+    FACTS(CriterionNames.FACTS),
+    CONFIRM(CriterionNames.CONFIRM);
+
     public static final List<CriterionType> FILTER_CRITERIA_TYPES = asList(SELECTOR, TEXT, VALUE);
-    
+
     private final String name;
-    
+
     private CriterionType(String name){
         this.name = name;
     }
-    
+
     public String getName() {
         return name;
     }
-    
+
     public static CriterionType findByName(String name){
         for(CriterionType criteriaType : values()){
             if(criteriaType.getName().equals(name)){

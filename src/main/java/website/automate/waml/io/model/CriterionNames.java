@@ -18,5 +18,6 @@ public class CriterionNames {
         ABSENT = "absent",
         META   = "meta",
         STORE  = "store",
-        FACTS  = "facts";
+        FACTS  = "facts",
+        CONFIRM  = "confirm";
 }
