@@ -20,13 +20,13 @@ public class AlertActionDeserializerIT extends DeserializerBase {
 
         assertNotNull(action);
         assertTrue(action instanceof AlertAction);
-        AlertAction actualClickAction = AlertAction.class.cast(action);
-        assertThat(actualClickAction.getConfirm(), is("yes"));
-        assertThat(actualClickAction.getText(), is("foo"));
-        assertThat(actualClickAction.getInput(), is("bar"));
-        assertThat(actualClickAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualClickAction.getUnless(), is("${isMobile}"));
-        assertThat(actualClickAction.getTimeout(), is("100"));
+        AlertAction actualAlertAction = AlertAction.class.cast(action);
+        assertThat(actualAlertAction.getConfirm(), is("yes"));
+        assertThat(actualAlertAction.getText(), is("foo"));
+        assertThat(actualAlertAction.getInput(), is("bar"));
+        assertThat(actualAlertAction.getWhen(), is("${isDesktop}"));
+        assertThat(actualAlertAction.getUnless(), is("${isMobile}"));
+        assertThat(actualAlertAction.getTimeout(), is("100"));
     }
 
     @Test
@@ -36,7 +36,7 @@ public class AlertActionDeserializerIT extends DeserializerBase {
 
         assertNotNull(action);
         assertTrue(action instanceof AlertAction);
-        AlertAction actualClickAction = AlertAction.class.cast(action);
-        assertThat(actualClickAction.getConfirm(), is("true"));
+        AlertAction actualAlertAction = AlertAction.class.cast(action);
+        assertThat(actualAlertAction.getConfirm(), is("true"));
     }
 }
