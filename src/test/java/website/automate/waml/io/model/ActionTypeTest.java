@@ -12,7 +12,7 @@ import website.automate.waml.io.model.action.EnterAction;
 import website.automate.waml.io.model.action.IncludeAction;
 import website.automate.waml.io.model.action.MoveAction;
 import website.automate.waml.io.model.action.OpenAction;
-import website.automate.waml.io.model.action.StoreAction;
+import website.automate.waml.io.model.action.DefineAction;
 import website.automate.waml.io.model.action.WaitAction;
 
 public class ActionTypeTest {
@@ -44,7 +44,7 @@ public class ActionTypeTest {
     
     @Test
     public void storeActionIsImplicit(){
-        assertTrue(isImplicit(StoreAction.class));
+        assertTrue(isImplicit(DefineAction.class));
     }
     
     @Test

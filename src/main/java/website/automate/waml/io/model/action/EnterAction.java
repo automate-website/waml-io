@@ -1,31 +1,16 @@
 package website.automate.waml.io.model.action;
 
-public class EnterAction extends ElementStoreAction {
+import website.automate.waml.io.model.criteria.EnterCriteria;
 
-    private String input;
-    
-    private String clear;
-    
-    public String getInput() {
-        return input;
-    }
+public class EnterAction extends BasicAction {
 
-    public void setInput(String input) {
-        this.input = input;
-    }
+  private EnterCriteria enter = new EnterCriteria();
 
-    public String getClear() {
-        return clear;
-    }
+  public EnterCriteria getEnter() {
+    return enter;
+  }
 
-    public void setClear(String clear) {
-        this.clear = clear;
-    }
-    
-    @Override
-    public boolean canBeShortNotated(){
-        return input == null
-                && clear == null
-                && super.canBeShortNotated();
-    }
+  public void setEnter(EnterCriteria enter) {
+    this.enter = enter;
+  }
 }

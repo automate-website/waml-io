@@ -1,37 +1,16 @@
 package website.automate.waml.io.model.action;
 
-public class AlertAction extends TimeLimitedAction {
+import website.automate.waml.io.model.criteria.AlertCriteria;
 
-    private String confirm;
-    private String text;
-    private String input;
+public class AlertAction extends BasicAction {
 
-    public String getConfirm() {
-        return confirm;
-    }
+  private AlertCriteria alert = new AlertCriteria();
 
-    public void setConfirm(String confirm) {
-        this.confirm = confirm;
-    }
+  public AlertCriteria getAlert() {
+    return alert;
+  }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getInput() {
-        return input;
-    }
-
-    public void setInput(String input) {
-        this.input = input;
-    }
-
-    @Override
-    public Object getDefaultCriterionValue() {
-        return confirm;
-    }
+  public void setAlert(AlertCriteria alert) {
+    this.alert = alert;
+  }
 }

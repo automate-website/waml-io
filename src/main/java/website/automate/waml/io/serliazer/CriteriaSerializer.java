@@ -1,9 +1,8 @@
 package website.automate.waml.io.serliazer;
 
-
 import java.io.IOException;
 
-import website.automate.waml.io.model.action.ParentCriteria;
+import website.automate.waml.io.model.criteria.Criteria;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -12,7 +11,7 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.ResolvableSerializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
-public class ParentCriteriaSerializer extends StdSerializer<ParentCriteria> implements ResolvableSerializer {
+public class CriteriaSerializer extends StdSerializer<Criteria> implements ResolvableSerializer {
 
     private static final long serialVersionUID = 7861146712268855092L;
     
@@ -20,21 +19,22 @@ public class ParentCriteriaSerializer extends StdSerializer<ParentCriteria> impl
     private final JsonSerializer defaultSerializer;
     
     @SuppressWarnings("rawtypes") 
-    public ParentCriteriaSerializer(JsonSerializer defaultSerializer) {
-        super(ParentCriteria.class);
+    public CriteriaSerializer(JsonSerializer defaultSerializer) {
+        super(Criteria.class);
         this.defaultSerializer = defaultSerializer;
     }
     
     @SuppressWarnings("unchecked")
     @Override
-    public void serialize(ParentCriteria parentCriteria, JsonGenerator generator,
+    public void serialize(Criteria criteria, JsonGenerator generator,
             SerializerProvider provider) throws IOException {
-        if(parentCriteria.canBeShortNotated()){
-            Object defaultCriterionValue = parentCriteria.getDefaultCriterionValue();
+        if(criteria.canBeShortNotated()){
+            Object defaultCriterionValue = criteria.getDefaultCriterionValue();
             generator.writeObject(defaultCriterionValue);
         } else {
-            defaultSerializer.serialize(parentCriteria, generator, provider);
+            defaultSerializer.serialize(criteria, generator, provider);
         }
+        generator.writeEndObject();
     }
 
     @Override

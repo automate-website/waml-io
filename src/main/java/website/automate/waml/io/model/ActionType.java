@@ -17,7 +17,7 @@ public enum ActionType {
     OPEN("open", CriterionType.URL, OpenAction.class),
     SELECT("select", CriterionType.SELECTOR, SelectAction.class),
     WAIT("wait", CriterionType.TIME, WaitAction.class),
-    STORE("store", CriterionType.FACTS, StoreAction.class),
+    STORE("store", CriterionType.FACTS, DefineAction.class),
     ALERT("alert", CriterionType.CONFIRM, AlertAction.class);
 
 	public static Set<ActionType> ACTION_TYPES = EnumSet.allOf(ActionType.class);
@@ -37,7 +37,7 @@ public enum ActionType {
         ACTION_CLAZZ_TYPE_MAP.put(OpenAction.class, OPEN);
         ACTION_CLAZZ_TYPE_MAP.put(SelectAction.class, SELECT);
         ACTION_CLAZZ_TYPE_MAP.put(WaitAction.class, WAIT);
-        ACTION_CLAZZ_TYPE_MAP.put(StoreAction.class, STORE);
+        ACTION_CLAZZ_TYPE_MAP.put(DefineAction.class, STORE);
         ACTION_CLAZZ_TYPE_MAP.put(AlertAction.class, ALERT);
 
         ACTION_NAME_TYPE_MAP.put(CLICK.getName(), CLICK);

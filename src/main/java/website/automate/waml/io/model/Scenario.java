@@ -3,7 +3,6 @@ package website.automate.waml.io.model;
 import java.util.List;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import website.automate.waml.io.model.action.Action;
@@ -23,7 +22,6 @@ public class Scenario {
     
     private String timeout = "5";
 
-    @JsonProperty("if")
     private String when;
     
     private String unless;

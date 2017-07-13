@@ -9,7 +9,6 @@ import org.junit.Test;
 import website.automate.waml.io.model.action.Action;
 import static java.lang.ClassLoader.getSystemResourceAsStream;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class StoreActionSerializerIT extends SerializerBase {

@@ -26,13 +26,12 @@ public class EnsureActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof EnsureAction);
         EnsureAction actualEnsureAction = EnsureAction.class.cast(action);
-        assertThat(actualEnsureAction.getSelector(), is("a.sign-up"));
-        assertThat(actualEnsureAction.getText(), is("Join now for free!"));
+        assertThat(actualEnsureAction.getEnsure().getSelector(), is("a.sign-up"));
+        assertThat(actualEnsureAction.getEnsure().getText(), is("Join now for free!"));
         assertThat(actualEnsureAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualEnsureAction.getUnless(), is("${isMobile}"));
         assertThat(actualEnsureAction.getTimeout(), is("100"));
-        assertThat(actualEnsureAction.getAbsent(), is("true"));
-        assertThat(actualEnsureAction.getValue(), is("val"));
+        assertThat(actualEnsureAction.getInvert(), is("true"));
+        assertThat(actualEnsureAction.getEnsure().getValue(), is("val"));
     }
     
     @Test
@@ -43,7 +42,7 @@ public class EnsureActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof EnsureAction);
         EnsureAction actualEnsureAction = EnsureAction.class.cast(action);
-        assertThat(actualEnsureAction.getSelector(), is("a.sign-up"));
+        assertThat(actualEnsureAction.getEnsure().getSelector(), is("a.sign-up"));
     }
     
     @Test
@@ -54,9 +53,7 @@ public class EnsureActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof EnsureAction);
         EnsureAction actualEnsureAction = EnsureAction.class.cast(action);
-        assertThat(actualEnsureAction.getSelector(), is("a.sign-up"));
-        assertThat(actualEnsureAction.getParent().getSelector(), is("div.main"));
-        assertThat(actualEnsureAction.getParent().getText(), is("some text"));
-        assertThat(actualEnsureAction.getParent().getValue(), is("some value"));
+        assertThat(actualEnsureAction.getEnsure().getSelector(), is("a.sign-up"));
+        assertThat(actualEnsureAction.getEnsure().getParent(), is("div.main"));
     }
 }

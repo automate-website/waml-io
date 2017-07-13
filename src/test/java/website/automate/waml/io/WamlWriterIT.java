@@ -36,7 +36,7 @@ public class WamlWriterIT {
         Scenario scenario = new Scenario();
         scenario.setName(name);
         ClickAction clickAction = new ClickAction();
-        clickAction.setSelector(actionDefaultCriterionValue);
+        clickAction.getClick().setSelector(actionDefaultCriterionValue);
         scenario.setSteps(asList((Action)clickAction));
         scenario.setPrecedence(1);
         scenario.setFragment(false);

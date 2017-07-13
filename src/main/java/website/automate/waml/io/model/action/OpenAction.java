@@ -1,19 +1,16 @@
 package website.automate.waml.io.model.action;
 
-public class OpenAction extends ConditionalAction {
+import website.automate.waml.io.model.criteria.OpenCriteria;
 
-    private String url;
-    
-    public String getUrl() {
-        return url;
-    }
+public class OpenAction extends BasicAction {
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
-    
-    @Override
-    public String getDefaultCriterionValue(){
-        return url;
-    }
+  private OpenCriteria open = new OpenCriteria();
+
+  public OpenCriteria getOpen() {
+    return open;
+  }
+
+  public void setOpen(OpenCriteria open) {
+    this.open = open;
+  }
 }

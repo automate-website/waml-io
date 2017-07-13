@@ -26,12 +26,11 @@ public class EnterActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof EnterAction);
         EnterAction enterEnterAction = EnterAction.class.cast(action);
-        assertThat(enterEnterAction.getSelector(), is("a.sign-up"));
-        assertThat(enterEnterAction.getText(), is("Join now for free!"));
+        assertThat(enterEnterAction.getEnter().getSelector(), is("a.sign-up"));
+        assertThat(enterEnterAction.getEnter().getText(), is("Join now for free!"));
         assertThat(enterEnterAction.getWhen(), is("${isDesktop}"));
-        assertThat(enterEnterAction.getUnless(), is("${isMobile}"));
         assertThat(enterEnterAction.getTimeout(), is("100"));
-        assertThat(enterEnterAction.getValue(), is("val"));
+        assertThat(enterEnterAction.getEnter().getValue(), is("val"));
     }
     
     @Test
@@ -42,7 +41,7 @@ public class EnterActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof EnterAction);
         EnterAction actualEnterAction = EnterAction.class.cast(action);
-        assertThat(actualEnterAction.getInput(), is("hello"));
+        assertThat(actualEnterAction.getEnter().getInput(), is("hello"));
     }
     
     @Test
@@ -53,9 +52,7 @@ public class EnterActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof EnterAction);
         EnterAction actualEnterAction = EnterAction.class.cast(action);
-        assertThat(actualEnterAction.getSelector(), is("a.sign-up"));
-        assertThat(actualEnterAction.getParent().getSelector(), is("div.main"));
-        assertThat(actualEnterAction.getParent().getText(), is("some text"));
-        assertThat(actualEnterAction.getParent().getValue(), is("some value"));
+        assertThat(actualEnterAction.getEnter().getSelector(), is("a.sign-up"));
+        assertThat(actualEnterAction.getEnter().getParent(), is("div.main"));
     }
 }

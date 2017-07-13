@@ -10,7 +10,7 @@ import java.util.Map.Entry;
 import website.automate.waml.io.model.ActionType;
 import website.automate.waml.io.model.CriterionType;
 import website.automate.waml.io.model.action.Action;
-import website.automate.waml.io.model.action.StoreAction;
+import website.automate.waml.io.model.action.DefineAction;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -85,7 +85,7 @@ public class ActionDeserializer extends StdDeserializer<Action> {
         if(object.isTextual()){
             return true;
         }
-        if(actionClass == StoreAction.class){
+        if(actionClass == DefineAction.class){
             return !object.has(CriterionType.IF.getName())
                     && !object.has(CriterionType.UNLESS.getName())
                     && !object.has(CriterionType.FACTS.getName())

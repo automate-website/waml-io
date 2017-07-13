@@ -26,9 +26,8 @@ public class IncludeActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof IncludeAction);
         IncludeAction actualIncludeAction = IncludeAction.class.cast(action);
-        assertThat(actualIncludeAction.getScenario(), is("included-scenario"));
+        assertThat(actualIncludeAction.getInclude().getScenario(), is("included-scenario"));
         assertThat(actualIncludeAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualIncludeAction.getUnless(), is("${isMobile}"));
     }
     
     @Test
@@ -39,6 +38,6 @@ public class IncludeActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof IncludeAction);
         IncludeAction actualIncludeAction = IncludeAction.class.cast(action);
-        assertThat(actualIncludeAction.getScenario(), is("included-scenario"));
+        assertThat(actualIncludeAction.getInclude().getScenario(), is("included-scenario"));
     }
 }

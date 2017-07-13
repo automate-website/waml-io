@@ -1,19 +1,16 @@
 package website.automate.waml.io.model.action;
 
-public class IncludeAction extends ConditionalAction {
+import website.automate.waml.io.model.criteria.IncludeCriteria;
 
-    private String scenario;
+public class IncludeAction extends BasicAction {
 
-    public String getScenario() {
-        return scenario;
-    }
+  private IncludeCriteria include = new IncludeCriteria();
 
-    public void setScenario(String scenario) {
-        this.scenario = scenario;
-    }
-    
-    @Override
-    public String getDefaultCriterionValue(){
-        return scenario;
-    }
+  public IncludeCriteria getInclude() {
+    return include;
+  }
+
+  public void setInclude(IncludeCriteria include) {
+    this.include = include;
+  }
 }

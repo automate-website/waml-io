@@ -26,12 +26,11 @@ public class MoveActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof MoveAction);
         MoveAction moveMoveAction = MoveAction.class.cast(action);
-        assertThat(moveMoveAction.getSelector(), is("a.sign-up"));
-        assertThat(moveMoveAction.getText(), is("Join now for free!"));
+        assertThat(moveMoveAction.getMove().getSelector(), is("a.sign-up"));
+        assertThat(moveMoveAction.getMove().getText(), is("Join now for free!"));
         assertThat(moveMoveAction.getWhen(), is("${isDesktop}"));
-        assertThat(moveMoveAction.getUnless(), is("${isMobile}"));
         assertThat(moveMoveAction.getTimeout(), is("100"));
-        assertThat(moveMoveAction.getValue(), is("val"));
+        assertThat(moveMoveAction.getMove().getValue(), is("val"));
     }
     
     @Test
@@ -42,7 +41,7 @@ public class MoveActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof MoveAction);
         MoveAction actualMoveAction = MoveAction.class.cast(action);
-        assertThat(actualMoveAction.getSelector(), is("a.sign-up"));
+        assertThat(actualMoveAction.getMove().getSelector(), is("a.sign-up"));
     }
     
     @Test
@@ -53,9 +52,7 @@ public class MoveActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof MoveAction);
         MoveAction actualMoveAction = MoveAction.class.cast(action);
-        assertThat(actualMoveAction.getSelector(), is("a.sign-up"));
-        assertThat(actualMoveAction.getParent().getSelector(), is("div.main"));
-        assertThat(actualMoveAction.getParent().getText(), is("some text"));
-        assertThat(actualMoveAction.getParent().getValue(), is("some value"));
+        assertThat(actualMoveAction.getMove().getSelector(), is("a.sign-up"));
+        assertThat(actualMoveAction.getMove().getParent(), is("div.main"));
     }
 }

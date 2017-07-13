@@ -13,7 +13,6 @@ import website.automate.waml.io.model.action.ClickAction;
 import static java.lang.ClassLoader.getSystemResourceAsStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -27,13 +26,11 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof ClickAction);
         ClickAction actualClickAction = ClickAction.class.cast(action);
-        assertThat(actualClickAction.getSelector(), is("a.sign-up"));
-        assertThat(actualClickAction.getText(), is("Join now for free!"));
+        assertThat(actualClickAction.getClick().getSelector(), is("a.sign-up"));
+        assertThat(actualClickAction.getClick().getText(), is("Join now for free!"));
         assertThat(actualClickAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualClickAction.getUnless(), is("${isMobile}"));
         assertThat(actualClickAction.getTimeout(), is("100"));
-        assertThat(actualClickAction.getValue(), is("val"));
-        assertThat(actualClickAction.getMeta(), is("data"));
+        assertThat(actualClickAction.getClick().getValue(), is("val"));
     }
     
     @Test
@@ -44,7 +41,7 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof ClickAction);
         ClickAction actualClickAction = ClickAction.class.cast(action);
-        assertThat(actualClickAction.getSelector(), is("a.sign-up"));
+        assertThat(actualClickAction.getClick().getSelector(), is("a.sign-up"));
     }
     
     @Test
@@ -55,9 +52,8 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof ClickAction);
         ClickAction actualClickAction = ClickAction.class.cast(action);
-        assertThat(actualClickAction.getSelector(), is("a.sign-up"));
-        assertThat(actualClickAction.getText(), is("Join now for free!"));
-        assertThat(actualClickAction.getStore(), is("signUpButton"));
+        assertThat(actualClickAction.getClick().getSelector(), is("a.sign-up"));
+        assertThat(actualClickAction.getClick().getText(), is("Join now for free!"));
     }
     
     @Test(expected=UnknownActionException.class)
@@ -86,10 +82,8 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof ClickAction);
         ClickAction actualClickAction = ClickAction.class.cast(action);
-        assertThat(actualClickAction.getSelector(), is("a.sign-up"));
-        assertThat(actualClickAction.getParent().getSelector(), is("div.main"));
-        assertThat(actualClickAction.getParent().getText(), is("some text"));
-        assertThat(actualClickAction.getParent().getValue(), is("some value"));
+        assertThat(actualClickAction.getClick().getSelector(), is("a.sign-up"));
+        assertThat(actualClickAction.getClick().getParent(), is("div.main"));
     }
     
     @Test
@@ -100,9 +94,7 @@ public class ClickActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof ClickAction);
         ClickAction actualClickAction = ClickAction.class.cast(action);
-        assertThat(actualClickAction.getSelector(), is("a.sign-up"));
-        assertThat(actualClickAction.getParent().getSelector(), is("div.main"));
-        assertNull(actualClickAction.getParent().getText());
-        assertNull(actualClickAction.getParent().getValue());
+        assertThat(actualClickAction.getClick().getSelector(), is("a.sign-up"));
+        assertThat(actualClickAction.getClick().getParent(), is("div.main"));
     }
 }

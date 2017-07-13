@@ -10,7 +10,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
 import website.automate.waml.io.model.action.Action;
-import website.automate.waml.io.model.action.StoreAction;
+import website.automate.waml.io.model.action.DefineAction;
 import static java.lang.ClassLoader.getSystemResourceAsStream;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
@@ -25,16 +25,12 @@ public class StoreActionDeserializerIT extends DeserializerBase {
         Action action = mapper.readValue(storeAction, Action.class);
         
         assertNotNull(action);
-        assertTrue(action instanceof StoreAction);
-        StoreAction actualStoreAction = StoreAction.class.cast(action);
+        assertTrue(action instanceof DefineAction);
+        DefineAction actualStoreAction = DefineAction.class.cast(action);
         assertThat(actualStoreAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualStoreAction.getUnless(), is("${isMobile}"));
-        Map<String, String> value = actualStoreAction.getFacts();
+        Map<String, String> value = actualStoreAction.getDefine().getFacts();
         assertThat(value.get("keyA"), is("valueA"));
         assertThat(value.get("keyB"), is("valueB"));
-        assertThat(actualStoreAction.getSelector(), is("button"));
-        assertThat(actualStoreAction.getValue(), is("xyz"));
-        assertThat(actualStoreAction.getStore(), is("buttonElement"));
     }
     
     @Test
@@ -43,9 +39,9 @@ public class StoreActionDeserializerIT extends DeserializerBase {
         Action action = mapper.readValue(storeAction, Action.class);
         
         assertNotNull(action);
-        assertTrue(action instanceof StoreAction);
-        StoreAction actualStoreAction = StoreAction.class.cast(action);
-        Map<String, String> value = actualStoreAction.getFacts();
+        assertTrue(action instanceof DefineAction);
+        DefineAction actualStoreAction = DefineAction.class.cast(action);
+        Map<String, String> value = actualStoreAction.getDefine().getFacts();
         assertThat(value.get("keyA"), is("valueA"));
         assertThat(value.get("keyB"), is("valueB"));
     }

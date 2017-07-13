@@ -26,9 +26,8 @@ public class WaitActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof WaitAction);
         WaitAction actualWaitAction = WaitAction.class.cast(action);
-        assertThat(actualWaitAction.getTime(), is("100"));
+        assertThat(actualWaitAction.getWait().getTime(), is("100"));
         assertThat(actualWaitAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualWaitAction.getUnless(), is("${isMobile}"));
     }
     
     @Test
@@ -39,6 +38,6 @@ public class WaitActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof WaitAction);
         WaitAction actualWaitAction = WaitAction.class.cast(action);
-        assertThat(actualWaitAction.getTime(), is("100"));
+        assertThat(actualWaitAction.getWait().getTime(), is("100"));
     }
 }

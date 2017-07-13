@@ -26,9 +26,8 @@ public class OpenActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof OpenAction);
         OpenAction actualOpenAction = OpenAction.class.cast(action);
-        assertThat(actualOpenAction.getUrl(), is("https://www.google.de"));
+        assertThat(actualOpenAction.getOpen().getUrl(), is("https://www.google.de"));
         assertThat(actualOpenAction.getWhen(), is("${isDesktop}"));
-        assertThat(actualOpenAction.getUnless(), is("${isMobile}"));
     }
     
     @Test
@@ -39,6 +38,6 @@ public class OpenActionDeserializerIT extends DeserializerBase {
         assertNotNull(action);
         assertTrue(action instanceof OpenAction);
         OpenAction actualOpenAction = OpenAction.class.cast(action);
-        assertThat(actualOpenAction.getUrl(), is("https://www.google.de"));
+        assertThat(actualOpenAction.getOpen().getUrl(), is("https://www.google.de"));
     }
 }
