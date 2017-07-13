@@ -1,8 +1,7 @@
 ---
 name: scenario-name
 description: scenario-description
-if: ${isDesktop}
-unless: ${isMobile}
+when: ${isDesktop}
 timeout: 100
 meta: data
 steps:

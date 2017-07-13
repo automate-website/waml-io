@@ -1,8 +1,7 @@
 ---
+when: ${isDesktop}
+timeout: 100
 move:
   selector: a.sign-up
   text: 'Join now for free!'
   value: val
-  if: ${isDesktop}
-  unless: ${isMobile}
-  timeout: 100

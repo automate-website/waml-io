@@ -1,8 +1,7 @@
 ---
+when: "${isDesktop}"
+timeout: "100"
 alert:
   confirm: "yes"
   text: "foo"
   input: "bar"
-  if: "${isDesktop}"
-  unless: "${isMobile}"
-  timeout: "100"

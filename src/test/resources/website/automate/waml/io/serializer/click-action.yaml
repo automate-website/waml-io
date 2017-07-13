@@ -1,8 +1,7 @@
 ---
+when: "${isDesktop}"
+timeout: "100"
 click:
-  if: "${isDesktop}"
-  unless: "${isMobile}"
   selector: "a.sign-up"
   text: "Join now for free!"
   value: "val"
-  timeout: "100"

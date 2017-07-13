@@ -1,8 +1,7 @@
 ---
 name: scenario-name
 description: scenario-description
-if: ${isDesktop}
-unless: ${isMobile}
+when: ${isDesktop}
 timeout: 100
 steps:
   - click:
@@ -14,8 +13,7 @@ steps:
 ---
 name: another-scenario-name
 description: scenario-description
-if: ${isDesktop}
-unless: ${isMobile}
+when: ${isDesktop}
 timeout: 100
 steps:
   - click:

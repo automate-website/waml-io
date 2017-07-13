@@ -1,5 +1,4 @@
 ---
+when: ${isDesktop}
 include:
   scenario: included-scenario
-  if: ${isDesktop}
-  unless: ${isMobile}

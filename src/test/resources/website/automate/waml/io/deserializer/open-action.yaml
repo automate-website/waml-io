@@ -1,5 +1,4 @@
 ---
+when: ${isDesktop}
 open:
   url: https://www.google.de
-  if: ${isDesktop}
-  unless: ${isMobile}
