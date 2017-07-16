@@ -4,7 +4,9 @@ import website.automate.waml.io.model.criteria.AlertCriteria;
 
 public class AlertAction extends BasicAction {
 
-  private AlertCriteria alert = new AlertCriteria();
+  static final String TYPE_NAME = "alert";
+  
+  private AlertCriteria alert;
 
   public AlertCriteria getAlert() {
     return alert;

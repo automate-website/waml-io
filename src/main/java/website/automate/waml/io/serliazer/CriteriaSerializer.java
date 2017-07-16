@@ -34,7 +34,6 @@ public class CriteriaSerializer extends StdSerializer<Criteria> implements Resol
         } else {
             defaultSerializer.serialize(criteria, generator, provider);
         }
-        generator.writeEndObject();
     }
 
     @Override

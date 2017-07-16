@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator.Feature;
 
 public class WamlConfig {
     
@@ -27,7 +28,7 @@ public class WamlConfig {
         module.addDeserializer(Action.class, new ActionDeserializer()); 
         module.setSerializerModifier(new WamlSerializerModifier());
 
-        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());  
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory().enable(Feature.MINIMIZE_QUOTES));  
         mapper.registerModule(module);
         mapper.setSerializationInclusion(Include.NON_NULL);
         return mapper;

@@ -4,7 +4,9 @@ import website.automate.waml.io.model.criteria.FilterCriteria;
 
 public class MoveAction extends BasicAction {
 
-  private FilterCriteria move = new FilterCriteria();
+  static final String TYPE_NAME = "move";
+  
+  private FilterCriteria move;
 
   public FilterCriteria getMove() {
     return move;

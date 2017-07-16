@@ -1,5 +1,8 @@
 package website.automate.waml.io.model.criteria;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class FilterCriteria implements Criteria {
 
   private static final String DEFAULT_CRITERION_NAME = "selector";
@@ -11,37 +14,36 @@ public class FilterCriteria implements Criteria {
   private String value;
 
   private String parent;
+  
+  public FilterCriteria(String selector){
+    super();
+    this.selector = selector;
+  }
+ 
+  @JsonCreator
+  public FilterCriteria(@JsonProperty("selector") String selector, 
+      @JsonProperty("text") String text, @JsonProperty("value") String value,
+      @JsonProperty("parent") String parent){
+    this(selector);
+    this.text = text;
+    this.value = value;
+    this.parent = parent;
+  }
 
   public String getSelector() {
     return selector;
-  }
-
-  public void setSelector(String selector) {
-    this.selector = selector;
   }
 
   public String getText() {
     return text;
   }
 
-  public void setText(String text) {
-    this.text = text;
-  }
-
   public String getValue() {
     return value;
   }
 
-  public void setValue(String value) {
-    this.value = value;
-  }
-
   public String getParent() {
     return parent;
-  }
-
-  public void setParent(String parent) {
-    this.parent = parent;
   }
 
   @Override

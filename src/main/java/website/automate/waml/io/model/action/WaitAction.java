@@ -4,6 +4,8 @@ import website.automate.waml.io.model.criteria.WaitCriteria;
 
 public class WaitAction extends BasicAction {
 
+  static final String TYPE_NAME = "wait";
+  
   private WaitCriteria wait;
 
   public WaitCriteria getWait() {

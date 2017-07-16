@@ -1,5 +1,8 @@
 package website.automate.waml.io.model.criteria;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class AlertCriteria implements Criteria{
 
   private static final String DEFAULT_CRITERION_NAME = "confirm";
@@ -10,28 +13,28 @@ public class AlertCriteria implements Criteria{
 
   private String input;
 
+  public AlertCriteria(String confirm){
+    this.confirm = confirm;
+  }
+  
+  @JsonCreator
+  public AlertCriteria(@JsonProperty("confirm") String confirm, 
+      @JsonProperty("text") String text, @JsonProperty("input") String input){
+    this(confirm);
+    this.text = text;
+    this.input = input;
+  }
+  
   public String getConfirm() {
     return confirm;
-  }
-
-  public void setConfirm(String confirm) {
-    this.confirm = confirm;
   }
 
   public String getText() {
     return text;
   }
 
-  public void setText(String text) {
-    this.text = text;
-  }
-
   public String getInput() {
     return input;
-  }
-
-  public void setInput(String input) {
-    this.input = input;
   }
 
   @Override

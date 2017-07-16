@@ -1,0 +1,8 @@
+---
+when: ${isDesktop}
+invert: "true"
+timeout: 100
+ensure:
+  selector: a.sign-up
+  text: Join now for free!
+  value: val

@@ -1,0 +1,8 @@
+---
+when: ${isDesktop}
+register: foo
+timeout: 100
+alert:
+  text: foo
+  input: bar
+  confirm: "true"

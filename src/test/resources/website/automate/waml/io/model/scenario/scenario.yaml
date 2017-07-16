@@ -1,0 +1,13 @@
+---
+name: scenario
+precedence: 1
+description: scenario description
+fragment: false
+timeout: 100
+when: ${isDesktop}
+steps:
+- when: ${isHighResolution}
+  click:
+    selector: a.sign-up
+    parent: element
+- ensure: div.dash-board

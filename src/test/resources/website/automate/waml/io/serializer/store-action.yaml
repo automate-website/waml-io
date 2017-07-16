@@ -1,9 +1,0 @@
----
-when: "${isDesktop}"
-store:
-  selector: "button"
-  value: "xyz"
-  facts:
-    keyA: "valueA"
-    keyB: "valueB"
-  store: "buttonElement"

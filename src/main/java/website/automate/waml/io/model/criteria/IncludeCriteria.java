@@ -5,13 +5,14 @@ public class IncludeCriteria implements Criteria {
   private static final String DEFAULT_CRITERION_NAME = "scenario";
   
   private String scenario;
+  
+  public IncludeCriteria(String scenario){
+    super();
+    this.scenario = scenario;
+  }
 
   public String getScenario() {
     return scenario;
-  }
-
-  public void setScenario(String scenario) {
-    this.scenario = scenario;
   }
 
   @Override

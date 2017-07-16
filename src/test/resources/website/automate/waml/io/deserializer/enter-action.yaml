@@ -1,8 +1,0 @@
----
-when: ${isDesktop}
-timeout: 100
-enter:
-  selector: a.sign-up
-  input: is
-  text: 'Join now for free!'
-  value: val

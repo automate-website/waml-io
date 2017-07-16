@@ -3,122 +3,91 @@ package website.automate.waml.io.model;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import website.automate.waml.io.model.action.Action;
 
-@JsonPropertyOrder({"name", "meta", "precedence", "description", "fragment", "timeout", "if", "unless", "steps"})
+@JsonPropertyOrder({"name", "precedence", "description", "fragment", "timeout", "when", "steps"})
 public class Scenario {
 
-    private String name;
-    
-    private String meta;
-    
-    private Integer precedence = -1;
-    
-    private String description;
-    
-    private Boolean fragment = false;
-    
-    private String timeout = "5";
+  private String name;
 
-    private String when;
-    
-    private String unless;
-    
-    private List<Action> steps;
-    
-    public String getName() {
-        return name;
-    }
+  private Integer precedence;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  private String description;
 
-    public Integer getPrecedence() {
-        return precedence;
-    }
+  private Boolean fragment;
 
-    public void setPrecedence(Integer precedence) {
-        this.precedence = precedence;
-    }
+  private String timeout;
 
-    public String getDescription() {
-        return description;
-    }
+  private String when;
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  private List<Action> steps;
 
-    public Boolean getFragment() {
-        return fragment;
-    }
+  @JsonCreator
+  public Scenario(@JsonProperty("name") String name,
+      @JsonProperty("precendence") Integer precedence,
+      @JsonProperty("description") String description, @JsonProperty("fragment") Boolean fragment,
+      @JsonProperty("timeout") String timeout, @JsonProperty("when") String when,
+      @JsonProperty("steps") List<Action> steps) {
+    super();
+    this.name = name;
+    this.precedence = precedence;
+    this.description = description;
+    this.fragment = fragment;
+    this.timeout = timeout;
+    this.when = when;
+    this.steps = steps;
+  }
+  public String getName() {
+    return name;
+  }
 
-    public void setFragment(Boolean fragment) {
-        this.fragment = fragment;
-    }
+  public Integer getPrecedence() {
+    return precedence;
+  }
 
-    public String getTimeout() {
-        return timeout;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public void setTimeout(String timeout) {
-        this.timeout = timeout;
-    }
+  public Boolean getFragment() {
+    return fragment;
+  }
 
-    public String getWhen() {
-        return when;
-    }
+  public String getTimeout() {
+    return timeout;
+  }
 
-    public void setWhen(String when) {
-        this.when = when;
-    }
+  public String getWhen() {
+    return when;
+  }
 
-    public String getUnless() {
-        return unless;
-    }
+  public List<Action> getSteps() {
+    return steps;
+  }
 
-    public void setUnless(String unless) {
-        this.unless = unless;
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(name);
+  }
 
-    public List<Action> getSteps() {
-        return steps;
-    }
-
-    public void setSteps(List<Action> steps) {
-        this.steps = steps;
-    }
-    
-    public String getMeta() {
-        return meta;
-    }
-
-    public void setMeta(String meta) {
-        this.meta = meta;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Scenario other = (Scenario) obj;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        return true;
-    }
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Scenario other = (Scenario) obj;
+    if (name == null) {
+      if (other.name != null)
+        return false;
+    } else if (!name.equals(other.name))
+      return false;
+    return true;
+  }
 }

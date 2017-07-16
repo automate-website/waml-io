@@ -4,7 +4,9 @@ import website.automate.waml.io.model.criteria.FilterCriteria;
 
 public class EnsureAction extends BasicAction {
 
-  private FilterCriteria ensure = new FilterCriteria();
+  static final String TYPE_NAME = "ensure";
+  
+  private FilterCriteria ensure;
 
   public FilterCriteria getEnsure() {
     return ensure;

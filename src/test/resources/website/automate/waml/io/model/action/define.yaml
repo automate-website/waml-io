@@ -1,0 +1,5 @@
+---
+when: ${isDesktop}
+define:
+  keyA: valueA
+  keyB: valueB

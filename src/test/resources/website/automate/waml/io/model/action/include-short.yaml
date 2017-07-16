@@ -1,0 +1,3 @@
+---
+when: ${isDesktop}
+include: included-scenario

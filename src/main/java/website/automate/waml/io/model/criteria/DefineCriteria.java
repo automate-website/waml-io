@@ -1,22 +1,25 @@
 package website.automate.waml.io.model.criteria;
 
-import java.util.Collections;
 import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
 
 public class DefineCriteria implements Criteria {
 
   private static final String DEFAULT_CRITERION_NAME = "facts";
   
-  private Map<String, String> facts = Collections.emptyMap();
+  private Map<String, Object> facts;
   
-  public Map<String, String> getFacts() {
+  @JsonCreator
+  public DefineCriteria(Map<String, Object> facts){
+    super();
+    this.facts = facts;
+  }
+  
+  public Map<String, Object> getFacts() {
       return facts;
   }
 
-  public void setFacts(Map<String, String> facts) {
-      this.facts = facts;
-  }
-  
   @Override
   public boolean canBeShortNotated(){
     return true;
@@ -28,7 +31,7 @@ public class DefineCriteria implements Criteria {
   }
 
   @Override
-  public Map<String, String> getDefaultCriterionValue() {
+  public Map<String, Object> getDefaultCriterionValue() {
     return facts;
   }
 }

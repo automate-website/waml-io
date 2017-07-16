@@ -4,7 +4,9 @@ import website.automate.waml.io.model.criteria.OpenCriteria;
 
 public class OpenAction extends BasicAction {
 
-  private OpenCriteria open = new OpenCriteria();
+  static final String TYPE_NAME = "open";
+  
+  private OpenCriteria open;
 
   public OpenCriteria getOpen() {
     return open;

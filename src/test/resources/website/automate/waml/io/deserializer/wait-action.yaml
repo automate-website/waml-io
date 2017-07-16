@@ -1,4 +1,0 @@
----
-when: ${isDesktop}
-wait:
-  time: 100

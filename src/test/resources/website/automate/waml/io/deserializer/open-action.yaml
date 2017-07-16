@@ -1,4 +1,0 @@
----
-when: ${isDesktop}
-open:
-  url: https://www.google.de

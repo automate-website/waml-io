@@ -4,7 +4,9 @@ import website.automate.waml.io.model.criteria.IncludeCriteria;
 
 public class IncludeAction extends BasicAction {
 
-  private IncludeCriteria include = new IncludeCriteria();
+  static final String TYPE_NAME = "include";
+  
+  private IncludeCriteria include;
 
   public IncludeCriteria getInclude() {
     return include;

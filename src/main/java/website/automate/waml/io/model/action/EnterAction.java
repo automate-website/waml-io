@@ -3,8 +3,10 @@ package website.automate.waml.io.model.action;
 import website.automate.waml.io.model.criteria.EnterCriteria;
 
 public class EnterAction extends BasicAction {
-
-  private EnterCriteria enter = new EnterCriteria();
+  
+  static final String TYPE_NAME = "enter";
+  
+  private EnterCriteria enter;
 
   public EnterCriteria getEnter() {
     return enter;

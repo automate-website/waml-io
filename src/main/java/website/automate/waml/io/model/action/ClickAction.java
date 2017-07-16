@@ -4,7 +4,9 @@ import website.automate.waml.io.model.criteria.FilterCriteria;
 
 public class ClickAction extends BasicAction {
 
-  private FilterCriteria click = new FilterCriteria();
+  static final String TYPE_NAME = "click";
+  
+  private FilterCriteria click;
 
   public FilterCriteria getClick() {
     return click;

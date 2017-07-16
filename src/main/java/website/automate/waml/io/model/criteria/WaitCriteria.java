@@ -4,16 +4,21 @@ public class WaitCriteria implements Criteria {
 
   private static final String DEFAULT_CRITERION_NAME = "time";
   
+  public WaitCriteria(String time){
+    super();
+    this.time = time;
+  }
+  
+  public WaitCriteria(int number){
+    this(Integer.toString(number));
+  }
+  
   private String time;
   
   public String getTime() {
       return time;
   }
 
-  public void setTime(String time) {
-      this.time = time;
-  }
-  
   @Override
   public boolean canBeShortNotated() {
     return true;

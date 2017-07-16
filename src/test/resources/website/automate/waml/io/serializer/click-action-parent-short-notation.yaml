@@ -1,4 +1,0 @@
----
-click:
-  selector: "a.sign-up"
-  parent: "div.main"

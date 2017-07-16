@@ -1,6 +1,0 @@
----
-register: signUpButton
-click:
-  selector: a.sign-up
-  text: 'Join now for free!'
-
