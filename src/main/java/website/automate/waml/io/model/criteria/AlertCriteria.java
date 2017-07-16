@@ -14,6 +14,7 @@ public class AlertCriteria implements Criteria{
   private String input;
 
   public AlertCriteria(String confirm){
+    super();
     this.confirm = confirm;
   }
   

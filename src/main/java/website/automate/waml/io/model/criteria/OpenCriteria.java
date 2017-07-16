@@ -5,6 +5,7 @@ public class OpenCriteria implements Criteria {
   private static final String DEFAULT_CRITERION_NAME = "url";
 
   public OpenCriteria(String url) {
+    super();
     this.url = url;
   }
 

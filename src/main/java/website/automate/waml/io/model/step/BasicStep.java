@@ -7,6 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import website.automate.waml.io.deserializer.UnknownStepException;
 
 
@@ -36,6 +39,18 @@ public abstract class BasicStep implements Step {
 
   private String invert;
   
+  @JsonCreator
+  public BasicStep(@JsonProperty("when") String when,
+      @JsonProperty("register") String register, 
+      @JsonProperty("timeout") String timeout,
+      @JsonProperty("invert") String invert) {
+    super();
+    this.when = when;
+    this.register = register;
+    this.timeout = timeout;
+    this.invert = invert;
+  }
+  
   public static Class<? extends Step> findClazzByNames(final Collection<String> names){
     Optional<String> matchinTypeName = TYPE_NAMES.keySet().stream().filter(typeName -> names.contains(typeName)).findFirst();
     if(matchinTypeName.isPresent()){
@@ -49,17 +64,9 @@ public abstract class BasicStep implements Step {
     return when;
   }
 
-  public void setWhen(String when) {
-    this.when = when;
-  }
-
   @Override
   public String getRegister() {
     return register;
-  }
-
-  public void setRegister(String register) {
-    this.register = register;
   }
 
   @Override
@@ -67,15 +74,7 @@ public abstract class BasicStep implements Step {
     return timeout;
   }
 
-  public void setTimeout(String timeout) {
-    this.timeout = timeout;
-  }
-
   public String getInvert() {
     return invert;
-  }
-
-  public void setInvert(String invert) {
-    this.invert = invert;
   }
 }
