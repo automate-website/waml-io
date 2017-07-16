@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.action;
+package website.automate.waml.io.model.step;
 
 import website.automate.waml.io.model.criteria.DefineCriteria;
 
-public class DefineAction extends BasicAction {
+public class DefineStep extends BasicStep {
 
   static final String TYPE_NAME = "define";
   

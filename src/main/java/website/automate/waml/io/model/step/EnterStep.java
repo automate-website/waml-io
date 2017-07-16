@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.action;
+package website.automate.waml.io.model.step;
 
 import website.automate.waml.io.model.criteria.EnterCriteria;
 
-public class EnterAction extends BasicAction {
+public class EnterStep extends BasicStep {
   
   static final String TYPE_NAME = "enter";
   

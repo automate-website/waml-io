@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.action;
+package website.automate.waml.io.model.step;
 
 import website.automate.waml.io.model.criteria.FilterCriteria;
 
-public class EnsureAction extends BasicAction {
+public class EnsureStep extends BasicStep {
 
   static final String TYPE_NAME = "ensure";
   

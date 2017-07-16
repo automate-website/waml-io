@@ -17,7 +17,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import website.automate.waml.io.model.Scenario;
+import website.automate.waml.io.model.scenario.Scenario;
 
 @RunWith(Parameterized.class)
 public class WamlIT {
@@ -32,10 +32,10 @@ public class WamlIT {
   @Test
   public void scenarioIsDeserializedAndSerialized() throws Exception {
     List<Scenario> scenarios = WAML_READER.read(new FileInputStream(scenariosFile));
-    String expectedSerializedAction = readFile(scenariosFile);
-    String actualSerializedAction = serializeScenarios(scenarios);
+    String expectedSerializedScenarios = readFile(scenariosFile);
+    String actualSerializedScenarios = serializeScenarios(scenarios);
 
-    assertEquals(expectedSerializedAction, actualSerializedAction);
+    assertEquals(expectedSerializedScenarios, actualSerializedScenarios);
   }
 
   @Parameters(name = "{0}")

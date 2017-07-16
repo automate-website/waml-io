@@ -12,9 +12,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import website.automate.waml.io.model.Scenario;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import website.automate.waml.io.model.scenario.Scenario;
 
 @RunWith(MockitoJUnitRunner.class)
 public class WamlWriterTest {

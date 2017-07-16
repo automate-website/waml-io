@@ -1,4 +1,4 @@
-package website.automate.waml.io.model.action;
+package website.automate.waml.io.model.step;
 
 import static java.text.MessageFormat.format;
 
@@ -7,25 +7,25 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import website.automate.waml.io.deserializer.UnknownActionException;
+import website.automate.waml.io.deserializer.UnknownStepException;
 
 
-public abstract class BasicAction implements Action {
+public abstract class BasicStep implements Step {
 
-  public static final Map<String, Class<? extends Action>> TYPE_NAMES;
+  public static final Map<String, Class<? extends Step>> TYPE_NAMES;
   
   static {
     TYPE_NAMES = new HashMap<>();
-    TYPE_NAMES.put(AlertAction.TYPE_NAME, AlertAction.class);
-    TYPE_NAMES.put(ClickAction.TYPE_NAME, ClickAction.class);
-    TYPE_NAMES.put(DefineAction.TYPE_NAME, DefineAction.class);
-    TYPE_NAMES.put(EnsureAction.TYPE_NAME, EnsureAction.class);
-    TYPE_NAMES.put(EnterAction.TYPE_NAME, EnterAction.class);
-    TYPE_NAMES.put(IncludeAction.TYPE_NAME, IncludeAction.class);
-    TYPE_NAMES.put(MoveAction.TYPE_NAME, MoveAction.class);
-    TYPE_NAMES.put(OpenAction.TYPE_NAME, OpenAction.class);
-    TYPE_NAMES.put(SelectAction.TYPE_NAME, SelectAction.class);
-    TYPE_NAMES.put(WaitAction.TYPE_NAME, WaitAction.class);
+    TYPE_NAMES.put(AlertStep.TYPE_NAME, AlertStep.class);
+    TYPE_NAMES.put(ClickStep.TYPE_NAME, ClickStep.class);
+    TYPE_NAMES.put(DefineStep.TYPE_NAME, DefineStep.class);
+    TYPE_NAMES.put(EnsureStep.TYPE_NAME, EnsureStep.class);
+    TYPE_NAMES.put(EnterStep.TYPE_NAME, EnterStep.class);
+    TYPE_NAMES.put(IncludeStep.TYPE_NAME, IncludeStep.class);
+    TYPE_NAMES.put(MoveStep.TYPE_NAME, MoveStep.class);
+    TYPE_NAMES.put(OpenStep.TYPE_NAME, OpenStep.class);
+    TYPE_NAMES.put(SelectStep.TYPE_NAME, SelectStep.class);
+    TYPE_NAMES.put(WaitStep.TYPE_NAME, WaitStep.class);
   }
   
   private String when;
@@ -36,12 +36,12 @@ public abstract class BasicAction implements Action {
 
   private String invert;
   
-  public static Class<? extends Action> findClazzByNames(final Collection<String> names){
+  public static Class<? extends Step> findClazzByNames(final Collection<String> names){
     Optional<String> matchinTypeName = TYPE_NAMES.keySet().stream().filter(typeName -> names.contains(typeName)).findFirst();
     if(matchinTypeName.isPresent()){
       return TYPE_NAMES.get(matchinTypeName.get());
     }
-    throw new UnknownActionException(format("Could not identify any step using keys: {0}.", names));
+    throw new UnknownStepException(format("Could not identify any step using keys: {0}.", names));
   }
   
   @Override

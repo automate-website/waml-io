@@ -6,9 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-import website.automate.waml.io.model.Scenario;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import website.automate.waml.io.model.scenario.Scenario;
 
 public class WamlReader {
 

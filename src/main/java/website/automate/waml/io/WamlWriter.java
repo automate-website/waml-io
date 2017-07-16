@@ -3,9 +3,9 @@ package website.automate.waml.io;
 import java.io.OutputStream;
 import java.util.List;
 
-import website.automate.waml.io.model.Scenario;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import website.automate.waml.io.model.scenario.Scenario;
 
 public class WamlWriter {
 	

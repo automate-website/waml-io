@@ -14,26 +14,26 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import website.automate.waml.io.model.action.Action;
+import website.automate.waml.io.model.step.Step;
 
 @RunWith(Parameterized.class)
-public class WamlActionIT {
+public class WamlStepIT {
 
   @Parameter
-  public File actionFile;
+  public File stepFile;
 
   @Test
   public void scenarioIsDeserializedAndSerialized() throws Exception {
-    Action action = getObjectMapper().readValue(actionFile, Action.class);
-    String expectedSerializedAction = readFile(actionFile);
-    String actualSerializedAction = getObjectMapper().writeValueAsString(action);
+    Step step = getObjectMapper().readValue(stepFile, Step.class);
+    String expectedSerializedStep = readFile(stepFile);
+    String actualSerializedStep = getObjectMapper().writeValueAsString(step);
 
-    assertEquals(expectedSerializedAction, actualSerializedAction);
+    assertEquals(expectedSerializedStep, actualSerializedStep);
   }
 
   @Parameters(name = "{0}")
   public static Iterable<? extends Object> data() {
-    Collection<File> files = getSamples("website/automate/waml/io/model/action");
+    Collection<File> files = getSamples("website/automate/waml/io/model/step");
     return files;
   }
 }

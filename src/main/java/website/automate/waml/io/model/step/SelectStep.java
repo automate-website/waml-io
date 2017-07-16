@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.action;
+package website.automate.waml.io.model.step;
 
 import website.automate.waml.io.model.criteria.FilterCriteria;
 
-public class SelectAction extends BasicAction {
+public class SelectStep extends BasicStep {
 
   static final String TYPE_NAME = "select";
   

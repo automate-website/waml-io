@@ -1,9 +1,9 @@
-package website.automate.waml.io.model.action;
+package website.automate.waml.io.model.step;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({"when", "invert", "register", "timeout"})
-public interface Action {
+public interface Step {
 
   String getWhen();
 

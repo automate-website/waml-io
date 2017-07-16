@@ -14,7 +14,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import website.automate.waml.io.model.Scenario;
+import website.automate.waml.io.model.scenario.Scenario;
 
 @RunWith(Parameterized.class)
 public class WamlScenarioIT {

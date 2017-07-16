@@ -1,4 +1,4 @@
-package website.automate.waml.io.model;
+package website.automate.waml.io.model.scenario;
 
 import java.util.List;
 import java.util.Objects;
@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import website.automate.waml.io.model.action.Action;
+import website.automate.waml.io.model.step.Step;
 
 @JsonPropertyOrder({"name", "precedence", "description", "fragment", "timeout", "when", "steps"})
 public class Scenario {
@@ -24,14 +24,14 @@ public class Scenario {
 
   private String when;
 
-  private List<Action> steps;
+  private List<Step> steps;
 
   @JsonCreator
   public Scenario(@JsonProperty("name") String name,
       @JsonProperty("precendence") Integer precedence,
       @JsonProperty("description") String description, @JsonProperty("fragment") Boolean fragment,
       @JsonProperty("timeout") String timeout, @JsonProperty("when") String when,
-      @JsonProperty("steps") List<Action> steps) {
+      @JsonProperty("steps") List<Step> steps) {
     super();
     this.name = name;
     this.precedence = precedence;
@@ -65,7 +65,7 @@ public class Scenario {
     return when;
   }
 
-  public List<Action> getSteps() {
+  public List<Step> getSteps() {
     return steps;
   }
 
