@@ -1,10 +1,11 @@
-package website.automate.waml.io;
+package website.automate.waml.io.writer;
 
 import java.io.OutputStream;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import website.automate.waml.io.WamlConfig;
 import website.automate.waml.io.model.scenario.Scenario;
 
 public class WamlWriter {

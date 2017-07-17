@@ -1,4 +1,4 @@
-package website.automate.waml.io;
+package website.automate.waml.io.reader;
 
 public class WamlDeserializationException extends RuntimeException {
 

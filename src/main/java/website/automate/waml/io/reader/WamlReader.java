@@ -1,4 +1,4 @@
-package website.automate.waml.io;
+package website.automate.waml.io.reader;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import website.automate.waml.io.WamlConfig;
 import website.automate.waml.io.model.scenario.Scenario;
 
 public class WamlReader {

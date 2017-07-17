@@ -1,4 +1,4 @@
-package website.automate.waml.io;
+package website.automate.waml.io.writer;
 
 import static org.mockito.Mockito.doThrow;
 
@@ -15,6 +15,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import website.automate.waml.io.model.scenario.Scenario;
+import website.automate.waml.io.writer.WamlWriter;
 
 @RunWith(MockitoJUnitRunner.class)
 public class WamlWriterTest {

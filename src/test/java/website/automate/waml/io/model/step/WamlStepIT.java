@@ -1,4 +1,4 @@
-package website.automate.waml.io;
+package website.automate.waml.io.model.step;
 
 import static org.junit.Assert.assertEquals;
 import static website.automate.waml.io.WamlTestUtils.getObjectMapper;
@@ -14,26 +14,26 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import website.automate.waml.io.model.scenario.Scenario;
+import website.automate.waml.io.model.step.Step;
 
 @RunWith(Parameterized.class)
-public class WamlScenarioIT {
+public class WamlStepIT {
 
   @Parameter
-  public File scenarioFile;
+  public File stepFile;
 
   @Test
   public void scenarioIsDeserializedAndSerialized() throws Exception {
-    Scenario scenario = getObjectMapper().readValue(scenarioFile, Scenario.class);
-    String expectedSerializedScenario = readFile(scenarioFile);
-    String actualSerializedScenario = getObjectMapper().writeValueAsString(scenario);
+    Step step = getObjectMapper().readValue(stepFile, Step.class);
+    String expectedSerializedStep = readFile(stepFile);
+    String actualSerializedStep = getObjectMapper().writeValueAsString(step);
 
-    assertEquals(expectedSerializedScenario, actualSerializedScenario);
+    assertEquals(expectedSerializedStep, actualSerializedStep);
   }
 
   @Parameters(name = "{0}")
   public static Iterable<? extends Object> data() {
-    Collection<File> files = getSamples("website/automate/waml/io/model/scenario");
+    Collection<File> files = getSamples("website/automate/waml/io/model/step");
     return files;
   }
 }

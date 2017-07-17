@@ -1,4 +1,4 @@
-package website.automate.waml.io;
+package website.automate.waml.io.writer;
 
 public class WamlSerializationException extends RuntimeException {
 

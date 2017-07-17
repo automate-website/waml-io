@@ -18,6 +18,8 @@ import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 import website.automate.waml.io.model.scenario.Scenario;
+import website.automate.waml.io.reader.WamlReader;
+import website.automate.waml.io.writer.WamlWriter;
 
 @RunWith(Parameterized.class)
 public class WamlIT {

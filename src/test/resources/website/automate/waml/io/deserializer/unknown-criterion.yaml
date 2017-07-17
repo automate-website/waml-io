@@ -1,0 +1,3 @@
+when: true
+click:
+  unknown: div.dashboard

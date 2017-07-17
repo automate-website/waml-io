@@ -1,6 +1,6 @@
 package website.automate.waml.io.deserializer;
 
-import website.automate.waml.io.WamlDeserializationException;
+import website.automate.waml.io.reader.WamlDeserializationException;
 
 public class UnknownStepException extends WamlDeserializationException {
 
