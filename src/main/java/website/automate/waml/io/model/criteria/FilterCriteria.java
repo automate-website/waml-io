@@ -60,6 +60,6 @@ public class FilterCriteria implements Criteria {
 
   @Override
   public String getDefaultCriterionValue() {
-    return selector;
+    return getSelector();
   }
 }

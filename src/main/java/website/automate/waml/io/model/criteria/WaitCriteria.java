@@ -31,7 +31,7 @@ public class WaitCriteria implements Criteria {
 
   @Override
   public String getDefaultCriterionValue() {
-    return time;
+    return getTime();
   }
 
 }

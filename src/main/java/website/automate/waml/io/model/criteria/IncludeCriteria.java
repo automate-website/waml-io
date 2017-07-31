@@ -27,6 +27,6 @@ public class IncludeCriteria implements Criteria {
 
   @Override
   public String getDefaultCriterionValue() {
-    return scenario;
+    return getScenario();
   }
 }

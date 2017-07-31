@@ -27,7 +27,7 @@ public class OpenCriteria implements Criteria {
 
   @Override
   public String getDefaultCriterionValue() {
-    return url;
+    return getUrl();
   }
 
 }

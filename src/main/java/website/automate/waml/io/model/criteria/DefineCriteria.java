@@ -32,6 +32,6 @@ public class DefineCriteria implements Criteria {
 
   @Override
   public Map<String, Object> getDefaultCriterionValue() {
-    return facts;
+    return getFacts();
   }
 }

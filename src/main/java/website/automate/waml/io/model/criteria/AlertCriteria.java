@@ -50,6 +50,6 @@ public class AlertCriteria implements Criteria{
 
   @Override
   public String getDefaultCriterionValue() {
-    return confirm;
+    return getConfirm();
   }
 }
