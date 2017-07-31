@@ -1,0 +1,6 @@
+---
+when: ${isDesktop}
+timeout: 100
+select:
+  selector: a.sign-up
+  value: val
