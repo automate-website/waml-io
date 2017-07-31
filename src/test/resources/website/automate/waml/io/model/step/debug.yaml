@@ -1,0 +1,6 @@
+---
+when: ${isDesktop}
+timeout: 100
+debug:
+  msg: ${foo}
+  verbosity: ${low}
