@@ -24,8 +24,4 @@ public class IncludeStep extends BasicStep {
   public IncludeCriteria getInclude() {
     return include;
   }
-
-  public void setInclude(IncludeCriteria include) {
-    this.include = include;
-  }
 }
