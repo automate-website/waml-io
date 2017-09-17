@@ -1,0 +1,6 @@
+---
+when: ${isDesktop}
+unless: ${!isDesktop}
+invert: "false"
+execute: |
+  document.body.style.backgroundColor = "red";

@@ -30,6 +30,7 @@ public abstract class BasicStep implements Step {
     TYPE_NAMES.put(SelectStep.TYPE_NAME, SelectStep.class);
     TYPE_NAMES.put(WaitStep.TYPE_NAME, WaitStep.class);
     TYPE_NAMES.put(DebugStep.TYPE_NAME, DebugStep.class);
+    TYPE_NAMES.put(ExecuteStep.TYPE_NAME, ExecuteStep.class);
   }
   
   private String when;
