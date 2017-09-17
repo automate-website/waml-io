@@ -58,7 +58,8 @@ public class FilterCriteria implements Criteria {
   public boolean canBeShortNotated() {
     return text == null
         && value == null
-        && parent == null;
+        && parent == null
+        && element == null;
   }
 
   @Override
