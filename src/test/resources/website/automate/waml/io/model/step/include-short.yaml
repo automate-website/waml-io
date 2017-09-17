@@ -2,5 +2,6 @@
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
+invert: "false"
 register: foo
 include: included-scenario

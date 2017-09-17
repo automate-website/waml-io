@@ -2,6 +2,7 @@
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
+invert: "false"
 register: foo
 move:
   selector: a.sign-up

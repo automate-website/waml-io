@@ -1,6 +1,7 @@
 ---
 when: ${isDesktop}
 unless: ${!isDesktop}
+invert: "false"
 register: foo
 define:
   keyA: valueA

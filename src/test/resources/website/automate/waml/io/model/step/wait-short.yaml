@@ -1,5 +1,6 @@
 ---
 when: ${isDesktop}
 unless: ${!isDesktop}
+invert: "false"
 register: foo
 wait: 100

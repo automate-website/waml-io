@@ -2,5 +2,6 @@
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 10
+invert: "false"
 register: foo
 open: https://www.google.de

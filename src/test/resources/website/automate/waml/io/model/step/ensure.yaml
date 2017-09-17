@@ -1,8 +1,8 @@
 ---
 when: ${isDesktop}
 unless: ${!isDesktop}
-invert: "true"
 timeout: 100
+invert: "false"
 register: foo
 ensure:
   selector: a.sign-up
