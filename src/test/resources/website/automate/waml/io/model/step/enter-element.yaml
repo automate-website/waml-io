@@ -1,0 +1,9 @@
+---
+when: ${isDesktop}
+unless: ${!isDesktop}
+timeout: 100
+invert: "false"
+register: foo
+enter:
+  element: email
+  input: is

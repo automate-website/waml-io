@@ -12,9 +12,11 @@ public class FilterCriteria implements Criteria {
   private String text;
 
   private String value;
-
-  private String parent;
   
+  private String parent;
+
+  private String element;
+
   public FilterCriteria(String selector){
     super();
     this.selector = selector;
@@ -23,11 +25,13 @@ public class FilterCriteria implements Criteria {
   @JsonCreator
   public FilterCriteria(@JsonProperty("selector") String selector, 
       @JsonProperty("text") String text, @JsonProperty("value") String value,
-      @JsonProperty("parent") String parent){
+      @JsonProperty("parent") String parent,
+      @JsonProperty("element") String element){
     this(selector);
     this.text = text;
     this.value = value;
     this.parent = parent;
+    this.element = element;
   }
 
   public String getSelector() {
@@ -44,6 +48,10 @@ public class FilterCriteria implements Criteria {
 
   public String getParent() {
     return parent;
+  }
+
+  public String getElement() {
+    return element;
   }
 
   @Override

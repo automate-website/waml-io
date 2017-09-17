@@ -12,8 +12,9 @@ public class EnterCriteria extends FilterCriteria {
   @JsonCreator
   public EnterCriteria(@JsonProperty("selector") String selector, 
       @JsonProperty("text") String text, @JsonProperty("value") String value,
-      @JsonProperty("parent") String parent, @JsonProperty("input")String input) {
-    super(selector, text, value, parent);
+      @JsonProperty("parent") String parent, @JsonProperty("input")String input,
+      @JsonProperty("element") String element) {
+    super(selector, text, value, parent, element);
     this.input = input;
   }
 
