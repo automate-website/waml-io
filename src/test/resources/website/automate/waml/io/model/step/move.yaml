@@ -2,6 +2,7 @@
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
+register: foo
 move:
   selector: a.sign-up
   text: Join now for free!

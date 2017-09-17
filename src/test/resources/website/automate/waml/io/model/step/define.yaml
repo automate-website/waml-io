@@ -1,6 +1,7 @@
 ---
 when: ${isDesktop}
 unless: ${!isDesktop}
+register: foo
 define:
   keyA: valueA
   keyB: valueB

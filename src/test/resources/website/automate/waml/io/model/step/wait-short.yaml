@@ -1,4 +1,5 @@
 ---
 when: ${isDesktop}
 unless: ${!isDesktop}
+register: foo
 wait: 100

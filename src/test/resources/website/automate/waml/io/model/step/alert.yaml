@@ -1,8 +1,8 @@
 ---
 when: ${isDesktop}
 unless: ${!isDesktop}
-register: foo
 timeout: 100
+register: foo
 alert:
   text: foo
   input: bar
