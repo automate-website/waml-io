@@ -1,3 +1,5 @@
 ---
 when: ${isDesktop}
+unless: ${!isDesktop}
+timeout: 100
 include: included-scenario

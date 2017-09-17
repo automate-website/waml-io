@@ -13,11 +13,12 @@ public class MoveStep extends BasicStep {
 
   @JsonCreator
   public MoveStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("move") FilterCriteria move){
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.move = move;
   }
   

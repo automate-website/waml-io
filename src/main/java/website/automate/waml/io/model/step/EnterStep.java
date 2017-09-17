@@ -13,11 +13,12 @@ public class EnterStep extends BasicStep {
   
   @JsonCreator
   public EnterStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("enter") EnterCriteria enter){
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.enter = enter;
   }
 

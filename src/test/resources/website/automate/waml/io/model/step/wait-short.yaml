@@ -1,2 +1,4 @@
 ---
+when: ${isDesktop}
+unless: ${!isDesktop}
 wait: 100

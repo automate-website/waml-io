@@ -34,6 +34,8 @@ public abstract class BasicStep implements Step {
   
   private String when;
 
+  private String unless;
+  
   private String register;
 
   private String timeout;
@@ -42,11 +44,13 @@ public abstract class BasicStep implements Step {
   
   @JsonCreator
   public BasicStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert) {
     super();
     this.when = when;
+    this.unless = unless;
     this.register = register;
     this.timeout = timeout;
     this.invert = invert;
@@ -75,7 +79,14 @@ public abstract class BasicStep implements Step {
     return timeout;
   }
 
+  @Override
   public String getInvert() {
     return invert;
   }
+  
+  @Override
+  public String getUnless() {
+    return unless;
+  }
+
 }

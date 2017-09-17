@@ -13,11 +13,12 @@ public class EnsureStep extends BasicStep {
 
   @JsonCreator
   public EnsureStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("ensure") FilterCriteria ensure){
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.ensure = ensure;
   }
   

@@ -13,11 +13,12 @@ public class WaitStep extends BasicStep {
 
   @JsonCreator
   public WaitStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("wait") WaitCriteria wait) {
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.wait = wait;
   }
 

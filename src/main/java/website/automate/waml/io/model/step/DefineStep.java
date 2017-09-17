@@ -13,11 +13,12 @@ public class DefineStep extends BasicStep {
 
   @JsonCreator
   public DefineStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("define") DefineCriteria define){
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.define = define;
   }
   

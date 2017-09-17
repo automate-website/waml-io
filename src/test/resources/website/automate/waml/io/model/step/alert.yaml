@@ -1,5 +1,6 @@
 ---
 when: ${isDesktop}
+unless: ${!isDesktop}
 register: foo
 timeout: 100
 alert:

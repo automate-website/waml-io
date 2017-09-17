@@ -13,11 +13,12 @@ public class AlertStep extends BasicStep {
   
   @JsonCreator
   public AlertStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("alert") AlertCriteria alert){
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.alert = alert;
   }
   

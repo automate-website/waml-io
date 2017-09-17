@@ -1,5 +1,6 @@
 ---
 when: ${isDesktop}
+unless: ${!isDesktop}
 invert: "true"
 timeout: 100
 ensure:

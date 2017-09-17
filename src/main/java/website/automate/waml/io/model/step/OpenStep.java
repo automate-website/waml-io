@@ -13,11 +13,12 @@ public class OpenStep extends BasicStep {
 
   @JsonCreator
   public OpenStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("open") OpenCriteria open){
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.open = open;
   }
   

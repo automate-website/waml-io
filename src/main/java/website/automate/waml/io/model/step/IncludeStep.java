@@ -13,11 +13,12 @@ public class IncludeStep extends BasicStep {
 
   @JsonCreator
   public IncludeStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("include") IncludeCriteria include){
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.include = include;
   }
   

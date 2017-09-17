@@ -13,11 +13,12 @@ public class SelectStep extends BasicStep {
 
   @JsonCreator
   public SelectStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("select") FilterCriteria select){
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.select = select;
   }
   

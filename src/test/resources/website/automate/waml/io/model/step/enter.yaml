@@ -1,5 +1,6 @@
 ---
 when: ${isDesktop}
+unless: ${!isDesktop}
 timeout: 100
 enter:
   selector: a.sign-up

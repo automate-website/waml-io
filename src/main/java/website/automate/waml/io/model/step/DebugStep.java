@@ -13,11 +13,12 @@ public class DebugStep extends BasicStep {
 
   @JsonCreator
   public DebugStep(@JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
       @JsonProperty("debug") DebugCriteria debug){
-    super(when, register, timeout, invert);
+    super(when, unless, register, timeout, invert);
     this.debug = debug;
   }
   
