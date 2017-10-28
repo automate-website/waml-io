@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import website.automate.waml.io.model.step.Step;
 
-@JsonPropertyOrder({"name", "precedence", "description", "fragment", "timeout", "when", "steps"})
+@JsonPropertyOrder({"name", "precedence", "description", "fragment", "timeout", "when", "unless", "steps"})
 public class Scenario {
 
   private String name;
@@ -23,6 +23,8 @@ public class Scenario {
   private String timeout;
 
   private String when;
+  
+  private String unless;
 
   private List<Step> steps;
 
@@ -31,6 +33,7 @@ public class Scenario {
       @JsonProperty("precendence") Integer precedence,
       @JsonProperty("description") String description, @JsonProperty("fragment") Boolean fragment,
       @JsonProperty("timeout") String timeout, @JsonProperty("when") String when,
+      @JsonProperty("unless") String unless,
       @JsonProperty("steps") List<Step> steps) {
     super();
     this.name = name;
@@ -39,6 +42,7 @@ public class Scenario {
     this.fragment = fragment;
     this.timeout = timeout;
     this.when = when;
+    this.unless = unless;
     this.steps = steps;
   }
   public String getName() {
@@ -63,6 +67,10 @@ public class Scenario {
 
   public String getWhen() {
     return when;
+  }
+  
+  public String getUnless() {
+    return unless;
   }
 
   public List<Step> getSteps() {
