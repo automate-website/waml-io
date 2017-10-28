@@ -46,8 +46,8 @@ public class WamlIT {
   }
 
   private String serializeScenarios(List<Scenario> scenarios) throws Exception {
-    ByteArrayOutputStream scenariosOutputStrema = new ByteArrayOutputStream();
-    WAML_WRITER.write(scenariosOutputStrema, scenarios);
-    return scenariosOutputStrema.toString(StandardCharsets.UTF_8.name());
+    ByteArrayOutputStream scenariosOutputStream = new ByteArrayOutputStream();
+    WAML_WRITER.write(scenariosOutputStream, scenarios);
+    return scenariosOutputStream.toString(StandardCharsets.UTF_8.name());
   }
 }
