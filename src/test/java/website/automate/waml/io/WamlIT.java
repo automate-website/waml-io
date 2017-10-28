@@ -16,8 +16,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-
-import website.automate.waml.io.model.scenario.Scenario;
+import website.automate.waml.io.model.Scenario;
 import website.automate.waml.io.reader.WamlReader;
 import website.automate.waml.io.writer.WamlWriter;
 

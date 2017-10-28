@@ -9,7 +9,7 @@ import java.util.Scanner;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import website.automate.waml.io.WamlConfig;
-import website.automate.waml.io.model.scenario.Scenario;
+import website.automate.waml.io.model.Scenario;
 
 public class WamlReader {
 

@@ -1,4 +1,4 @@
-package website.automate.waml.io.model.scenario;
+package website.automate.waml.io.model;
 
 import static org.junit.Assert.assertEquals;
 import static website.automate.waml.io.WamlTestUtils.getObjectMapper;
@@ -13,8 +13,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-
-import website.automate.waml.io.model.scenario.Scenario;
+import website.automate.waml.io.model.Scenario;
 
 @RunWith(Parameterized.class)
 public class WamlScenarioIT {
@@ -33,7 +32,7 @@ public class WamlScenarioIT {
 
   @Parameters(name = "{0}")
   public static Iterable<? extends Object> data() {
-    Collection<File> files = getSamples("website/automate/waml/io/model/scenario");
+    Collection<File> files = getSamples("website/automate/waml/io/model");
     return files;
   }
 }

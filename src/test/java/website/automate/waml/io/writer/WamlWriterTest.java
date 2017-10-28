@@ -13,8 +13,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import website.automate.waml.io.model.scenario.Scenario;
+import website.automate.waml.io.model.Scenario;
 import website.automate.waml.io.writer.WamlWriter;
 
 @RunWith(MockitoJUnitRunner.class)

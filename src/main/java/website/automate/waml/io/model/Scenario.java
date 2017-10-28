@@ -1,4 +1,4 @@
-package website.automate.waml.io.model.scenario;
+package website.automate.waml.io.model;
 
 import java.util.List;
 import java.util.Objects;
