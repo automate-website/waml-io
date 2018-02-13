@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import website.automate.waml.io.model.criteria.WaitCriteria;
+import website.automate.waml.io.report.StepReport;
 
 public class WaitStep extends BasicStep {
 
@@ -17,12 +18,18 @@ public class WaitStep extends BasicStep {
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
-      @JsonProperty("wait") WaitCriteria wait) {
-    super(when, unless, register, timeout, invert);
+      @JsonProperty("wait") WaitCriteria wait,
+      @JsonProperty("report") StepReport report) {
+    super(when, unless, register, timeout, invert, report);
     this.wait = wait;
   }
 
   public WaitCriteria getWait() {
     return wait;
+  }
+
+  @Override
+  public String getName() {
+    return TYPE_NAME;
   }
 }

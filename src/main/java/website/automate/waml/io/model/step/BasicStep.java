@@ -11,11 +11,12 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import website.automate.waml.io.deserializer.UnknownStepException;
+import website.automate.waml.io.report.StepReport;
 
 
 public abstract class BasicStep implements Step {
 
-  public static final Map<String, Class<? extends Step>> TYPE_NAMES;
+public static final Map<String, Class<? extends Step>> TYPE_NAMES;
   
   static {
     TYPE_NAMES = new HashMap<>();
@@ -43,18 +44,22 @@ public abstract class BasicStep implements Step {
 
   private String invert;
   
+  private StepReport report;
+  
   @JsonCreator
   public BasicStep(@JsonProperty("when") String when,
       @JsonProperty("unless") String unless,
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
-      @JsonProperty("invert") String invert) {
+      @JsonProperty("invert") String invert,
+      @JsonProperty("report") StepReport report) {
     super();
     this.when = when;
     this.unless = unless;
     this.register = register;
     this.timeout = timeout;
     this.invert = invert;
+    this.report = report;
   }
   
   public static Class<? extends Step> findClazzByNames(final Collection<String> names){
@@ -88,6 +93,11 @@ public abstract class BasicStep implements Step {
   @Override
   public String getUnless() {
     return unless;
+  }
+  
+  @Override
+  public StepReport getReport() {
+      return report;
   }
 
 }

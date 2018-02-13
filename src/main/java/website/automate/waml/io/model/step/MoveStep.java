@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import website.automate.waml.io.model.criteria.FilterCriteria;
+import website.automate.waml.io.report.StepReport;
 
 public class MoveStep extends BasicStep {
 
@@ -17,12 +18,18 @@ public class MoveStep extends BasicStep {
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
-      @JsonProperty("move") FilterCriteria move){
-    super(when, unless, register, timeout, invert);
+      @JsonProperty("move") FilterCriteria move,
+      @JsonProperty("report") StepReport report){
+    super(when, unless, register, timeout, invert, report);
     this.move = move;
   }
   
   public FilterCriteria getMove() {
     return move;
+  }
+
+  @Override
+  public String getName() {
+    return TYPE_NAME;
   }
 }

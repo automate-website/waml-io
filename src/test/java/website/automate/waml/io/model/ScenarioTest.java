@@ -50,6 +50,6 @@ public class ScenarioTest {
   }
 
   private Scenario createScenario(String name) {
-    return new Scenario(name, null, null, null, null, null, null, null);
+    return new Scenario(name, null, null, null, null, null, null, null, null);
   }
 }

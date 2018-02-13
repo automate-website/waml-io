@@ -1,0 +1,15 @@
+---
+when: ${isDesktop}
+unless: ${!isDesktop}
+timeout: 10
+invert: "false"
+register: foo
+open: https://www.google.de
+report:
+  status: SUCCESS
+  time: 1.0
+  path: test-scenario
+  log:
+  - level: INFO
+    time: 2007-12-24 18:21:00
+    message: Hallo

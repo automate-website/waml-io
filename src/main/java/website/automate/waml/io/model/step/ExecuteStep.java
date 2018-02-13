@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import website.automate.waml.io.model.criteria.ExecuteCriteria;
+import website.automate.waml.io.report.StepReport;
 
 public class ExecuteStep extends BasicStep {
 
@@ -17,12 +18,18 @@ public class ExecuteStep extends BasicStep {
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
-      @JsonProperty("debug") ExecuteCriteria execute){
-    super(when, unless, register, timeout, invert);
+      @JsonProperty("debug") ExecuteCriteria execute,
+      @JsonProperty("report") StepReport report){
+    super(when, unless, register, timeout, invert, report);
     this.execute = execute;
   }
   
   public ExecuteCriteria getExecute() {
     return execute;
+  }
+
+  @Override
+  public String getName() {
+    return TYPE_NAME;
   }
 }

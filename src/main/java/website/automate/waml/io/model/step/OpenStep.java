@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import website.automate.waml.io.model.criteria.OpenCriteria;
+import website.automate.waml.io.report.StepReport;
 
 public class OpenStep extends BasicStep {
 
@@ -17,12 +18,18 @@ public class OpenStep extends BasicStep {
       @JsonProperty("register") String register, 
       @JsonProperty("timeout") String timeout,
       @JsonProperty("invert") String invert,
-      @JsonProperty("open") OpenCriteria open){
-    super(when, unless, register, timeout, invert);
+      @JsonProperty("open") OpenCriteria open,
+      @JsonProperty("report") StepReport report){
+    super(when, unless, register, timeout, invert, report);
     this.open = open;
   }
   
   public OpenCriteria getOpen() {
     return open;
+  }
+
+  @Override
+  public String getName() {
+    return TYPE_NAME;
   }
 }
