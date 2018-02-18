@@ -2,32 +2,40 @@ package website.automate.waml.io.model.criteria;
 
 public class OpenCriteria implements Criteria {
 
-  private static final String DEFAULT_CRITERION_NAME = "url";
+    private static final String DEFAULT_CRITERION_NAME = "url";
 
-  public OpenCriteria(String url) {
-    super();
-    this.url = url;
-  }
+    public OpenCriteria() {
+        super();
+    }
 
-  private String url;
+    public OpenCriteria(String url) {
+        this();
+        this.url = url;
+    }
 
-  public String getUrl() {
-    return url;
-  }
+    private String url;
 
-  @Override
-  public boolean canBeShortNotated() {
-    return true;
-  }
+    public String getUrl() {
+        return url;
+    }
 
-  @Override
-  public String getDefaultCriterionName() {
-    return DEFAULT_CRITERION_NAME;
-  }
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-  @Override
-  public String getDefaultCriterionValue() {
-    return getUrl();
-  }
+    @Override
+    public boolean canBeShortNotated() {
+        return true;
+    }
+
+    @Override
+    public String getDefaultCriterionName() {
+        return DEFAULT_CRITERION_NAME;
+    }
+
+    @Override
+    public String getDefaultCriterionValue() {
+        return getUrl();
+    }
 
 }

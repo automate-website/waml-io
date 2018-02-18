@@ -1,46 +1,50 @@
 package website.automate.waml.io.model.criteria;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class DebugCriteria implements Criteria {
 
-  private static final String DEFAULT_CRITERION_NAME = "msg";
-  
-  private String msg;
-  
-  private String verbosity;
-  
-  public DebugCriteria(@JsonProperty("msg") String msg, 
-      @JsonProperty("verbosity") String verbosity){
-    this(msg);
-    this.verbosity = verbosity;
-  }
-  
-  public DebugCriteria(String msg){
-    super();
-    this.msg = msg;
-  }
-  
-  @Override
-  public boolean canBeShortNotated() {
-    return verbosity == null;
-  }
+    private static final String DEFAULT_CRITERION_NAME = "msg";
 
-  @Override
-  public String getDefaultCriterionName() {
-    return DEFAULT_CRITERION_NAME;
-  }
+    private String msg;
 
-  @Override
-  public Object getDefaultCriterionValue() {
-    return getMsg();
-  }
+    private String verbosity;
 
-  public String getMsg() {
-    return msg;
-  }
+    public DebugCriteria() {
+        super();
+    }
 
-  public String getVerbosity() {
-    return verbosity;
-  }
+    public DebugCriteria(String msg) {
+        this();
+        this.msg = msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public void setVerbosity(String verbosity) {
+        this.verbosity = verbosity;
+    }
+
+    @Override
+    public boolean canBeShortNotated() {
+        return verbosity == null;
+    }
+
+    @Override
+    public String getDefaultCriterionName() {
+        return DEFAULT_CRITERION_NAME;
+    }
+
+    @Override
+    public Object getDefaultCriterionValue() {
+        return getMsg();
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public String getVerbosity() {
+        return verbosity;
+    }
 }

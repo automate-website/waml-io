@@ -1,55 +1,60 @@
 package website.automate.waml.io.model.criteria;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+public class AlertCriteria implements Criteria {
 
-public class AlertCriteria implements Criteria{
+    private static final String DEFAULT_CRITERION_NAME = "confirm";
 
-  private static final String DEFAULT_CRITERION_NAME = "confirm";
+    private String confirm;
 
-  private String confirm;
+    private String text;
 
-  private String text;
+    private String input;
 
-  private String input;
+    public AlertCriteria() {
+        super();
+    }
 
-  public AlertCriteria(String confirm){
-    super();
-    this.confirm = confirm;
-  }
-  
-  @JsonCreator
-  public AlertCriteria(@JsonProperty("confirm") String confirm, 
-      @JsonProperty("text") String text, @JsonProperty("input") String input){
-    this(confirm);
-    this.text = text;
-    this.input = input;
-  }
-  
-  public String getConfirm() {
-    return confirm;
-  }
+    public AlertCriteria(String confirm) {
+        this();
+        this.confirm = confirm;
+    }
 
-  public String getText() {
-    return text;
-  }
+    public String getConfirm() {
+        return confirm;
+    }
 
-  public String getInput() {
-    return input;
-  }
+    public String getText() {
+        return text;
+    }
 
-  @Override
-  public boolean canBeShortNotated() {
-    return text == null && input == null;
-  }
+    public String getInput() {
+        return input;
+    }
 
-  @Override
-  public String getDefaultCriterionName() {
-    return DEFAULT_CRITERION_NAME;
-  }
+    public void setConfirm(String confirm) {
+        this.confirm = confirm;
+    }
 
-  @Override
-  public String getDefaultCriterionValue() {
-    return getConfirm();
-  }
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setInput(String input) {
+        this.input = input;
+    }
+
+    @Override
+    public boolean canBeShortNotated() {
+        return text == null && input == null;
+    }
+
+    @Override
+    public String getDefaultCriterionName() {
+        return DEFAULT_CRITERION_NAME;
+    }
+
+    @Override
+    public String getDefaultCriterionValue() {
+        return getConfirm();
+    }
 }

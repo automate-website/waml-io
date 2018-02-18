@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import website.automate.waml.io.report.StepReport;
 
-@JsonPropertyOrder({"when", "unless", "timeout", "invert", "register"})
+@JsonPropertyOrder({"when", "unless", "timeout", "invert", "register", "report"})
 public interface Step {
 
   String getWhen();

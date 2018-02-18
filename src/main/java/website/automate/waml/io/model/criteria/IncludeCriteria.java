@@ -2,31 +2,39 @@ package website.automate.waml.io.model.criteria;
 
 public class IncludeCriteria implements Criteria {
 
-  private static final String DEFAULT_CRITERION_NAME = "scenario";
-  
-  private String scenario;
-  
-  public IncludeCriteria(String scenario){
-    super();
-    this.scenario = scenario;
-  }
+    private static final String DEFAULT_CRITERION_NAME = "scenario";
 
-  public String getScenario() {
-    return scenario;
-  }
+    private String scenario;
 
-  @Override
-  public boolean canBeShortNotated() {
-    return true;
-  }
+    public IncludeCriteria() {
+        super();
+    }
 
-  @Override
-  public String getDefaultCriterionName() {
-    return DEFAULT_CRITERION_NAME;
-  }
+    public IncludeCriteria(String scenario) {
+        this();
+        this.scenario = scenario;
+    }
 
-  @Override
-  public String getDefaultCriterionValue() {
-    return getScenario();
-  }
+    public String getScenario() {
+        return scenario;
+    }
+
+    public void setScenario(String scenario) {
+        this.scenario = scenario;
+    }
+
+    @Override
+    public boolean canBeShortNotated() {
+        return true;
+    }
+
+    @Override
+    public String getDefaultCriterionName() {
+        return DEFAULT_CRITERION_NAME;
+    }
+
+    @Override
+    public String getDefaultCriterionValue() {
+        return getScenario();
+    }
 }

@@ -1,74 +1,80 @@
 package website.automate.waml.io.model.criteria;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class FilterCriteria implements Criteria {
 
-  private static final String DEFAULT_CRITERION_NAME = "selector";
-  
-  private String selector;
+    private static final String DEFAULT_CRITERION_NAME = "selector";
 
-  private String text;
+    private String selector;
 
-  private String value;
-  
-  private String parent;
+    private String text;
 
-  private String element;
+    private String value;
 
-  public FilterCriteria(String selector){
-    super();
-    this.selector = selector;
-  }
- 
-  @JsonCreator
-  public FilterCriteria(@JsonProperty("selector") String selector, 
-      @JsonProperty("text") String text, @JsonProperty("value") String value,
-      @JsonProperty("parent") String parent,
-      @JsonProperty("element") String element){
-    this(selector);
-    this.text = text;
-    this.value = value;
-    this.parent = parent;
-    this.element = element;
-  }
+    private String parent;
 
-  public String getSelector() {
-    return selector;
-  }
+    private String element;
 
-  public String getText() {
-    return text;
-  }
+    public FilterCriteria(String selector) {
+        this();
+        this.selector = selector;
+    }
 
-  public String getValue() {
-    return value;
-  }
+    public FilterCriteria() {
+        super();
+    }
 
-  public String getParent() {
-    return parent;
-  }
+    public String getSelector() {
+        return selector;
+    }
 
-  public String getElement() {
-    return element;
-  }
+    public String getText() {
+        return text;
+    }
 
-  @Override
-  public boolean canBeShortNotated() {
-    return text == null
-        && value == null
-        && parent == null
-        && element == null;
-  }
+    public String getValue() {
+        return value;
+    }
 
-  @Override
-  public String getDefaultCriterionName() {
-    return DEFAULT_CRITERION_NAME;
-  }
+    public String getParent() {
+        return parent;
+    }
 
-  @Override
-  public String getDefaultCriterionValue() {
-    return getSelector();
-  }
+    public String getElement() {
+        return element;
+    }
+
+    public void setSelector(String selector) {
+        this.selector = selector;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
+
+    public void setElement(String element) {
+        this.element = element;
+    }
+
+    @Override
+    public boolean canBeShortNotated() {
+        return text == null && value == null && parent == null && element == null;
+    }
+
+    @Override
+    public String getDefaultCriterionName() {
+        return DEFAULT_CRITERION_NAME;
+    }
+
+    @Override
+    public String getDefaultCriterionValue() {
+        return getSelector();
+    }
 }

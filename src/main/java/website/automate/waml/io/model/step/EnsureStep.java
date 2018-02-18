@@ -1,35 +1,23 @@
 package website.automate.waml.io.model.step;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import website.automate.waml.io.model.criteria.FilterCriteria;
-import website.automate.waml.io.report.StepReport;
 
 public class EnsureStep extends BasicStep {
 
-  static final String TYPE_NAME = "ensure";
-  
-  private FilterCriteria ensure;
+    static final String TYPE_NAME = "ensure";
 
-  @JsonCreator
-  public EnsureStep(@JsonProperty("when") String when,
-      @JsonProperty("unless") String unless,
-      @JsonProperty("register") String register, 
-      @JsonProperty("timeout") String timeout,
-      @JsonProperty("invert") String invert,
-      @JsonProperty("ensure") FilterCriteria ensure,
-      @JsonProperty("report") StepReport report){
-    super(when, unless, register, timeout, invert, report);
-    this.ensure = ensure;
-  }
-  
-  public FilterCriteria getEnsure() {
-    return ensure;
-  }
+    private FilterCriteria ensure;
 
-  @Override
-  public String getName() {
-    return TYPE_NAME;
-  }
+    public FilterCriteria getEnsure() {
+        return ensure;
+    }
+
+    public void setEnsure(FilterCriteria ensure) {
+        this.ensure = ensure;
+    }
+
+    @Override
+    public String getName() {
+        return TYPE_NAME;
+    }
 }
