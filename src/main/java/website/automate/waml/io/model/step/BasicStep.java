@@ -8,7 +8,6 @@ import java.util.Optional;
 import website.automate.waml.io.deserializer.UnknownStepException;
 import website.automate.waml.io.report.StepReport;
 
-
 public abstract class BasicStep implements Step {
 
     public static final Map<String, Class<? extends Step>> TYPE_NAMES;
@@ -38,6 +37,8 @@ public abstract class BasicStep implements Step {
     private String timeout;
 
     private String invert;
+    
+    private String meta;
 
     private StepReport report;
 
@@ -103,5 +104,13 @@ public abstract class BasicStep implements Step {
 
     public void setReport(StepReport report) {
         this.report = report;
+    }
+
+    public String getMeta() {
+        return meta;
+    }
+
+    public void setMeta(String meta) {
+        this.meta = meta;
     }
 }

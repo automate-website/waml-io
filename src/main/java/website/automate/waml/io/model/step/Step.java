@@ -7,18 +7,20 @@ import website.automate.waml.io.report.StepReport;
 @JsonPropertyOrder({"when", "unless", "timeout", "invert", "register", "report"})
 public interface Step {
 
-  String getWhen();
-  
-  String getUnless();
+    String getWhen();
 
-  String getRegister();
+    String getUnless();
 
-  String getTimeout();
+    String getRegister();
 
-  String getInvert();
+    String getTimeout();
 
-  StepReport getReport();
-  
-  @JsonIgnore
-  String getName();
+    String getInvert();
+
+    StepReport getReport();
+
+    String getMeta();
+
+    @JsonIgnore
+    String getName();
 }
