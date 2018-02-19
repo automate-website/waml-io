@@ -25,7 +25,7 @@ public class WamlReport {
     
     public void updateStats(){
         for(Scenario scenario : scenarios){
-            scenario.getReport().updateStats(scenario.getSteps());
+            scenario.getReport().updateStats(scenario.getActions());
             ExecutionStatus scenarioStatus = scenario.getReport().getStatus();
             status = ExecutionStatus.worstOf(status, scenarioStatus);
             setNumAction(scenarioStatus);

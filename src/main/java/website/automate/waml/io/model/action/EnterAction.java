@@ -1,8 +1,9 @@
-package website.automate.waml.io.model.step;
+package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.EnterCriteria;
+import website.automate.waml.io.model.criteria.FilterCriteria;
 
-public class EnterStep extends BasicStep {
+public class EnterAction extends FilterAction {
 
     static final String TYPE_NAME = "enter";
 
@@ -19,5 +20,10 @@ public class EnterStep extends BasicStep {
     @Override
     public String getName() {
         return TYPE_NAME;
+    }
+
+    @Override
+    public FilterCriteria getFilter() {
+        return enter;
     }
 }

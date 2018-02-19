@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.step;
+package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.ExecuteCriteria;
 
-public class ExecuteStep extends BasicStep {
+public class ExecuteAction extends ConditionalAction {
 
     static final String TYPE_NAME = "execute";
 

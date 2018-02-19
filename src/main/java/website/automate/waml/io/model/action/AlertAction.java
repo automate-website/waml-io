@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.step;
+package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.AlertCriteria;
 
-public class AlertStep extends BasicStep {
+public class AlertAction extends TimeLimitedAction {
 
     static final String TYPE_NAME = "alert";
 

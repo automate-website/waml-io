@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.step;
+package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.DebugCriteria;
 
-public class DebugStep extends BasicStep {
+public class DebugAction extends ConditionalAction {
 
 static final String TYPE_NAME = "debug";
   

@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.step;
+package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.OpenCriteria;
 
-public class OpenStep extends BasicStep {
+public class OpenAction extends ConditionalAction {
 
     static final String TYPE_NAME = "open";
 

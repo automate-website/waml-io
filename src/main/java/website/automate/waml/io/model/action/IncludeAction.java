@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.step;
+package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.IncludeCriteria;
 
-public class IncludeStep extends BasicStep {
+public class IncludeAction extends ConditionalAction {
 
     static final String TYPE_NAME = "include";
 

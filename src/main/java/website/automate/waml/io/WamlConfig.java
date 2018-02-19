@@ -1,7 +1,7 @@
 package website.automate.waml.io;
 
-import website.automate.waml.io.deserializer.StepDeserializer;
-import website.automate.waml.io.model.step.Step;
+import website.automate.waml.io.deserializer.ActionDeserializer;
+import website.automate.waml.io.model.action.Action;
 import website.automate.waml.io.serliazer.WamlSerializerModifier;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -25,7 +25,7 @@ public class WamlConfig {
     
     private ObjectMapper createMapper(){
         SimpleModule module = new SimpleModule(MODULE_NAME, Version.unknownVersion());
-        module.addDeserializer(Step.class, new StepDeserializer()); 
+        module.addDeserializer(Action.class, new ActionDeserializer()); 
         module.setSerializerModifier(new WamlSerializerModifier());
 
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory().enable(Feature.MINIMIZE_QUOTES));  

@@ -11,6 +11,6 @@ public class WamlReaderIT {
   
   @Test(expected=WamlDeserializationException.class)
   public void readerFailsWithDeserializationException(){
-    reader.read(WamlReaderIT.class.getClassLoader().getResourceAsStream("website/automate/waml/io/reader/unknown-step-scenario.yaml"));
+    reader.read(WamlReaderIT.class.getClassLoader().getResourceAsStream("website/automate/waml/io/reader/unknown-action-scenario.yaml"));
   }
 }

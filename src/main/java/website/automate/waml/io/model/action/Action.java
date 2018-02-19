@@ -1,11 +1,11 @@
-package website.automate.waml.io.model.step;
+package website.automate.waml.io.model.action;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import website.automate.waml.io.report.StepReport;
+import website.automate.waml.io.report.ActionReport;
 
 @JsonPropertyOrder({"when", "unless", "timeout", "invert", "register", "report"})
-public interface Step {
+public interface Action {
 
     String getWhen();
 
@@ -17,7 +17,7 @@ public interface Step {
 
     String getInvert();
 
-    StepReport getReport();
+    ActionReport getReport();
 
     String getMeta();
 

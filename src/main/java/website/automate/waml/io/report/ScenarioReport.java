@@ -3,7 +3,7 @@ package website.automate.waml.io.report;
 import java.util.Collection;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import website.automate.waml.io.model.step.Step;
+import website.automate.waml.io.model.action.Action;
 
 @JsonPropertyOrder({"status", "message", "time", "numActionPasses", "numActionFailures", "path", "criteria"})
 public class ScenarioReport {
@@ -20,12 +20,12 @@ public class ScenarioReport {
 
     private Integer numActionFailures = 0;
 
-    public void updateStats(Collection<Step> steps) {
-        for (Step step : steps) {
-            ExecutionStatus actionStatus = step.getReport().getStatus();
+    public void updateStats(Collection<Action> actions) {
+        for (Action action : actions) {
+            ExecutionStatus actionStatus = action.getReport().getStatus();
             status = ExecutionStatus.worstOf(status, actionStatus);
             setNumAction(actionStatus);
-            time += step.getReport().getTime();
+            time += action.getReport().getTime();
         }
     }
 

@@ -50,6 +50,8 @@ public class ScenarioTest {
   }
 
   private Scenario createScenario(String name) {
-    return new Scenario(name, null, null, null, null, null, null, null, null);
+    Scenario scenario = new Scenario();
+    scenario.setName(name);
+    return scenario;
   }
 }

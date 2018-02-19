@@ -1,8 +1,8 @@
-package website.automate.waml.io.model.step;
+package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.FilterCriteria;
 
-public class MoveStep extends BasicStep {
+public class MoveAction extends TimeLimitedAction {
 
     static final String TYPE_NAME = "move";
 
@@ -20,4 +20,5 @@ public class MoveStep extends BasicStep {
     public String getName() {
         return TYPE_NAME;
     }
+
 }
