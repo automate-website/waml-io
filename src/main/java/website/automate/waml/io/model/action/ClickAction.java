@@ -2,7 +2,7 @@ package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.FilterCriteria;
 
-public class ClickAction extends FilterAction {
+public class ClickAction extends FilterAction<FilterCriteria> {
 
     static final String TYPE_NAME = "click";
 
@@ -24,5 +24,10 @@ public class ClickAction extends FilterAction {
     @Override
     public FilterCriteria getFilter() {
         return click;
+    }
+
+    @Override
+    public void setFilter(FilterCriteria filter) {
+        this.click = filter;
     }
 }

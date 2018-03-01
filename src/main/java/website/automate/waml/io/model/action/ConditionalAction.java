@@ -1,12 +1,11 @@
 package website.automate.waml.io.model.action;
 
-public abstract class ConditionalAction extends BasicAction {
+public abstract class ConditionalAction extends Action {
 
     private String when;
 
     private String unless;
 
-    @Override
     public String getWhen() {
         return when;
     }
@@ -15,7 +14,6 @@ public abstract class ConditionalAction extends BasicAction {
         this.when = when;
     }
 
-    @Override
     public String getUnless() {
         return unless;
     }

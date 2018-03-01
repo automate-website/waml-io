@@ -4,9 +4,9 @@ import website.automate.waml.io.reader.WamlDeserializationException;
 
 public class UnknownCriterionException extends WamlDeserializationException {
 
-	private static final long serialVersionUID = -7676165691657650400L;
+    private static final long serialVersionUID = -7676165691657650400L;
 
-	public UnknownCriterionException(String msg, Throwable cause){
+    public UnknownCriterionException(String msg, Throwable cause) {
         super(msg, cause);
     }
 }

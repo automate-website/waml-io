@@ -6,7 +6,7 @@ public class UnknownActionException extends WamlDeserializationException {
 
     private static final long serialVersionUID = 902254215961310661L;
 
-    public UnknownActionException(String msg){
+    public UnknownActionException(String msg) {
         super(msg);
     }
 }

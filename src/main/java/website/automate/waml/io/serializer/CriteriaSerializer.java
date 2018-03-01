@@ -1,9 +1,7 @@
-package website.automate.waml.io.serliazer;
+package website.automate.waml.io.serializer;
 
 import java.io.IOException;
-
 import website.automate.waml.io.model.criteria.Criteria;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
@@ -14,21 +12,21 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 public class CriteriaSerializer extends StdSerializer<Criteria> implements ResolvableSerializer {
 
     private static final long serialVersionUID = 7861146712268855092L;
-    
+
     @SuppressWarnings("rawtypes")
     private final JsonSerializer defaultSerializer;
-    
-    @SuppressWarnings("rawtypes") 
+
+    @SuppressWarnings("rawtypes")
     public CriteriaSerializer(JsonSerializer defaultSerializer) {
         super(Criteria.class);
         this.defaultSerializer = defaultSerializer;
     }
-    
+
     @SuppressWarnings("unchecked")
     @Override
-    public void serialize(Criteria criteria, JsonGenerator generator,
-            SerializerProvider provider) throws IOException {
-        if(criteria.canBeShortNotated()){
+    public void serialize(Criteria criteria, JsonGenerator generator, SerializerProvider provider)
+            throws IOException {
+        if (criteria.canBeShortNotated()) {
             Object defaultCriterionValue = criteria.getDefaultCriterionValue();
             generator.writeObject(defaultCriterionValue);
         } else {
@@ -37,8 +35,7 @@ public class CriteriaSerializer extends StdSerializer<Criteria> implements Resol
     }
 
     @Override
-    public void resolve(SerializerProvider provider)
-            throws JsonMappingException {
+    public void resolve(SerializerProvider provider) throws JsonMappingException {
         ((ResolvableSerializer) defaultSerializer).resolve(provider);
     }
 

@@ -5,7 +5,7 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import website.automate.waml.io.model.action.Action;
-import website.automate.waml.io.report.ScenarioReport;
+import website.automate.waml.io.model.report.ScenarioReport;
 
 @JsonPropertyOrder({"name", "precedence", "description", "fragment", "timeout", "when", "unless",
         "report", "steps"})
@@ -13,17 +13,19 @@ public class Scenario {
 
     private String name;
 
-    private Integer precedence;
+    private Integer precedence = -1;
 
     private String description;
 
-    private Boolean fragment;
+    private Boolean fragment = false;
 
-    private String timeout;
+    private String timeout = "5";
 
     private String when;
 
     private String unless;
+
+    private String meta;
 
     private ScenarioReport report;
 
@@ -100,6 +102,14 @@ public class Scenario {
 
     public void setReport(ScenarioReport report) {
         this.report = report;
+    }
+
+    public String getMeta() {
+        return meta;
+    }
+
+    public void setMeta(String meta) {
+        this.meta = meta;
     }
 
     @Override

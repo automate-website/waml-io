@@ -2,7 +2,7 @@ package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.FilterCriteria;
 
-public class EnsureAction extends FilterAction {
+public class EnsureAction extends FilterAction<FilterCriteria> {
 
     static final String TYPE_NAME = "ensure";
 
@@ -24,5 +24,10 @@ public class EnsureAction extends FilterAction {
     @Override
     public FilterCriteria getFilter() {
         return ensure;
+    }
+
+    @Override
+    public void setFilter(FilterCriteria filter) {
+        this.ensure = filter;
     }
 }

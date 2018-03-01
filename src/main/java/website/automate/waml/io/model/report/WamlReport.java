@@ -1,30 +1,30 @@
-package website.automate.waml.io.report;
+package website.automate.waml.io.model.report;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import website.automate.waml.io.model.Scenario;
 
-@JsonPropertyOrder({"status", "message", "time", "numScenarioTotal", "numActionPasses", "numActionFailures"})
+@JsonPropertyOrder({"status", "message", "time", "numScenarioTotal", "numActionPasses",
+        "numActionFailures"})
 public class WamlReport {
 
     private ExecutionStatus status = ExecutionStatus.SUCCESS;
-    
+
     private String message;
-    
+
     private Double time = 0.0;
-    
+
     private Integer numScenarioTotal = 0;
-    
+
     private Integer numScenarioPasses = 0;
-    
+
     private Integer numScenarioFailures = 0;
-    
+
     private List<Scenario> scenarios = new ArrayList<>();
-    
-    public void updateStats(){
-        for(Scenario scenario : scenarios){
+
+    public void updateStats() {
+        for (Scenario scenario : scenarios) {
             scenario.getReport().updateStats(scenario.getActions());
             ExecutionStatus scenarioStatus = scenario.getReport().getStatus();
             status = ExecutionStatus.worstOf(status, scenarioStatus);
@@ -32,16 +32,16 @@ public class WamlReport {
             time += scenario.getReport().getTime();
         }
     }
-    
-    private void setNumAction(ExecutionStatus actionStatus){
+
+    private void setNumAction(ExecutionStatus actionStatus) {
         numScenarioTotal++;
-        if(actionStatus == ExecutionStatus.SUCCESS){
+        if (actionStatus == ExecutionStatus.SUCCESS) {
             numScenarioPasses++;
         } else {
             numScenarioFailures++;
         }
     }
-    
+
     public ExecutionStatus getStatus() {
         return status;
     }

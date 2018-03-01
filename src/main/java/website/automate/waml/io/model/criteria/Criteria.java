@@ -4,14 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({"selector", "text", "value", "element", "input", "facts", "local", "script"})
-public interface Criteria{
+public interface Criteria {
 
-  @JsonIgnore
-  boolean canBeShortNotated();
+    @JsonIgnore
+    boolean canBeShortNotated();
 
-  @JsonIgnore
-  String getDefaultCriterionName();
-  
-  @JsonIgnore
-  Object getDefaultCriterionValue();
+    @JsonIgnore
+    String getDefaultCriterionName();
+
+    @JsonIgnore
+    Object getDefaultCriterionValue();
 }

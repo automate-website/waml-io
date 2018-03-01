@@ -77,4 +77,8 @@ public class FilterCriteria implements Criteria {
     public String getDefaultCriterionValue() {
         return getSelector();
     }
+
+    public boolean hasFilterCriteria() {
+        return selector != null || text != null || value != null || parent != null;
+    }
 }

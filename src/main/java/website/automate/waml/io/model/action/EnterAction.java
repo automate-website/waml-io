@@ -1,9 +1,8 @@
 package website.automate.waml.io.model.action;
 
 import website.automate.waml.io.model.criteria.EnterCriteria;
-import website.automate.waml.io.model.criteria.FilterCriteria;
 
-public class EnterAction extends FilterAction {
+public class EnterAction extends FilterAction<EnterCriteria> {
 
     static final String TYPE_NAME = "enter";
 
@@ -23,7 +22,12 @@ public class EnterAction extends FilterAction {
     }
 
     @Override
-    public FilterCriteria getFilter() {
+    public EnterCriteria getFilter() {
         return enter;
+    }
+
+    @Override
+    public void setFilter(EnterCriteria filter) {
+        this.enter = filter;
     }
 }
