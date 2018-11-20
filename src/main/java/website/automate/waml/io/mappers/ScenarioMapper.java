@@ -1,7 +1,7 @@
 package website.automate.waml.io.mappers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import website.automate.waml.io.model.Scenario;
+import website.automate.waml.io.model.main.Scenario;
 
 public class ScenarioMapper {
 

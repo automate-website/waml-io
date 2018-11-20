@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import website.automate.waml.io.model.action.Action;
+import website.automate.waml.io.model.main.action.Action;
 
 public class ActionDeserializer extends StdDeserializer<Action> {
 

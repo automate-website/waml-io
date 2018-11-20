@@ -4,6 +4,8 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import website.automate.waml.io.model.main.action.Action;
 
 @JsonPropertyOrder({"status", "message", "time", "path", "criteria", "log"})
 public class ActionReport {
@@ -15,6 +17,9 @@ public class ActionReport {
     private Double time = 0.0;
 
     private ExecutionStatus status;
+
+    @JsonUnwrapped
+    private Action step;
 
     @JsonProperty("log")
     private List<LogEntry> logEntries;
@@ -63,4 +68,13 @@ public class ActionReport {
     public void setLogEntries(List<LogEntry> logEntries) {
         this.logEntries = logEntries;
     }
+
+    public Action getStep() {
+        return step;
+    }
+
+    public void setStep(Action step) {
+        this.step = step;
+    }
+
 }

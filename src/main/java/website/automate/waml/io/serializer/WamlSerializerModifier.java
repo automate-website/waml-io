@@ -1,6 +1,6 @@
 package website.automate.waml.io.serializer;
 
-import website.automate.waml.io.model.criteria.Criteria;
+import website.automate.waml.io.model.main.criteria.Criteria;
 import com.fasterxml.jackson.databind.BeanDescription;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializationConfig;

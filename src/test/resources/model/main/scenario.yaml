@@ -1,0 +1,6 @@
+---
+- when: ${isHighResolution}
+  click:
+    selector: a.sign-up
+    parent: element
+- ensure: div.dash-board

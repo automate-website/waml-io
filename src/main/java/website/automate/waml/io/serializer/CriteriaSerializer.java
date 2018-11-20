@@ -1,7 +1,7 @@
 package website.automate.waml.io.serializer;
 
 import java.io.IOException;
-import website.automate.waml.io.model.criteria.Criteria;
+import website.automate.waml.io.model.main.criteria.Criteria;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonSerializer;

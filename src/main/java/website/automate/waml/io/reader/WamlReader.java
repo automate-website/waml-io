@@ -7,8 +7,8 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import website.automate.waml.io.model.Scenario;
-import website.automate.waml.io.model.action.Action;
+import website.automate.waml.io.model.main.Scenario;
+import website.automate.waml.io.model.main.action.Action;
 
 import static java.text.MessageFormat.format;
 

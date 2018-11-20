@@ -3,7 +3,7 @@ package website.automate.waml.io;
 import website.automate.waml.io.deserializer.ActionDeserializer;
 import website.automate.waml.io.mappers.ActionMapper;
 import website.automate.waml.io.mappers.ScenarioMapper;
-import website.automate.waml.io.model.action.Action;
+import website.automate.waml.io.model.main.action.Action;
 import website.automate.waml.io.reader.WamlReader;
 import website.automate.waml.io.serializer.WamlSerializerModifier;
 import website.automate.waml.io.writer.WamlWriter;

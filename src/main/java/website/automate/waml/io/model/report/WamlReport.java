@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import website.automate.waml.io.model.Scenario;
 
 @JsonPropertyOrder({"status", "message", "time", "numScenarioTotal", "numActionPasses",
         "numActionFailures"})
@@ -26,15 +25,15 @@ public class WamlReport {
 
     private Integer numScenarioFailures = 0;
 
-    private List<Scenario> scenarios = new ArrayList<>();
+    private List<ScenarioReport> scenarios = new ArrayList<>();
 
     public void updateStats() {
-        for (Scenario scenario : scenarios) {
-            scenario.getReport().updateStats(scenario.getSteps());
-            ExecutionStatus scenarioStatus = scenario.getReport().getStatus();
+        for (ScenarioReport scenario : scenarios) {
+            scenario.updateStats(scenario.getSteps());
+            ExecutionStatus scenarioStatus = scenario.getStatus();
             status = ExecutionStatus.worstOf(status, scenarioStatus);
             setNumAction(scenarioStatus);
-            time += scenario.getReport().getTime();
+            time += scenario.getTime();
         }
     }
 
@@ -87,11 +86,11 @@ public class WamlReport {
         this.numScenarioFailures = numScenarioFailures;
     }
 
-    public List<Scenario> getScenarios() {
+    public List<ScenarioReport> getScenarios() {
         return scenarios;
     }
 
-    public void setScenarios(List<Scenario> scenarios) {
+    public void setScenarios(List<ScenarioReport> scenarios) {
         this.scenarios = scenarios;
     }
 

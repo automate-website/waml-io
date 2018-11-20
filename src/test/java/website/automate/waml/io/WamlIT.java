@@ -5,16 +5,14 @@ import static website.automate.waml.io.WamlTestUtils.getSamples;
 import static website.automate.waml.io.WamlTestUtils.readFile;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
-import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-import website.automate.waml.io.model.Scenario;
+import website.automate.waml.io.model.main.Scenario;
 import website.automate.waml.io.reader.WamlReader;
 import website.automate.waml.io.writer.WamlWriter;
 
@@ -34,7 +32,7 @@ public class WamlIT {
         String expectedSerializedScenario = readFile(scenariosFile);
         String actualSerializedScenario = serializeScenario(scenario);
 
-        assertEquals(expectedSerializedScenarios, actualSerializedScenarios);
+        assertEquals(expectedSerializedScenario, actualSerializedScenario);
     }
 
     @Parameters(name = "{0}")

@@ -1,4 +1,4 @@
-package website.automate.waml.io.model;
+package website.automate.waml.io.model.main.action;
 
 import static org.junit.Assert.assertEquals;
 import static website.automate.waml.io.WamlTestUtils.getObjectMapper;
@@ -11,30 +11,25 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-import website.automate.waml.io.WamlConfig;
-import website.automate.waml.io.model.main.Scenario;
-import website.automate.waml.io.reader.WamlReader;
 
 @RunWith(Parameterized.class)
-public class WamlScenarioIT {
-
-    private WamlReader wamlReader = WamlConfig.getInstance().getWamlReader();
+public class WamlActionIT {
 
     @Parameter
-    public File scenarioFile;
+    public File actionFile;
 
     @Test
     public void scenarioIsDeserializedAndSerialized() throws Exception {
-        Scenario scenario = wamlReader.read(scenarioFile);
-        String expectedSerializedScenario = readFile(scenarioFile);
-        String actualSerializedScenario = getObjectMapper().writeValueAsString(scenario);
+        Action action = getObjectMapper().readValue(actionFile, Action.class);
+        String expectedSerializedAction = readFile(actionFile);
+        String actualSerializedAction = getObjectMapper().writeValueAsString(action);
 
-        assertEquals(expectedSerializedScenario, actualSerializedScenario);
+        assertEquals(expectedSerializedAction, actualSerializedAction);
     }
 
     @Parameters(name = "{0}")
     public static Iterable<? extends Object> data() {
-        Collection<File> files = getSamples("model");
+        Collection<File> files = getSamples("model/main/action");
         return files;
     }
 }

@@ -14,6 +14,6 @@ public class WamlReaderIT {
     @Test(expected = WamlDeserializationException.class)
     public void readerFailsWithDeserializationException() {
         reader.read(new File(WamlReaderIT.class.getClassLoader().getResource(
-                "website/automate/waml/io/reader/unknown-action-scenario.yaml").getFile()));
+                "reader/unknown-action-scenario.yaml").getFile()));
     }
 }

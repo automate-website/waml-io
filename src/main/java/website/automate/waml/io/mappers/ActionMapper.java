@@ -1,7 +1,7 @@
 package website.automate.waml.io.mappers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import website.automate.waml.io.model.action.Action;
+import website.automate.waml.io.model.main.action.Action;
 
 public class ActionMapper {
 

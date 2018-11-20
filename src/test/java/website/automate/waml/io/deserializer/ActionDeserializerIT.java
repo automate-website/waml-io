@@ -4,7 +4,7 @@ import java.io.InputStream;
 import org.junit.Test;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import website.automate.waml.io.WamlConfig;
-import website.automate.waml.io.model.action.Action;
+import website.automate.waml.io.model.main.action.Action;
 
 public class ActionDeserializerIT {
 
@@ -13,14 +13,14 @@ public class ActionDeserializerIT {
     @Test(expected = UnknownActionException.class)
     public void actionDeserializerFailsWithUnknownActionException() throws Exception {
         objectMapper.readValue(
-                getResourceAsStream("website/automate/waml/io/deserializer/unknown-action.yaml"),
+                getResourceAsStream("deserializer/unknown-action.yaml"),
                 Action.class);
     }
 
     @Test(expected = UnknownCriterionException.class)
     public void actionDeserializerFailsWithUnknownCriterionException() throws Exception {
         objectMapper.readValue(
-                getResourceAsStream("website/automate/waml/io/deserializer/unknown-criterion.yaml"),
+                getResourceAsStream("deserializer/unknown-criterion.yaml"),
                 Action.class);
     }
 
