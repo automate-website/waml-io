@@ -30,9 +30,9 @@ public class WamlIT {
 
     @Test
     public void scenarioIsDeserializedAndSerialized() throws Exception {
-        List<Scenario> scenarios = WAML_READER.read(new FileInputStream(scenariosFile));
-        String expectedSerializedScenarios = readFile(scenariosFile);
-        String actualSerializedScenarios = serializeScenarios(scenarios);
+        Scenario scenario = WAML_READER.read(scenariosFile);
+        String expectedSerializedScenario = readFile(scenariosFile);
+        String actualSerializedScenario = serializeScenario(scenario);
 
         assertEquals(expectedSerializedScenarios, actualSerializedScenarios);
     }
@@ -43,9 +43,9 @@ public class WamlIT {
         return files;
     }
 
-    private String serializeScenarios(List<Scenario> scenarios) throws Exception {
+    private String serializeScenario(Scenario scenario) throws Exception {
         ByteArrayOutputStream scenariosOutputStream = new ByteArrayOutputStream();
-        WAML_WRITER.write(scenariosOutputStream, scenarios);
+        WAML_WRITER.write(scenario);
         return scenariosOutputStream.toString(StandardCharsets.UTF_8.name());
     }
 }

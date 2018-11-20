@@ -1,12 +1,16 @@
 package website.automate.waml.io.reader;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
+
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import website.automate.waml.io.model.Scenario;
+import website.automate.waml.io.model.action.Action;
+
+import static java.text.MessageFormat.format;
 
 public class WamlReader {
 
@@ -15,30 +19,44 @@ public class WamlReader {
     public WamlReader(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
     }
-    
-    public List<Scenario> read(InputStream inputStream) {
-        List<Scenario> scenarios = new LinkedList<>();
-        Scanner scanner = new Scanner(inputStream, StandardCharsets.UTF_8.name());
+
+    public Scenario read(File file) {
+        String path = file.getPath();
+        String name = file.getName();
 
         try {
-            scanner.useDelimiter("\r?\n---\r?\n");
+            List<Action> steps = readSteps(new FileInputStream(file));
+            return createScenario(name, path, steps);
+        } catch (Exception e) {
+            throw new WamlDeserializationException(format("Failed to open file {0}.", path), e);
+        }
+    }
 
-            while (scanner.hasNext()) {
-                String content = scanner.next();
-                scenarios.add(objectMapper.readValue(content, Scenario.class));
-            }
+    private Scenario createScenario(String name, String path, List<Action> steps) {
+        Scenario scenario = new Scenario();
+        scenario.setPath(path);
+        scenario.setName(name);
+        scenario.setSteps(steps);
+        return scenario;
+    }
 
+    private List<Action> readSteps(InputStream inputStream) {
+        try {
+            return objectMapper.readValue(
+                inputStream,
+                objectMapper
+                    .getTypeFactory()
+                    .constructType(new TypeReference<List<Action>>() {
+                    })
+            );
         } catch (Exception e) {
             if (e instanceof WamlDeserializationException) {
                 throw (WamlDeserializationException) e;
             } else {
                 throw new WamlDeserializationException(
-                        "Unable to read the suite from the desired format.", e);
+                    "Failed to deserialize from stream.", e);
             }
-        } finally {
-            scanner.close();
         }
-        return scenarios;
     }
 
 }

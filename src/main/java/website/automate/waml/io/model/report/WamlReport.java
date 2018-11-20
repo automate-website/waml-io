@@ -2,6 +2,8 @@ package website.automate.waml.io.model.report;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import website.automate.waml.io.model.Scenario;
 
@@ -10,6 +12,9 @@ import website.automate.waml.io.model.Scenario;
 public class WamlReport {
 
     private ExecutionStatus status = ExecutionStatus.SUCCESS;
+
+    @JsonIgnore
+    private String path;
 
     private String message;
 
@@ -25,7 +30,7 @@ public class WamlReport {
 
     public void updateStats() {
         for (Scenario scenario : scenarios) {
-            scenario.getReport().updateStats(scenario.getActions());
+            scenario.getReport().updateStats(scenario.getSteps());
             ExecutionStatus scenarioStatus = scenario.getReport().getStatus();
             status = ExecutionStatus.worstOf(status, scenarioStatus);
             setNumAction(scenarioStatus);
@@ -96,5 +101,13 @@ public class WamlReport {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

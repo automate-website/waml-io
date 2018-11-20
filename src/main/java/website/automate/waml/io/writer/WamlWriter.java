@@ -1,9 +1,11 @@
 package website.automate.waml.io.writer;
 
+import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import website.automate.waml.io.model.Scenario;
+import website.automate.waml.io.model.action.Action;
 import website.automate.waml.io.model.report.WamlReport;
 
 public class WamlWriter {
@@ -14,19 +16,26 @@ public class WamlWriter {
         this.objectMapper = objectMapper;
     }
 
-    public void write(OutputStream scenarioStream, List<Scenario> scenarios) {
-        try {
-            for (Scenario scenario : scenarios) {
-                objectMapper.writeValue(scenarioStream, scenario);
-            }
-        } catch (Exception e) {
-            throw new WamlSerializationException("Unable to write the suite to desired format.", e);
+    public void write(Scenario scenario){
+        try (FileOutputStream outputStream = new FileOutputStream(scenario.getPath())){
+            writeSteps(outputStream, scenario.getSteps());
+        } catch (Exception e){
+            throw new WamlSerializationException("Failed to open stream.", e);
         }
     }
 
-    public void write(OutputStream reportStream, WamlReport report) {
+    private void writeSteps(OutputStream outputStream, List<Action> actions){
         try {
-            objectMapper.writeValue(reportStream, report);
+            objectMapper.writeValue(outputStream, actions);
+        } catch (Exception e) {
+            throw new WamlSerializationException("Failed to serialize to stream.", e);
+        }
+    }
+
+    public void write(WamlReport report) {
+        try {
+            FileOutputStream outputStream = new FileOutputStream(report.getPath());
+            objectMapper.writeValue(outputStream, report);
         } catch (Exception e) {
             throw new WamlSerializationException("Unable to write the suite to desired format.", e);
         }

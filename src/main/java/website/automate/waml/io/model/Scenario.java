@@ -11,45 +11,24 @@ import website.automate.waml.io.model.report.ScenarioReport;
         "report", "steps"})
 public class Scenario {
 
+    private static final String FRAGMENT_PREFIX = "_";
+
     private String name;
 
-    private Integer precedence = -1;
-
-    private String description;
-
-    private Boolean fragment = false;
-
-    private String timeout = "5";
+    private String path;
 
     private String when;
 
     private String unless;
 
-    private String meta;
+    private String metadata;
 
     private ScenarioReport report;
 
-    @JsonProperty("steps")
-    private List<Action> actions;
+    private List<Action> steps;
 
     public String getName() {
         return name;
-    }
-
-    public Integer getPrecedence() {
-        return precedence;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Boolean getFragment() {
-        return fragment;
-    }
-
-    public String getTimeout() {
-        return timeout;
     }
 
     public String getWhen() {
@@ -64,32 +43,28 @@ public class Scenario {
         return report;
     }
 
-    public List<Action> getActions() {
-        return actions;
+    public List<Action> getSteps() {
+        return steps;
     }
 
-    public void setActions(List<Action> actions) {
-        this.actions = actions;
+    public void setSteps(List<Action> steps) {
+        this.steps = steps;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPrecedence(Integer precedence) {
-        this.precedence = precedence;
+    public boolean isFragment() {
+        return getPath().startsWith(FRAGMENT_PREFIX);
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getPath() {
+        return path;
     }
 
-    public void setFragment(Boolean fragment) {
-        this.fragment = fragment;
-    }
-
-    public void setTimeout(String timeout) {
-        this.timeout = timeout;
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public void setWhen(String when) {
@@ -104,33 +79,25 @@ public class Scenario {
         this.report = report;
     }
 
-    public String getMeta() {
-        return meta;
+    public String getMetadata() {
+        return metadata;
     }
 
-    public void setMeta(String meta) {
-        this.meta = meta;
+    public void setMetadata(String metadata) {
+        this.metadata = metadata;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Scenario scenario = (Scenario) o;
+        return Objects.equals(getName(), scenario.getName()) &&
+            Objects.equals(getPath(), scenario.getPath());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Scenario other = (Scenario) obj;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        return true;
+        return Objects.hash(getName(), getPath());
     }
 }

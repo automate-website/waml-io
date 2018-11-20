@@ -31,7 +31,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.5.0]
 ### Added
-- added utility methods to distinguish between explicit and implicit actions.
+- added utility methods to distinguish between explicit and implicit steps.
 
 ## [0.4.0]
 ### Changed
@@ -43,7 +43,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.3.0]
 ### Added
-- added meta criterion for scenario and action for meta data transport
+- added metadata criterion for scenario and action for metadata data transport
 
 ## [0.2.1]
 ### Changed
