@@ -1,6 +1,6 @@
 ---
 when: ${isDesktop}
 unless: ${!isDesktop}
-invert: "false"
+failed_when: "false"
 execute: |
   document.body.style.backgroundColor = "red";

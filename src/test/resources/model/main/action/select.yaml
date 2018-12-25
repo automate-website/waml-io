@@ -2,7 +2,7 @@
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
-invert: "false"
+failed_when: "false"
 register: foo
 select:
   selector: a.sign-up
