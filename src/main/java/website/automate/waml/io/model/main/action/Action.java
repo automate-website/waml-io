@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import website.automate.waml.io.deserializer.UnknownActionException;
 
@@ -40,7 +41,8 @@ public abstract class Action {
 
     private String timeout;
 
-    private String failed_when;
+    @JsonProperty("failed_when")
+    private String failedWhen;
 
     private static void register(String name, Class<? extends Action> clazz) {
         ACTION_NAME_CLASS_MAP.put(name, clazz);
@@ -73,8 +75,8 @@ public abstract class Action {
         return timeout;
     }
 
-    public String getFailed_when() {
-        return failed_when;
+    public String getFailedWhen() {
+        return failedWhen;
     }
 
     public void setRegister(String register) {
@@ -85,8 +87,8 @@ public abstract class Action {
         this.timeout = timeout;
     }
 
-    public void setFailed_when(String failed_when) {
-        this.failed_when = failed_when;
+    public void setFailedWhen(String failedWhen) {
+        this.failedWhen = failedWhen;
     }
 
     @JsonIgnore
