@@ -1,0 +1,18 @@
+---
+status: SUCCESS
+time: 1.0
+total: 1
+pass: 1
+fail: 0
+scenarios:
+- status: SUCCESS
+  time: 1.0
+  path: /var/waml/test-scenario.yaml
+  steps:
+  - click:
+      selector: a.sign-up
+      parent: element
+    when: ${isHighResolution}
+    time: 0.0
+  - ensure: div.dash-board
+    time: 0.0

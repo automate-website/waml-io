@@ -8,7 +8,9 @@ import website.automate.waml.io.model.main.action.Action;
 
 import java.util.List;
 
-@JsonPropertyOrder({"status", "message", "time", "path", "criteria", "log"})
+@JsonPropertyOrder({
+    "step", "status", "message", "time", "path", "log"
+})
 public class ActionReport {
 
     private String path;

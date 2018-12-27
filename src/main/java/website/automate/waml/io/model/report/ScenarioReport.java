@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.Collection;
 import java.util.List;
 
-@JsonPropertyOrder({"status", "message", "time", "numActionPasses", "numActionFailures", "path",
+@JsonPropertyOrder({"status", "message", "time", "pass", "fail", "path",
         "criteria"})
 public class ScenarioReport {
 
@@ -17,26 +17,13 @@ public class ScenarioReport {
 
     private Double time = 0.0;
 
-    private Integer numActionPasses = 0;
-
-    private Integer numActionFailures = 0;
-
     private List<ActionReport> steps;
 
     public void updateStats(Collection<ActionReport> steps) {
         for (ActionReport step : steps) {
             ExecutionStatus actionStatus = step.getStatus();
             status = ExecutionStatus.worstOf(status, actionStatus);
-            setNumAction(actionStatus);
             time += step.getTime();
-        }
-    }
-
-    private void setNumAction(ExecutionStatus actionStatus) {
-        if (actionStatus == ExecutionStatus.SUCCESS) {
-            this.numActionPasses++;
-        } else {
-            this.numActionFailures++;
         }
     }
 
@@ -70,22 +57,6 @@ public class ScenarioReport {
 
     public void setTime(Double time) {
         this.time = time;
-    }
-
-    public Integer getNumActionPasses() {
-        return numActionPasses;
-    }
-
-    public void setNumActionPasses(Integer numActionPasses) {
-        this.numActionPasses = numActionPasses;
-    }
-
-    public Integer getNumActionFailures() {
-        return numActionFailures;
-    }
-
-    public void setNumActionFailures(Integer numActionFailures) {
-        this.numActionFailures = numActionFailures;
     }
 
     public List<ActionReport> getSteps() {

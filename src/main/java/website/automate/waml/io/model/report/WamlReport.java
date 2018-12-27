@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.ArrayList;
 import java.util.List;
 
-@JsonPropertyOrder({"status", "message", "time", "numScenarioTotal", "numActionPasses",
+@JsonPropertyOrder({"status", "message", "time", "total", "numActionPasses",
         "numActionFailures"})
 public class WamlReport {
 
@@ -19,11 +19,11 @@ public class WamlReport {
 
     private Double time = 0.0;
 
-    private Integer numScenarioTotal = 0;
+    private Integer total = 0;
 
-    private Integer numScenarioPasses = 0;
+    private Integer pass = 0;
 
-    private Integer numScenarioFailures = 0;
+    private Integer fail = 0;
 
     private List<ScenarioReport> scenarios = new ArrayList<>();
 
@@ -38,11 +38,11 @@ public class WamlReport {
     }
 
     private void setNumAction(ExecutionStatus actionStatus) {
-        numScenarioTotal++;
+        total++;
         if (actionStatus == ExecutionStatus.SUCCESS) {
-            numScenarioPasses++;
+            pass++;
         } else {
-            numScenarioFailures++;
+            fail++;
         }
     }
 
@@ -62,28 +62,28 @@ public class WamlReport {
         this.time = time;
     }
 
-    public Integer getNumScenarioTotal() {
-        return numScenarioTotal;
+    public Integer getTotal() {
+        return total;
     }
 
-    public void setNumScenarioTotal(Integer numScenarioTotal) {
-        this.numScenarioTotal = numScenarioTotal;
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 
-    public Integer getNumScenarioPasses() {
-        return numScenarioPasses;
+    public Integer getPass() {
+        return pass;
     }
 
-    public void setNumScenarioPasses(Integer numScenarioPasses) {
-        this.numScenarioPasses = numScenarioPasses;
+    public void setPass(Integer pass) {
+        this.pass = pass;
     }
 
-    public Integer getNumScenarioFailures() {
-        return numScenarioFailures;
+    public Integer getFail() {
+        return fail;
     }
 
-    public void setNumScenarioFailures(Integer numScenarioFailures) {
-        this.numScenarioFailures = numScenarioFailures;
+    public void setFail(Integer fail) {
+        this.fail = fail;
     }
 
     public List<ScenarioReport> getScenarios() {
