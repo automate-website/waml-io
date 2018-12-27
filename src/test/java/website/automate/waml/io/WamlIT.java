@@ -1,12 +1,5 @@
 package website.automate.waml.io;
 
-import static org.junit.Assert.assertEquals;
-import static website.automate.waml.io.WamlTestUtils.getSamples;
-import static website.automate.waml.io.WamlTestUtils.readFile;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.nio.charset.StandardCharsets;
-import java.util.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -15,6 +8,15 @@ import org.junit.runners.Parameterized.Parameters;
 import website.automate.waml.io.model.main.Scenario;
 import website.automate.waml.io.reader.WamlReader;
 import website.automate.waml.io.writer.WamlWriter;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.util.Collection;
+
+import static org.junit.Assert.assertEquals;
+import static website.automate.waml.io.WamlTestUtils.getSamples;
+import static website.automate.waml.io.WamlTestUtils.readFile;
 
 @RunWith(Parameterized.class)
 public class WamlIT {

@@ -1,13 +1,12 @@
 package website.automate.waml.io.model.main;
 
-import java.util.List;
-import java.util.Objects;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.annotation.JsonValue;
 import website.automate.waml.io.model.main.action.Action;
+
+import java.util.List;
+import java.util.Objects;
 
 @JsonPropertyOrder({"name", "precedence", "description", "fragment", "timeout", "when", "unless",
         "report", "steps"})

@@ -1,11 +1,5 @@
 package website.automate.waml.io.model;
 
-import static org.junit.Assert.assertEquals;
-import static website.automate.waml.io.WamlTestUtils.getObjectMapper;
-import static website.automate.waml.io.WamlTestUtils.getSamples;
-import static website.automate.waml.io.WamlTestUtils.readFile;
-import java.io.File;
-import java.util.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -14,6 +8,12 @@ import org.junit.runners.Parameterized.Parameters;
 import website.automate.waml.io.WamlConfig;
 import website.automate.waml.io.model.main.Scenario;
 import website.automate.waml.io.reader.WamlReader;
+
+import java.io.File;
+import java.util.Collection;
+
+import static org.junit.Assert.assertEquals;
+import static website.automate.waml.io.WamlTestUtils.*;
 
 @RunWith(Parameterized.class)
 public class WamlScenarioIT {

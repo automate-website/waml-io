@@ -1,10 +1,11 @@
 package website.automate.waml.io.deserializer;
 
-import java.io.InputStream;
-import org.junit.Test;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Test;
 import website.automate.waml.io.WamlConfig;
 import website.automate.waml.io.model.main.action.Action;
+
+import java.io.InputStream;
 
 public class ActionDeserializerIT {
 

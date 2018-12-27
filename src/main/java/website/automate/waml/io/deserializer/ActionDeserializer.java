@@ -1,9 +1,5 @@
 package website.automate.waml.io.deserializer;
 
-import static java.text.MessageFormat.format;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -12,6 +8,13 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import website.automate.waml.io.model.main.action.Action;
+import website.automate.waml.io.model.main.action.ActionRegistry;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import static java.text.MessageFormat.format;
 
 public class ActionDeserializer extends StdDeserializer<Action> {
 
@@ -29,7 +32,7 @@ public class ActionDeserializer extends StdDeserializer<Action> {
 
         List<String> fieldNames = new ArrayList<>();
         root.fieldNames().forEachRemaining(fieldNames::add);
-        Class<? extends Action> actionClazz = Action.findClazzByNames(fieldNames);
+        Class<? extends Action> actionClazz = ActionRegistry.findClazzByNames(fieldNames);
 
         try {
             return mapper.convertValue(root, actionClazz);

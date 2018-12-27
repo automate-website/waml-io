@@ -1,14 +1,14 @@
 package website.automate.waml.io.reader;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.util.List;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import website.automate.waml.io.model.main.Scenario;
 import website.automate.waml.io.model.main.action.Action;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.List;
 
 import static java.text.MessageFormat.format;
 

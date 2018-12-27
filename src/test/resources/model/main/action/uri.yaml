@@ -1,0 +1,21 @@
+---
+uri:
+  url: https://foo.bar
+  body: foo
+  dest: /tmp/bar.txt
+  headers:
+    X-Debug: foo-bar
+  method: POST
+  password: secret
+  user: user
+  src: /tmp/foo.txt
+  body_format: raw
+  status_code: 200
+when: ${isDesktop}
+unless: ${!isDesktop}
+timeout: 100
+failed_when: "false"
+register: foo
+with_items:
+- true
+- false

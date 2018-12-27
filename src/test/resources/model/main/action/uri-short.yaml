@@ -1,0 +1,10 @@
+---
+uri: https://foo.bar
+when: ${isDesktop}
+unless: ${!isDesktop}
+timeout: 100
+failed_when: "false"
+register: foo
+with_items:
+- true
+- false

@@ -1,7 +1,8 @@
 package website.automate.waml.io.model.report;
 
-import static java.util.Arrays.asList;
 import java.util.List;
+
+import static java.util.Arrays.asList;
 
 public enum ExecutionStatus {
     SUCCESS, FAILURE, ERROR;

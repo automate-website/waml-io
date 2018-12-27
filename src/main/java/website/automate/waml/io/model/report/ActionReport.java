@@ -1,11 +1,12 @@
 package website.automate.waml.io.model.report;
 
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import website.automate.waml.io.model.main.action.Action;
+
+import java.util.List;
 
 @JsonPropertyOrder({"status", "message", "time", "path", "criteria", "log"})
 public class ActionReport {

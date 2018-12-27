@@ -1,14 +1,16 @@
 package website.automate.waml.io.model.report;
 
-import static java.text.MessageFormat.format;
-import static java.util.EnumSet.of;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import static java.text.MessageFormat.format;
+import static java.util.EnumSet.of;
 
 @JsonPropertyOrder(value = {"level", "time", "message"})
 public class LogEntry {

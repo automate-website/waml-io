@@ -1,13 +1,14 @@
 package website.automate.waml.io.serializer;
 
-import java.io.IOException;
-import website.automate.waml.io.model.main.criteria.Criteria;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.ResolvableSerializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+import website.automate.waml.io.model.main.criteria.Criteria;
+
+import java.io.IOException;
 
 public class CriteriaSerializer extends StdSerializer<Criteria> implements ResolvableSerializer {
 

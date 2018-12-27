@@ -1,9 +1,9 @@
 package website.automate.waml.io.model.main;
 
+import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import org.junit.Test;
-import website.automate.waml.io.model.main.Scenario;
 
 public class ScenarioTest {
 

@@ -2,8 +2,6 @@ package website.automate.waml.io.reader;
 
 import org.junit.Test;
 import website.automate.waml.io.WamlConfig;
-import website.automate.waml.io.reader.WamlDeserializationException;
-import website.automate.waml.io.reader.WamlReader;
 
 import java.io.File;
 

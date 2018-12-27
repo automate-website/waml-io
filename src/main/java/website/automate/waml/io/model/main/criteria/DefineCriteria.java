@@ -1,7 +1,8 @@
 package website.automate.waml.io.model.main.criteria;
 
-import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonCreator;
+
+import java.util.Map;
 
 public class DefineCriteria implements Criteria {
 
