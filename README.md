@@ -5,8 +5,5 @@
 ## Short Description
 **waml-io** provides (de-)serialization of [Web Automation Markup Language][waml-git] for Java.
 
-## References
-Refer to the [changelog] for recent notable changes and modifications.
-
 [waml-git]: https://github.com/automate-website/waml
-[changelog]: CHANGELOG.md
+
