@@ -18,7 +18,7 @@ public class LogEntry {
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public enum LogLevel {
-        INFO, WARN, ERROR, DEBUG;
+        INFO, WARN, ERROR, DEBUG
     }
 
     public static Set<LogLevel> INFO_LEVELS = of(LogLevel.INFO, LogLevel.WARN, LogLevel.ERROR);

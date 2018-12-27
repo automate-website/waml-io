@@ -1,7 +1,6 @@
 package website.automate.waml.io.deserializer;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
@@ -26,9 +25,9 @@ public class ActionDeserializer extends StdDeserializer<Action> {
 
     @Override
     public Action deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-            throws IOException, JsonProcessingException {
+            throws IOException {
         ObjectMapper mapper = (ObjectMapper) jsonParser.getCodec();
-        ObjectNode root = (ObjectNode) mapper.readTree(jsonParser);
+        ObjectNode root = mapper.readTree(jsonParser);
 
         List<String> fieldNames = new ArrayList<>();
         root.fieldNames().forEachRemaining(fieldNames::add);

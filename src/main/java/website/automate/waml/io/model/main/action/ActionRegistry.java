@@ -50,10 +50,10 @@ public class ActionRegistry {
     }
 
     public static Class<? extends Action> findClazzByNames(final Collection<String> names) {
-        Optional<String> matchinTypeName = ACTION_NAME_CLASS_MAP.keySet().stream()
+        Optional<String> matchingTypeName = ACTION_NAME_CLASS_MAP.keySet().stream()
             .filter(typeName -> names.contains(typeName)).findFirst();
-        if (matchinTypeName.isPresent()) {
-            return ACTION_NAME_CLASS_MAP.get(matchinTypeName.get());
+        if (matchingTypeName.isPresent()) {
+            return ACTION_NAME_CLASS_MAP.get(matchingTypeName.get());
         }
         throw new UnknownActionException(
             format("Could not identify any action using keys: {0}.", names));

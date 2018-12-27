@@ -11,7 +11,7 @@ public class ScenarioMapper {
         this.objectMapper = objectMapper;
     }
 
-    public Scenario map(Scenario action) throws Exception {
+    public Scenario map(Scenario action) {
         try {
             return objectMapper.readValue(objectMapper.writeValueAsString(action),
                     action.getClass());
