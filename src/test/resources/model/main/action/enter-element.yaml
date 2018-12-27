@@ -1,9 +1,12 @@
 ---
+enter:
+  element: email
+  input: is
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
 failed_when: "false"
 register: foo
-enter:
-  element: email
-  input: is
+with_items:
+- true
+- false

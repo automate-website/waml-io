@@ -1,7 +1,10 @@
 ---
+open: https://www.google.de
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 10
 failed_when: "false"
 register: foo
-open: https://www.google.de
+with_items:
+- true
+- false

@@ -1,6 +1,9 @@
 ---
+execute: |
+  document.body.style.backgroundColor = "red";
 when: ${isDesktop}
 unless: ${!isDesktop}
 failed_when: "false"
-execute: |
-  document.body.style.backgroundColor = "red";
+with_items:
+- true
+- false

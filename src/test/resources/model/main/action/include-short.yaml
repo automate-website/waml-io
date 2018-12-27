@@ -1,7 +1,10 @@
 ---
+include: included-scenario
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
 failed_when: "false"
 register: foo
-include: included-scenario
+with_items:
+- true
+- false

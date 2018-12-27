@@ -1,9 +1,12 @@
 ---
+debug:
+  msg: ${foo}
+  verbosity: ${low}
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
 failed_when: "false"
 register: foo
-debug:
-  msg: ${foo}
-  verbosity: ${low}
+with_items:
+- true
+- false

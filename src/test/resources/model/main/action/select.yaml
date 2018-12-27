@@ -1,9 +1,12 @@
 ---
+select:
+  selector: a.sign-up
+  value: val
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
 failed_when: "false"
 register: foo
-select:
-  selector: a.sign-up
-  value: val
+with_items:
+- true
+- false

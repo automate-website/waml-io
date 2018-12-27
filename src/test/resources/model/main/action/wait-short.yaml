@@ -1,6 +1,9 @@
 ---
+wait: 100
 when: ${isDesktop}
 unless: ${!isDesktop}
 failed_when: "false"
 register: foo
-wait: 100
+with_items:
+- true
+- false

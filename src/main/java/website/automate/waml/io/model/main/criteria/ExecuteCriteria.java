@@ -6,8 +6,6 @@ public class ExecuteCriteria implements Criteria {
 
     private String script;
 
-    private String local;
-
     public ExecuteCriteria() {
         super();
     }
@@ -21,13 +19,9 @@ public class ExecuteCriteria implements Criteria {
         this.script = script;
     }
 
-    public void setLocal(String local) {
-        this.local = local;
-    }
-
     @Override
     public boolean canBeShortNotated() {
-        return local == null;
+        return true;
     }
 
     @Override
@@ -42,9 +36,5 @@ public class ExecuteCriteria implements Criteria {
 
     public String getScript() {
         return script;
-    }
-
-    public String getLocal() {
-        return local;
     }
 }

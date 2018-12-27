@@ -1,8 +1,11 @@
 ---
+define:
+  keyA: valueA
+  keyB: valueB
 when: ${isDesktop}
 unless: ${!isDesktop}
 failed_when: "false"
 register: foo
-define:
-  keyA: valueA
-  keyB: valueB
+with_items:
+- true
+- false

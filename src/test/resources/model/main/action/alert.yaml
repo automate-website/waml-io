@@ -1,10 +1,13 @@
 ---
+alert:
+  text: foo
+  input: bar
+  confirm: "true"
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
 failed_when: "false"
 register: foo
-alert:
-  text: foo
-  input: bar
-  confirm: "true"
+with_items:
+- true
+- false

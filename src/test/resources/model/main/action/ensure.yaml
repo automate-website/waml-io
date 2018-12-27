@@ -1,10 +1,13 @@
 ---
+ensure:
+  selector: a.sign-up
+  text: Join now for free!
+  value: val
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100
 failed_when: "false"
 register: foo
-ensure:
-  selector: a.sign-up
-  text: Join now for free!
-  value: val
+with_items:
+- true
+- false

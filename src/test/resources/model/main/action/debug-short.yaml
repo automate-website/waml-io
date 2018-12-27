@@ -1,4 +1,4 @@
 ---
+debug: ${foo}
 when: ${isDesktop}
 timeout: 100
-debug: ${foo}

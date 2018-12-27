@@ -11,7 +11,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import website.automate.waml.io.deserializer.UnknownActionException;
 
-@JsonPropertyOrder({"when", "unless", "timeout", "failed_when", "register", "report"})
+@JsonPropertyOrder({
+    "alert", "click", "debug", "define", "ensure", "enter", "execute", "filter", "include", "move", "open", "select", "wait",
+    "when", "unless", "timeout", "failed_when", "register", "with_items", "report"
+})
 public abstract class Action {
 
     public static Map<String, Class<? extends Action>> ACTION_NAME_CLASS_MAP = new HashMap<>();
@@ -43,6 +46,9 @@ public abstract class Action {
 
     @JsonProperty("failed_when")
     private String failedWhen;
+
+    @JsonProperty("with_items")
+    private Object withItems;
 
     private static void register(String name, Class<? extends Action> clazz) {
         ACTION_NAME_CLASS_MAP.put(name, clazz);
@@ -93,4 +99,12 @@ public abstract class Action {
 
     @JsonIgnore
     public abstract String getName();
+
+    public Object getWithItems() {
+        return withItems;
+    }
+
+    public void setWithItems(Object withItems) {
+        this.withItems = withItems;
+    }
 }
