@@ -13,6 +13,13 @@ scenarios:
       selector: a.sign-up
       parent: element
     when: ${isHighResolution}
+    status: SUCCESS
+    message: foo
     time: 0.0
+    log:
+    - level: INFO
+      time: 2018-12-12 00:00:00
+      message: foo
   - ensure: div.dash-board
+    status: FAILURE
     time: 0.0

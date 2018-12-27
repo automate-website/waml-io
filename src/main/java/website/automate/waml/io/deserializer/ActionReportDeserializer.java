@@ -57,7 +57,7 @@ public class ActionReportDeserializer extends StdDeserializer<ActionReport> {
 
         JsonNode statusNode = objectNode.remove("status");
         if(statusNode != null){
-            actionReport.setStatus(ExecutionStatus.valueOf(statusNode.asText()));
+            actionReport.setStatus(mapper.convertValue(statusNode, ExecutionStatus.class));
         }
 
         JsonNode message = objectNode.remove("message");
