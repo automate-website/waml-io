@@ -3,25 +3,20 @@ package website.automate.waml.io.deserializer;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import website.automate.waml.io.model.main.action.Action;
-import website.automate.waml.io.model.main.action.ActionRegistry;
 import website.automate.waml.io.model.report.ActionReport;
 import website.automate.waml.io.model.report.ExecutionStatus;
 import website.automate.waml.io.model.report.LogEntry;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static java.text.MessageFormat.format;
-import static java.util.Arrays.asList;
 
 public class ActionReportDeserializer extends StdDeserializer<ActionReport> {
 

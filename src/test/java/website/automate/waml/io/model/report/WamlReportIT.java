@@ -8,9 +8,7 @@ import java.io.File;
 import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
-import static website.automate.waml.io.WamlTestUtils.getObjectMapper;
-import static website.automate.waml.io.WamlTestUtils.getSamples;
-import static website.automate.waml.io.WamlTestUtils.readFile;
+import static website.automate.waml.io.WamlTestUtils.*;
 
 @RunWith(Parameterized.class)
 public class WamlReportIT {
