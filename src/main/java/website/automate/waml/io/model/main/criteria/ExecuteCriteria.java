@@ -5,6 +5,7 @@ public class ExecuteCriteria implements Criteria {
     private static final String DEFAULT_CRITERION_NAME = "script";
 
     private String script;
+    private String async;
 
     public ExecuteCriteria() {
         super();
@@ -21,7 +22,7 @@ public class ExecuteCriteria implements Criteria {
 
     @Override
     public boolean canBeShortNotated() {
-        return true;
+        return async == null;
     }
 
     @Override
@@ -36,5 +37,21 @@ public class ExecuteCriteria implements Criteria {
 
     public String getScript() {
         return script;
+    }
+
+    public String getAsync() {
+        return async;
+    }
+
+    public void setAsync(String async) {
+        this.async = async;
+    }
+
+    @Override
+    public String toString() {
+        return "ExecuteCriteria{" +
+            "script='" + script + '\'' +
+            ", async='" + async + '\'' +
+            '}';
     }
 }

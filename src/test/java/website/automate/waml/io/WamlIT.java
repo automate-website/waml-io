@@ -14,7 +14,8 @@ import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 import static website.automate.waml.io.WamlTestUtils.getSamples;
 import static website.automate.waml.io.WamlTestUtils.readFile;
 
@@ -34,7 +35,7 @@ public class WamlIT {
         String expectedSerializedScenario = readFile(scenariosFile);
         String actualSerializedScenario = serializeScenario(scenario);
 
-        assertEquals(expectedSerializedScenario, actualSerializedScenario);
+        assertThat(actualSerializedScenario, is(expectedSerializedScenario));
     }
 
     @Parameters(name = "{0}")

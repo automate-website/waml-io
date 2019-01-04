@@ -9,7 +9,8 @@ import org.junit.runners.Parameterized.Parameters;
 import java.io.File;
 import java.util.Collection;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 import static website.automate.waml.io.WamlTestUtils.*;
 
 @RunWith(Parameterized.class)
@@ -24,7 +25,7 @@ public class WamlActionIT {
         String expectedSerializedAction = readFile(actionFile);
         String actualSerializedAction = getObjectMapper().writeValueAsString(action);
 
-        assertEquals(expectedSerializedAction, actualSerializedAction);
+        assertThat(actualSerializedAction, is(expectedSerializedAction));
     }
 
     @Parameters(name = "{0}")
