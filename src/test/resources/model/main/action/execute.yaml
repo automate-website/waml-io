@@ -1,6 +1,8 @@
 ---
-execute: |
-  document.body.style.backgroundColor = "red";
+execute:
+  async: "true"
+  script: |
+    document.body.style.backgroundColor = "red";
 when: ${isDesktop}
 unless: ${!isDesktop}
 timeout: 100

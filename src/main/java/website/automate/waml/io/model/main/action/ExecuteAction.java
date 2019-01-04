@@ -2,7 +2,7 @@ package website.automate.waml.io.model.main.action;
 
 import website.automate.waml.io.model.main.criteria.ExecuteCriteria;
 
-public class ExecuteAction extends ConditionalAction {
+public class ExecuteAction extends TimeLimitedAction {
 
     static final String TYPE_NAME = "execute";
 
