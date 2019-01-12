@@ -10,14 +10,14 @@ public class UriCriteria implements Criteria {
 
     private String url;
 
-    private String body;
+    private Object body;
 
     @JsonProperty("body_format")
     private String bodyFormat;
 
     private String dest;
 
-    private Map<String, String> headers;
+    private Object headers;
 
     private String method;
 
@@ -47,11 +47,11 @@ public class UriCriteria implements Criteria {
         this.url = url;
     }
 
-    public String getBody() {
+    public Object getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    public void setBody(Object body) {
         this.body = body;
     }
 
@@ -71,11 +71,11 @@ public class UriCriteria implements Criteria {
         this.dest = dest;
     }
 
-    public Map<String, String> getHeaders() {
+    public Object getHeaders() {
         return headers;
     }
 
-    public void setHeaders(Map<String, String> headers) {
+    public void setHeaders(Object headers) {
         this.headers = headers;
     }
 
