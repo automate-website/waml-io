@@ -4,6 +4,8 @@ time: 1.0
 total: 1
 pass: 1
 fail: 0
+export:
+  foo: bar
 scenarios:
 - status: SUCCESS
   time: 1.0

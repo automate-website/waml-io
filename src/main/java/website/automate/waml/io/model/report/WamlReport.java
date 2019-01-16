@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @JsonPropertyOrder({"status", "message", "time", "total", "numActionPasses",
         "numActionFailures"})
@@ -24,6 +25,8 @@ public class WamlReport {
     private Integer pass = 0;
 
     private Integer fail = 0;
+
+    private Map<String, Object> export;
 
     private List<ScenarioReport> scenarios = new ArrayList<>();
 
@@ -108,5 +111,13 @@ public class WamlReport {
 
     public void setPath(String path) {
         this.path = path;
+    }
+
+    public Map<String, Object> getExport() {
+        return export;
+    }
+
+    public void setExport(Map<String, Object> export) {
+        this.export = export;
     }
 }
