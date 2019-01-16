@@ -17,7 +17,7 @@ public class IncludeAction extends ConditionalAction {
     }
 
     @Override
-    public String getName() {
+    public String getTypeName() {
         return TYPE_NAME;
     }
 }

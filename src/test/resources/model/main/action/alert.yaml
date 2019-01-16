@@ -1,4 +1,5 @@
 ---
+name: alert-hard
 alert:
   text: foo
   input: bar

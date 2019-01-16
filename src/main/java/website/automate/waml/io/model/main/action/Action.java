@@ -5,11 +5,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({
-    "alert", "click", "debug", "define", "ensure", "enter", "execute", "filter",
+    "name", "alert", "click", "debug", "define", "ensure", "enter", "execute", "filter",
     "include", "move", "open", "select", "uri", "export", "wait", "when", "unless",
     "timeout", "failed_when", "register", "with_items"
 })
 public abstract class Action {
+
+    private String name;
 
     private String register;
 
@@ -46,7 +48,7 @@ public abstract class Action {
     }
 
     @JsonIgnore
-    public abstract String getName();
+    public abstract String getTypeName();
 
     public Object getWithItems() {
         return withItems;
@@ -54,5 +56,13 @@ public abstract class Action {
 
     public void setWithItems(Object withItems) {
         this.withItems = withItems;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

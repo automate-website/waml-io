@@ -17,7 +17,7 @@ public class AlertAction extends TimeLimitedAction {
     }
 
     @Override
-    public String getName() {
+    public String getTypeName() {
         return TYPE_NAME;
     }
 }
