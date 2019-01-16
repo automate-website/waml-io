@@ -1,0 +1,11 @@
+---
+export:
+  keyA: valueA
+  keyB: valueB
+when: ${isDesktop}
+unless: ${!isDesktop}
+failed_when: "false"
+register: foo
+with_items:
+- true
+- false

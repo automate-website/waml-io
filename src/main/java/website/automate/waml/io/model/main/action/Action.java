@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({
     "alert", "click", "debug", "define", "ensure", "enter", "execute", "filter",
-    "include", "move", "open", "select", "uri", "wait", "when", "unless",
+    "include", "move", "open", "select", "uri", "export", "wait", "when", "unless",
     "timeout", "failed_when", "register", "with_items"
 })
 public abstract class Action {

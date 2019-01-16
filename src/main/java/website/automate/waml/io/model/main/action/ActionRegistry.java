@@ -1,6 +1,7 @@
 package website.automate.waml.io.model.main.action;
 
 import website.automate.waml.io.deserializer.UnknownActionException;
+import website.automate.waml.io.model.main.criteria.ExportCriteria;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -34,6 +35,7 @@ public class ActionRegistry {
         register(DebugAction.TYPE_NAME, DebugAction.class);
         register(ExecuteAction.TYPE_NAME, ExecuteAction.class);
         register(UriAction.TYPE_NAME, UriAction.class);
+        register(ExportAction.TYPE_NAME, ExportAction.class);
     }
 
     private static void register(String name, Class<? extends Action> clazz) {
