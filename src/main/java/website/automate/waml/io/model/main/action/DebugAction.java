@@ -17,7 +17,7 @@ public class DebugAction extends ConditionalAction {
     }
 
     @Override
-    public String getName() {
+    public String getTypeName() {
         return TYPE_NAME;
     }
 }

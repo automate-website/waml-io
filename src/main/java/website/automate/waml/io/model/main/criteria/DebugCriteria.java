@@ -6,8 +6,6 @@ public class DebugCriteria implements Criteria {
 
     private String msg;
 
-    private String pause;
-
     private String verbosity;
 
     public DebugCriteria() {
@@ -29,8 +27,7 @@ public class DebugCriteria implements Criteria {
 
     @Override
     public boolean canBeShortNotated() {
-        return verbosity == null
-            && pause == null;
+        return verbosity == null;
     }
 
     @Override
@@ -49,13 +46,5 @@ public class DebugCriteria implements Criteria {
 
     public String getVerbosity() {
         return verbosity;
-    }
-
-    public String getPause() {
-        return pause;
-    }
-
-    public void setPause(String pause) {
-        this.pause = pause;
     }
 }

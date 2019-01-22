@@ -1,7 +1,6 @@
 ---
 debug:
   msg: ${foo}
-  pause: "true"
   verbosity: ${low}
 when: ${isDesktop}
 unless: ${!isDesktop}

@@ -17,7 +17,7 @@ public class EnsureAction extends FilterAction<FilterCriteria> {
     }
 
     @Override
-    public String getName() {
+    public String getTypeName() {
         return TYPE_NAME;
     }
 
