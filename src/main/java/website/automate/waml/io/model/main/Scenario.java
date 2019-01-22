@@ -40,7 +40,7 @@ public class Scenario {
 
     @JsonIgnore
     public boolean isFragment() {
-        return getPath().startsWith(FRAGMENT_PREFIX);
+        return getName().startsWith(FRAGMENT_PREFIX);
     }
 
     @JsonIgnore
