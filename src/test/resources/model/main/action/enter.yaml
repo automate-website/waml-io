@@ -6,6 +6,7 @@ enter:
   input: is
 when: ${isDesktop}
 unless: ${!isDesktop}
+invert: "false"
 timeout: 100
 failed_when: "false"
 register: foo
