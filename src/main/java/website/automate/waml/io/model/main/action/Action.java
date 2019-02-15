@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({
     "name", "alert", "click", "debug", "define", "ensure", "enter", "execute", "filter",
-    "include", "move", "open", "select", "uri", "export", "wait", "when", "unless", "invert",
+    "include", "move", "open", "select", "uri", "export", "wait", "when", "unless",
     "timeout", "failed_when", "register", "with_items"
 })
 public abstract class Action {
@@ -16,8 +16,6 @@ public abstract class Action {
     private String register;
 
     private String timeout;
-
-    private String invert;
 
     @JsonProperty("failed_when")
     private String failedWhen;
@@ -66,13 +64,5 @@ public abstract class Action {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getInvert() {
-        return invert;
-    }
-
-    public void setInvert(String invert) {
-        this.invert = invert;
     }
 }

@@ -3,9 +3,9 @@ click:
   selector: a.sign-up
   text: Join now for free!
   value: val
+  invert: "false"
 when: ${isDesktop}
 unless: ${!isDesktop}
-invert: "false"
 timeout: 100
 failed_when: "false"
 register: foo

@@ -4,9 +4,9 @@ enter:
   text: Join now for free!
   value: val
   input: is
+  invert: "false"
 when: ${isDesktop}
 unless: ${!isDesktop}
-invert: "false"
 timeout: 100
 failed_when: "false"
 register: foo

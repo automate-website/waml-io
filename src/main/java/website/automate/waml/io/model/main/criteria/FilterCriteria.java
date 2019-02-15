@@ -14,6 +14,8 @@ public class FilterCriteria implements Criteria {
 
     private String element;
 
+    private String invert;
+
     public FilterCriteria(String selector) {
         this();
         this.selector = selector;
@@ -63,9 +65,21 @@ public class FilterCriteria implements Criteria {
         this.element = element;
     }
 
+    public String getInvert() {
+        return invert;
+    }
+
+    public void setInvert(String invert) {
+        this.invert = invert;
+    }
+
     @Override
     public boolean canBeShortNotated() {
-        return text == null && value == null && parent == null && element == null;
+        return text == null
+            && value == null
+            && parent == null
+            && element == null
+            && invert == null;
     }
 
     @Override
@@ -79,6 +93,9 @@ public class FilterCriteria implements Criteria {
     }
 
     public boolean hasFilterCriteria() {
-        return selector != null || text != null || value != null || parent != null;
+        return selector != null
+            || text != null
+            || value != null
+            || parent != null;
     }
 }

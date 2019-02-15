@@ -2,9 +2,9 @@
 select:
   selector: a.sign-up
   value: val
+  invert: "false"
 when: ${isDesktop}
 unless: ${!isDesktop}
-invert: "false"
 timeout: 100
 failed_when: "false"
 register: foo
